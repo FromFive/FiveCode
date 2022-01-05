@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        [tittle]{
+            color:#f00;
+        }
+        [tittle='one div']{
+            font-size:20px;
+        }
+        /* tittle中包含one单词 */
+        [tittle*='one']{
+            background-color: #00f;
+        }
+        /* tittle中以one开头 */
+        [tittle^='one']{
+            font-style:oblique;
+        }
+        /*  */
+    </style>
+</head>
+<body>
+    <div tittle="one div">我是div元素</div>
+    <p tittle="p one">我是p元素</p>
+    <p>我也是p元素</p>
+    <span tittle="span one">我是span元素</span>
+</body>
+</html>
