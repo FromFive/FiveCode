@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中div元素中的span元素，包含直接子元素和间接子元素 */
+        div span{
+            color:#f00;
+        }
+        /* 选中div元素下的p元素下的span元素，包含直接子元素和间接子元素 */
+        div p span{
+            font-size:25px;
+        }
+    </style>
+</head>
+<body>
+    <span>文字内容1</span>
+    <div>
+        <span>文字内容2</span>
+        <p>
+            <span>文字内容3</span>
+        </p>
+    </div>
+    <div>
+        <span>文字内容4</span>
+    </div>
+    <span>文字内容5</span>
+    <p>
+        <span>文字内容6</span>
+    </p>
+</body>
+</html>

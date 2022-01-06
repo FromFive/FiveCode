@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选中div元素下的span元素，直接子元素 */
+        div>span{
+            color:#f00;
+        }
+        /* 选中类box下的span元素，直接子元素 */
+        .box>span{
+            font-size:30px;
+        }
+        /* 选中类box下面的类tittle元素，直接子元素 */
+        .box>.tittle{
+            background-color: #12ff12;
+        }
+    </style>
+</head>
+<body>
+    <span>文字内容1</span>
+    <div class="box">
+        <span>文字内容2</span>
+        <p>
+            <span>文字内容3</span>
+        </p>
+        <div>
+            <span>文字内容4</span>
+        </div>
+        <span class="tittle">文字内容5</span>
+        <div class="tittle">哈哈哈哈</div>
+    </div>
+    <div>
+       <a href="#">
+           <span>文字内容6</span>
+       </a>
+    </div>
+    <span>文字内容7</span>
+    <p>
+        <span>文字内容8</span>
+    </p>
+</body>
+</html>
