@@ -33,14 +33,21 @@
         input:focus{
             background-color: #f00;
         }
-        a:fovus{
+        /* a:fovus{
             background-color: #ff0;
+        } */
+
+        /* 去掉a元素默认的聚焦 */
+        a:focus{
+            outline:none;
         }
     </style>
 </head>
 <body>
     <!-- 1、在a元素中使用link、visited、hover、active -->
     <a href="#">休息一下</a>
+    <!-- tabindex可以调整tab键选中元素的顺序，如果设置成-1则以后不能被选中 -->
+    <a tabindex="-1" href="#">tab一下</a>
     <!-- 2、在其他元素中使用hover、active -->
     <strong>我是strong元素</strong>
     <!-- 3、focus -->
