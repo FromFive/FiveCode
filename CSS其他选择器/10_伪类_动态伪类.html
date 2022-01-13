@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 在a元素使用的动态伪类，注意使用顺序：link、visited、hover、avtive */
+        /* 未访问的链接状态 */
+        a:link{
+            color:red;
+        }
+        /* 已访问的链接状态 */
+        a:visited{
+            color:green;
+        }
+        /* 鼠标放在链接上的状态 */
+        a:hover{
+            color:blue;
+        }
+        /* 鼠标长按住链接但是未松开的状态 */
+        a:active{
+            color:orange;
+        }
+        strong:hover{
+            color:red;
+        }
+        strong:active{
+            font-size:40px;
+        }
+        /* foucs使用 */
+        input:focus{
+            background-color: #f00;
+        }
+        /* a:fovus{
+            background-color: #ff0;
+        } */
+
+        /* 去掉a元素默认的聚焦 */
+        a:focus{
+            outline:none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1、在a元素中使用link、visited、hover、active -->
+    <a href="#">休息一下</a>
+    <!-- tabindex可以调整tab键选中元素的顺序，如果设置成-1则以后不能被选中 -->
+    <a tabindex="-1" href="#">tab一下</a>
+    <!-- 2、在其他元素中使用hover、active -->
+    <strong>我是strong元素</strong>
+    <!-- 3、focus -->
+    <!-- 3.1文本输入框聚焦后背景变红色 -->
+    <input type="text">
+</body>
+</html>
