@@ -6,12 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        /* 选择p作为第三个的元素，即文字内容2生效 */
-        p:nth-child(3){
-            color:green;
-        }
-        /* 只选择类型是 p元素的第三个元素 */
-        p:nth-of-type(3){
+        /* 只选择类型是p元素的偶数行内容 */
+        p:nth-of-type(2n){
             color:red;
         }
     </style>
@@ -20,7 +16,6 @@
     <div>
         <div>div1</div>
         <p>内容1</p>
-        <span>我是span元素</span>
         <p>内容2</p>
         <p>内容3</p>
         <p>内容4</p>
