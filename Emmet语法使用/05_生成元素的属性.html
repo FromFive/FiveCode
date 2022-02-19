@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--生成div含id属性是main:div#main  -->
+    <div id="main">id属性</div>
+   <!-- 生成div含class属性box：div.box -->
+   <div class="box">class属性</div>
+   <!-- 生成div含title为空：div[title] -->
+   <div title="">title为空</div>
+   <!-- 生成div含title不为空：div[title=哈哈哈] -->
+   <div title="哈哈哈">哈哈哈</div>
+   <!-- 练习 div#main>div.box+p.p1+span[title]^div#footer>div.box2-->
+   <div id="mian">
+       <div class="box">练习</div>
+       <p class="p1"></p>
+       <span title=""></span>
+   </div>
+   <div id="footer">
+       <div class="box2"></div>
+   </div>
+</body>
+</html>
