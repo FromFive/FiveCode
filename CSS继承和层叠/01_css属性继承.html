@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* css属性继承，设置div元素属性，其子元素p和strong都会继承div */
+        /* strong元素本身默认加粗是700，所以在地中设置fontweight时，strong不会继承fontweight */
+        .box{
+            color:red;
+            font-size: 20px;
+            font-weight: 400;
+
+            background-color: #00f;
+            width: 500px;
+        }
+        /* 使用inherit强制继承width */
+        img{
+            width: inherit;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p>哈哈哈</p>
+        <div>
+            <strong>哦哦哦</strong>
+        </div>
+        <img src="../img/test.jpg" alt="">
+    </div>
+</body>
+</html>

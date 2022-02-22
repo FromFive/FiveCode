@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 基本层叠：后面的样式会层叠前面的样式，前提是相同的选择器 */
+        .box1{
+            color: red;
+        }
+        .box2{
+            color: green;
+        }
+        .box3{
+            color: orange;
+        }
+        /* 2、给第二个div设置样式 */
+        /* 当选择器不同时，按照权重层叠 */
+        /* 
+        !important：10000
+        内联样式：1000
+        id选择器权重：100
+        类选择器、属性选择器、伪类权重：10
+        元素选择器、伪元素权重：1
+        通配选择器：0
+         */
+        div{
+            color:red;
+        }
+        #mian{
+            color:blue;
+        }
+        .box{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1 box2 box3">哈哈哈</div>
+    <div id="main" class="box">嘿嘿嘿</div>
+</body>
+</html>
