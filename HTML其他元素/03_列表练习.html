@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表及伪类练习</title>
+    <style>
+        ul{
+            list-style: none;
+            margin: 0;
+            padding:0;
+        }
+        ul li{
+            margin-top: 8px;
+        }
+        ul li span{
+            color:#fff;
+            padding:0 8px;
+        }
+        /* 
+        nth-child是用于兄弟元素，但是每个span元素都对应在一个li元素下
+        所以使用在li元素上使用nth伪类，找到相应的对应行，
+        再找到其下面的span元素设置属性。
+         */
+        li:nth-child(-n+3) span{
+            background-color: #f00;
+        }
+        li:nth-last-child(-n+2) span{
+            background-color: grey;
+        }
+    </style>
+</head>
+<body>
+   <ul>
+       <li>
+           <span>1</span>
+           <a href="http://www.news.cn/politics/leaders/2022-03/09/c_1128452681.htm" target="_blank">第一观察｜习近平心目中的“大食物观”</a>
+        </li>
+       <li>
+           <span>2</span>
+           <a href="http://www.news.cn/politics/xxjxs/2022-03/07/c_1128448003.htm" target="_blank">习近平这样谈粮食安全  “我们一定要不负青山”</a>
+        </li>
+       <li>
+           <span>3</span>
+           <a href="https://xhpfmapi.xinhuaxmt.com/vh512/share/10645628" target="_blank">让希望的田野充满活力</a>
+        </li>
+       <li>
+           <span>4</span>
+           <a href="https://mp.weixin.qq.com/s/IIbTiqrDinNI1zQT0samLg" target="_blank">这些政策，事关你的钱袋子</a>
+        </li>
+       <li>
+           <span>5</span>
+           <a href="http://www.ckxx.net/p/293261.html" target="_blank">新媒述评：“稳”字成中国爬坡过坎要诀</a>
+        </li>
+   </ul>
+</body>
+</html>
