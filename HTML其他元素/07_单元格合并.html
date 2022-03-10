@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+        td{
+            border:1px solid #000;
+            /* 第一个值是上下的值，第二个值时左右的值 */
+            padding:6px 25px;
+            text-align: center;
+        }
+        /* 使用属性选择器 */
+        [colspan],[rowspan],tr:nth-child(2){
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="6">课程表</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>星期一</td>
+            <td>星期二</td>
+            <td>星期三</td>
+            <td>星期四</td>
+            <td>星期五</td>
+        </tr>
+        <tr>
+            <td rowspan="4">上午</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td rowspan="4">下午</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td rowspan="2">晚自习</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+        <tr>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+            <td>化学</td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        fieldset{
+            width: 400px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>必填信息</legend>
+        <div>
+            <span>手机：</span>
+            <input type="text">
+        </div>
+        <div>
+            <span>密码：</span>
+            <input type="password">
+            <!-- 3.1按钮的实现方式一 -->
+            <input type="button" value="获取验证码">
+            <!-- 3.2按钮的实现方式二 -->
+            <!-- <button>获取验证码</button> -->
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>选填信息</legend>
+        <div>
+            <span>照片：</span>
+            <input type="file" value="选择文件">
+            <span>未选择任何文件</span>
+        </div>
+        <div>
+            <span>性别：</span>
+            <input type="radio">
+        </div>
+    </fieldset>
+</body>
+</html>
