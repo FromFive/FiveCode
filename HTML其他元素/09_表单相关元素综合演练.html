@@ -12,15 +12,20 @@
     </style>
 </head>
 <body>
+    <form>
     <fieldset>
         <legend>必填信息</legend>
         <div>
             <span>手机：</span>
-            <input type="text">
+            <input type="text"
+                   maxlength="11"
+                   placeholder="请输入手机号"
+                   autofocus>
         </div>
         <div>
             <span>密码：</span>
-            <input type="password">
+            <input type="password"
+                   maxlength="请输入密码">
             <!-- 3.1按钮的实现方式一 -->
             <input type="button" value="获取验证码">
             <!-- 3.2按钮的实现方式二 -->
@@ -32,12 +37,42 @@
         <div>
             <span>照片：</span>
             <input type="file" value="选择文件">
-            <span>未选择任何文件</span>
         </div>
         <div>
             <span>性别：</span>
-            <input type="radio">
+            <!-- 要实现选择一个另一个取消选择，需要设置相同的name值，实现互斥 -->
+            <!-- name值相同时告诉浏览器要从这两个中选一个作为input的值 -->
+            男<input type="radio" name="sex">
+            女<input type="radio" name="sex">
+        </div>
+        <div>
+            <span>爱好：</span>
+            唱歌<input type="checkbox" name="hobbies">
+            跳舞<input type="checkbox" name="hobbies">
+            运动<input type="checkbox" name="hobbies">
+            coding<input type="checkbox" name="hobbies">
+        </div>
+        <div>
+            <span>学历：</span>
+            <select name="" id="">
+                <option value="0">小学</option>
+                <option value="1">中学</option>
+                <option value="2">高中</option>
+                <option value="3">大学</option>
+            </select>
+        </div>
+        <div>
+            <span>简介：</span>
+            <!-- rows10行是指在页面上显示10行，超过10行会有滚动条 -->
+            <textarea name="" id="" cols="30" rows="10"></textarea>
         </div>
     </fieldset>
+    <!-- 
+    重置按钮，使用input通常用reset类型，但有两个前提：
+    1、type必须是reset类型，此时value值可以不写
+    2、所有的内容都必须在同一个表单form中，否则重置按钮不生效
+    -->
+    <input type="reset">
+</form>
 </body>
 </html>
