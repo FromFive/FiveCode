@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            background-color: #ff0;
+            height: 200px;
+            width: 200px;
+        }
+        .inner{
+            background-color: #f00;
+        }
+        p{
+            background-color: #0f0;
+        }
+        span{
+            background-color: #00f;
+        }
+        strong{
+            background-color: #0ff;
+        }
+        img{
+            width:100px;
+            height:100px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 
+        块级元素：独占父元素一行。
+        行内级元素：多个行内级元素可以在父元素的同一行显示。
+        非替换元素：元素本身有实际内容，浏览器会直接就显示出来。
+        替换元素：元素本身没有实际内容，浏览器根据元素的类型和属性
+                来决定元素的具体显示内容。
+    -->
+
+     <!-- 1、块级元素-非替换元素：
+        独占父元素一行可随意设置宽高，其默认宽高由内容决定
+     -->
+     <div class="box">
+         <div class="inner">我是div元素</div>
+         <p class="p">我是p元素</p>
+     </div>
+
+     <!--2.1 行内级元素-非替换元素：
+        ①跟其他行内级元素在同一行显示；
+        ②不可随意设置宽高；
+        ③宽高有内容决定。
+     -->
+     <span>我是span元素</span>
+     <strong>我是strong元素</strong>
+
+     <!-- 2.2行内级元素-替换元素：
+        跟其他行内级元素在同一行；
+        可以随意设置宽高。
+     -->
+     <img src="..//img/test.jpg" alt="">
+     <input type="text">
+     <iframe src="http://www.taobao.com" frameborder="0"></iframe>
+</body>
+</html>
