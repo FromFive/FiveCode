@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width:500px;
+            height:350px;
+        }
+        /* 1、样式重置:去掉列表的标记、链接的下划线和蓝色字体 */
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+
+        /* 2、先整体后局部 */
+        /* 2.1整体样式：设置整个列表的宽度、字体居中、边框及边框背景色 */
+        .email{
+            width: 100px;
+            text-align: center;
+            border:1px solid #999;
+        }
+        /* 2.1.1为2.2.3内容 */
+        .email ul{
+            display: none;
+        }
+        /* 当鼠标放到头部邮箱的时候显示邮箱列表 */
+        /* 这里为什么不用.header是因为当鼠标下移到邮箱列表时，那个列表就消失了，不能达到所说的需求
+        所以需要在最外部的div中设置，即.email。即可完成当鼠标放在头部邮箱时显示邮箱列表，并且鼠标在邮箱列表移动时背景可以变蓝 */
+        .email:hover ul{
+            display: block;
+        }
+        /* 2.2局部样式 */
+        /* 2.2.1头部邮箱样式：背景灰色、字体白色 */
+        .header{
+            background-color: #999;
+            color:#000;
+        }
+        /* 2.2.2当鼠标放到邮箱列表时，背景色变为蓝色 */
+        /* 但是鼠标放在文字上时才有小手，放在旁边一点就没有。
+        是因为中间部分是a元素，还没有占据一行，此时就将a元素转为块级元素 */
+        .email ul li a{
+            display: block;
+        }
+        .email ul li a:hover{
+            background-color: skyblue;
+        }
+
+        /* 2.2.3邮箱列表默认为隐藏，鼠标放在头部邮箱时才显示
+        所以此部分代码应写在前面，这里只是按思路分析。 */
+    </style>
+</head>
+<body>
+    <img src="../img/display练习-邮箱列表.png" alt="">
+
+    <!-- 先做整体后做局部
+    1、整个框架是一个div
+    2、上半部分邮箱是一个div
+    3、下半部分的邮箱是一个列表 -->
+    <div class="email">
+        <div class="header">邮箱</div>
+        <ul>
+            <li><a href="">QQ邮箱</a></li>
+            <li><a href="">网易邮箱</a></li>
+            <li><a href="">新浪邮箱</a></li>
+        </ul>
+    </div>
+</body>
+</html>

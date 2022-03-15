@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*  */
+        .span{
+            display: block;
+        }
+
+        /* 将div、p、h1等元素转回为行内级元素 */
+        /* div,p,h1{
+            display: inline;
+        } */
+
+        /* 将元素设置为隐藏且不占据空间 */
+        strong{
+            display: none;
+        }
+
+        /* 将元素设置成同时具有块级和行内级的特征：
+        可以和其他元素在同一行显示
+        可以设置宽度和高度 */
+        div,p,h1{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <!-- 块级元素的由来：在浏览器调试模式中可见，浏览器给以下元素加上了display：block这个样式。 -->
+    <div>div元素</div>
+    <p>p元素</p>
+    <h1>h1元素</h1>
+
+    <!-- 行内级元素 -->
+    <span>span元素</span>
+    <strong>strong元素</strong>
+
+    <!-- 行内级元素也可以通过设置display属性使之为独占一行。 -->
+    <span class="span">加了display的span元素</span>
+    <strong>strong元素</strong>
+</body>
+</html>
