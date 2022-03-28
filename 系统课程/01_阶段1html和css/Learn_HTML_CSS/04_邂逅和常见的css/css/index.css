@@ -1,0 +1,4 @@
+/* 
+通常在项目开发中按照代码规范会将外部的css文件同一引入index文件中，
+然后在html中引入index文件。 */
+@import url(../css/style.css);
