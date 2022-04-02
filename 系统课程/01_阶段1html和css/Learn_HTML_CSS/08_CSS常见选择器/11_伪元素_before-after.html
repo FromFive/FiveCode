@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span::before{
+            content:"123";
+            color:red;
+            margin-right: 20px;
+        }
+        span::after{
+            content:"abc" url("../img/test.jpg");
+            color:purple;
+            margin-left: 20px;
+        } */
+        /* 普通方案 */
+        .box1 .one{
+            color: chocolate;
+        }
+        .box1 .two{
+            color: bisque;
+        }
+        /* 伪元素方案:插入文字*/
+        .item::before{
+            content: "123";
+            color: chocolate;
+            font-size: 20px;
+        }
+        .item::after{
+            content: "abc";
+            color: aqua;
+            font-size: 30px;
+        }
+
+        /* 伪元素方案：插入图片,且让它向右向下一些 */
+        .box4::after{
+          content: url(../image/hot-icon.svg);
+          position: relative; 
+          left:6px;
+          top:3px;
+        }
+        /* 伪元素插入一个6*6的方格 */
+        /* 
+        1、content不能省略，即便是没有内容也不能省略；
+        2、伪元素是行内非替换元素，所以不能设置宽高，如果要设置必须要设置inline-block；
+         */
+        .box4::before{
+            content: "";
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background-color:chocolate;
+        }
+    </style>
+</head>
+<body>
+    <!-- 需求：在一段文本前插入123，后插入ABC并设置样式 -->
+    <!-- 方案一：不推荐的方案：在文本前插入span -->
+    <div class="box1">
+        <span class="one">123</span>
+        before伪元素学习
+        <span class="two">abc</span>
+    </div>
+
+    <!-- 伪元素方案 -->
+    <div class="box2 item">after伪元素学习</div>
+    <div class="box3 item">不能省略content</div>
+    <div class="box4">伪元素插入图片</div>
+    
+    <!-- <span>我是span元素</span> -->
+</body>
+</html>
