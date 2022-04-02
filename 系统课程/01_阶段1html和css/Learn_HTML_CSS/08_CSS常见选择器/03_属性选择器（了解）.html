@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 有共同的属性title，全部生效 */
+    [title]{
+      color: aqua;
+    }
+    /* 属性值中都包含one,134556生效*/
+    [title*='one']{
+      font-style: italic;
+    }
+    /* 属性值以one开头,1356生效 */
+    [title^='one']{
+      font-size: 30px;
+    }
+    /* 属性值以one结尾，14生效 */
+    [title$='one']{
+      font-weight: 700;
+    }
+    /* 属性值等于on或以one开头且后有连字符,1、5生效 */
+    [title|='one']{
+      background-color: #f00;
+    }
+    /* 属性值包含one，且与其他单词之间有空格隔开，1、6生效 */
+    [title~='one']{
+      font-variant: small-caps;
+    }
+
+  </style>
+</head>
+<body>
+  <div title="one">attribute selector属性选择器学习</div>
+  <p title="two">不同元素有共同的属性</p>
+  <div title="onebox">属性值以one开头</div>
+  <div title="boxone">属性值以one结尾</div>
+  <div title="one-box">属性值恰好为one或者以one开头其后有连字符</div>
+  <div title="one box">属性值包含one，且有空格隔开</div>
+</body>
+</html> 

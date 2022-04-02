@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 相邻兄弟选择器，id-three生效 */
+    .box +.content{
+      color: aqua;
+    }
+    /* 全兄弟选择器,id-four生效 */
+    .box~p{
+      background-color: #f00;
+    }
+    /* 全兄弟选择器，id-three、five生效 */
+    .box~div{
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <div id="one" class="home">兄弟选择器</div>
+  <div id="two" class="box">相邻兄弟选择器</div>
+  <div id="three" class="content">全兄弟选择器</div>
+  <p id="four">哇哈哈哈哈</p>
+  <div id="five" >嘿嘿嘿</div>
+</body>
+</html>

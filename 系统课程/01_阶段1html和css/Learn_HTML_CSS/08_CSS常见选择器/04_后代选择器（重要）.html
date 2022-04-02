@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 选择类为home下的后代span元素 */
+    .home span{
+      color: aqua;
+    }
+    /* 选择类为home的直接子代span元素 */
+    .home >span{
+      background-color: chocolate;
+    }
+  </style>
+</head>
+<body>
+  <div class="home">
+    <span>直接子代span元素</span>
+    <div class="item">
+      <p>后代p元素</p>
+      <span>后代span元素</span>
+    </div>
+    <div class="box">
+      <span>呵呵哈哈哈</span>
+    </div>
+  </div>
+  <p>直接子代用&gt;分隔</p>
+  <span>后代用空格分隔</span>
+</body>
+</html>

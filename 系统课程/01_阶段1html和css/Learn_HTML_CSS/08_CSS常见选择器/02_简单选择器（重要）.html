@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 元素选择器 */
+    div,p{
+      color: antiquewhite;
+    }
+
+    /* 类选择器 */
+    /* 会层叠上面的样式 */
+    .box{
+      color: aqua;
+    }
+
+    /* id选择器 */
+    /* 会层叠上面的样式 */
+    #item{
+      color: aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <!-- 在同一个html文件中，id不要重复，应该是唯一，也不要用元素名称作为id或class -->
+  <div>元素选择器</div>
+  <div class="box">类选择器</div>
+  <div id="item">id选择器</div>
+  <p class="box one">可以有多个类名</p>
+  <p class="box-one box_two boxThree BoxFour">类名或id名复杂可以用连字符或者下划线或者大/小驼峰</p>
+</body>
+</html>
