@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 如果父元素不设置高度，那么他的高度默认值是auto，即是由他的内容决定的，也就是它子元素的高度是200px。此时父元素与子元素的底部重合且高度是auto，那么设置子元素的margin-bottom时，会传递给父元素，显示整体偏移。 */
+     .one{
+      width: 500px;
+      /* height: 500px; */
+      background-color: #1ff;
+      overflow: auto;
+    }
+    .two{
+      width: 200px;
+      height: 200px;
+      background-color: plum;
+      margin-bottom: 100px;
+    }
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="two"></div>
+  </div>
+  <div class="three">测试margin-bottom传递</div>
+</body>
+</html>

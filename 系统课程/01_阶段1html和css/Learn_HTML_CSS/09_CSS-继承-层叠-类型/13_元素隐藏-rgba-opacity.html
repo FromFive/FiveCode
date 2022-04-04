@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      /* 
+      设置半透明，alpha取值是0到1，可以设置0.5为半透明，小数点前的0可以省略。
+       */
+      color: rgba(255, 0, 0, .5);
+    }
+    /* 通过设置前景色透明来隐藏：但是占据空间和位置，只是将文本隐藏并没有将元素隐藏。这种方法不会影响子元素。 */
+    .two{
+      color:rgba(0, 0, 0, 0)
+    }
+    /* 通过设置背景色透明度不会产生任何影响，因为某些元素的背景色默认值是transparent就是rgba(0,0,0,0) */
+    .three{
+      background-color: rgba(0, 0, 0, 0);
+    }
+    /* 通过设置opacity来隐藏元素，是设置整个元素的透明值。不仅是当前元素的文本内容还是他的子元素，都会有影响.隐藏的时候将opacity设置为0 */
+    .four{
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+  <div class="one">我是第一个div元素</div>
+  <div class="two">我是第二个div元素</div>
+  <div class="three">我是第三个div元素</div>
+  <div class="four">我是第四个div元素
+    <p>测试opacity的影响</p>
+    <img src="../image/flower.webp" alt="" width="500">
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 块级元素、inline-block元素中一般可以放其他元素（块级、行内级、inline-block） -->
+  <div>
+    <h1></h1>
+    <p></p>
+    <span></span>
+    <a href=""></a>
+    <img src="" alt="">
+  </div>
+
+  <!-- p元素中不要放其他任何元素，以下代码浏览器解析并不是这个样子 -->
+  <!-- 错误案例 -->
+  <p>
+    哈哈哈哈
+    <div>1234</div>
+    <h1>777</h1>
+  </p>
+  <!-- 行内级元素中不要放块级元素 -->
+  <!-- 错误案例 -->
+  <span>
+    哈哈哈哈
+    <div>123</div>
+  </span>
+</body>
+</html>

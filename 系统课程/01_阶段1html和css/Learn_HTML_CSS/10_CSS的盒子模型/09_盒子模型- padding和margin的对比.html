@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      width: 500px;
+      height: 500px;
+      background-color: #1ff;
+    }
+    .two{
+      width: 200px;
+      height: 200px;
+      background-color: plum;
+    }
+
+    /* 需求：让子元素向右偏移100px */
+    /* 方案一：设置父元素的内边距padding，但是真实效果是整个父元素被撑开了100px，并不是在原有的500px里面让子元素向右100。这是因为宽度=内容宽度+padding值。
+    如果不想父元素被撑开，就需要设置他的box-sizing为border-box。 */
+    /* .one{
+      padding-left:100px;
+      box-sizing:border-box;
+    } */
+
+    /* 方案二：设置子元素的外边距 */
+    .two{
+      margin-left: 100px;
+    }
+    /* 方案二虽然可以解决左右的移动，但是当设置上方的外边距时，会有整体向下移动的问题。这是因为margin传递的问题。解决方法是设置它父元素的bfc，即设置父元素的overflow为auto */
+    .two{
+      margin-top: 100px;
+    }
+    .one{
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="two"></div>
+  </div>
+</body>
+</html>

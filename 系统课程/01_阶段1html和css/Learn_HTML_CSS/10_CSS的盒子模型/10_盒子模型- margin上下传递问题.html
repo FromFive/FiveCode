@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      width: 500px;
+      height: 500px;
+      background-color: #1ff;
+    }
+    .two{
+      width: 200px;
+      height: 200px;
+      background-color: plum;
+    }
+
+    /* margin左右不会传递，上下在特定条件下会传递 */
+    /* 需求：设置子元素距离父元素的上方100px */
+    /* 方案一：设置父元素的内边距，但是如果不设置box-sizing，父元素在垂直方向上依然会被撑开。 */
+    /* .one{
+      padding-top: 100px;
+      box-sizing:border-box;
+    } */
+
+    /* 方案二：设置子元素的外边距 */
+    /* 此方案会产生margin上下传递的问题：如果块级元素的顶部线和父元素的顶部线重叠，那么这个块级元素的margin-top值会传递给父元素。 */ 
+    /* 解决方案：
+    1、按照方案一，根据元素语意化，设置父元素的内边距
+    2、触发父元素的BFC：就是给当前的盒子建立一个独立空间。
+    */
+    .two{
+      margin-top: 100px;
+    }
+    .one{
+      overflow: auto;
+    }
+
+    /* 方案三：设置父元素的border */
+  </style>
+</head>
+<body>
+  <div class="one">
+    <div class="two"></div>
+  </div>
+</body>
+</html>

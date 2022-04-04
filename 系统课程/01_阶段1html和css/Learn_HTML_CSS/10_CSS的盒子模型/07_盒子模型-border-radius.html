@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 300px;
+      height: 200px;
+      background-color: #f00;
+      border: 10px solid green;
+    }
+    /* 边框圆角设置为具体数值，则水平方向和垂直方向的都是20，所以圆角比较圆润。*/
+    .one{
+      border-radius: 20px;
+    }
+
+    /* 边框圆角设置为百分比，是相对于border box的百分比 */
+    /* border box：水平方向是内容的宽度加上左右的边框宽度，垂直方向是内容的高度加上上下的边框宽度。*/
+    .two{
+      border-radius: 10%;
+    }
+
+    /* 当内容的高度和宽度一样，可以设置圆角为50%成为圆形。等于或大于50都是圆形。所以一般都是写50. */
+    .three{
+      width: 200px;
+      height: 200px;
+      border: 10px solid plum;
+      background-color: aqua;
+
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+</body>
+</html>

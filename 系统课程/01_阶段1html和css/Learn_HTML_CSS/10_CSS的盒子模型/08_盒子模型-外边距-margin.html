@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*1、 上下margin */
+    /* 当给两个盒子分别设置了各自的下、上margin时，其实真实的margin只有一个，并不是两个的值。这一个值是取分别设置的最大值。 */
+    .one{
+      width: 200px;
+      height: 200px;
+      background-color: #f00;
+
+      /* 设置距离下面的盒子的间距 */
+      margin-bottom: 30px;
+
+    }
+    
+    .two{
+      width: 200px;
+      height: 200px;
+      background-color: #f0f;
+
+      /* 设置距离上面的盒子的间距 */
+      margin-top: 30px;
+    }
+
+    /* 2、左右margin */
+    /* 当两个盒子在各自的左右即两者中间都设置了margin时，此时的margin时两者相加的值。即两个盒子之间的间距其实是three的mr加four的ml即60px。*/
+    .three{
+      width: 300px;
+      height: 300px;
+      background-color: #1ff;
+      display: inline-block;
+
+      /* 设置距离右边盒子的间距 */
+      margin-right: 30px;
+    }
+
+    .four{
+      width: 300px;
+      height: 300px;
+      background-color: #145;
+      display: inline-block;
+
+      /* 设置距离左边盒子的间距 */
+      margin-left: 30px;
+
+      /* 缩写属性:和padding一样，是上右下左的顺序，且有不同的个数写法。 */
+      /* margin: 10px 20px 30px 40px; */
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+
+  <!-- 当行内级元素换行编写时，显示的时候会有空隙，所以在一行编写，去掉空隙，但真实的开发中不会这样操作。此处案例只是为了理解margin。 -->
+  <div class="three"></div><div class="four"></div>
+</body>
+</html>

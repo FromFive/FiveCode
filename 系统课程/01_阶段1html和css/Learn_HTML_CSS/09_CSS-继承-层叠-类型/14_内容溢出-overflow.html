@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      width: 300px;
+      height: 100px;
+      background-color: plum;
+
+      /* 1、当内容高度超出设置的高度，内容溢出时，其实是默认的overflow为visible生效。 */
+      /* overflow: visible; */
+
+      /* 2、让溢出的内容不显示 */
+    /* overflow: hidden;*/
+
+    /* 3、在设置的宽度和高度内，让溢出的内容可见，并且可滑动。滚动条会占据宽度的一部分。即便是宽度和高度能显示开内容，scroll还是会显示滚动条 */
+      /* overflow: scroll; */
+
+      /* 4、让内容根据宽度和高度自适应 */
+      overflow: auto;
+    } 
+  </style>
+</head>
+<body>
+  <div class="one">
+    北京是我国的首都，除了现代化的建筑，也有很多公园，不少公园都有相当高的人气，不管是本地人还是外地人，都很喜欢去。今天给大家介绍的一处公园，在北京本地人当中有着相当高的人气，外地人却很少去，这个公园就是北京东郊湿地公园。
+  </div>
+</body>
+</html>

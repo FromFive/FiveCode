@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      /* 对于块级元素，width默认值是auto，是交给浏览器来决定的。*/
+      background-color: plum;
+    }
+    /* 对于行内级元素，width默认值其实也是auto */
+    span{
+      color: aqua;
+    }
+    /* 对于行内替换元素，width默认值也是auto */
+    img{
+      /* 强制设置宽度 */
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">盒子模型-width默认值</div>
+  <span class="item">哈哈哈</span>
+  <img src="../image/flower.webp" alt="">
+</body>
+</html>

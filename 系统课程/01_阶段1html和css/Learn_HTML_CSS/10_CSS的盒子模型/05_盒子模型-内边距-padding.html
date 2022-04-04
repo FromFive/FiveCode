@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      border: 1px solid plum;
+      /* 当块级元素独占一行时，文本内容默认时靠左显示，其右边的空白并不是padding，而是属于width的一部分，因为width默认值时auto，所以时浏览器分配的。*/
+    }
+    .one{
+      border: 1px solid plum;
+      display: inline-block;
+      /* 元素中的内容显示出来会看到顶部和底部都会有空白，其实这不是padding，而是内容的行高产生的行距。所以可以通过line-height设置上下的间距，但其实这个间距不是padding.*/
+      /* 如何看是padding还是行距：当选中内容时，看选中的高度是与外部重合了还是有空隙，如果有空隙则这个空隙就是padding。 */
+      line-height: 60px;
+    }
+
+    .two{
+      border: 1px solid plum;
+      display: inline-block;
+      /* 设置元素盒子的padding */
+      /* padding-top: 20px;
+      padding-right: 30px;
+      padding-bottom: 40px;
+      padding-left: 50px; */
+
+      /* padding缩写 */
+      padding: 20px 30px 40px 50px;
+
+      /* 其他值的情况 */
+      /* 3个 */
+      /* 表示上10右20 下30 左20 */
+      /* padding: 10px 20px 30px; */
+
+      /* 2个 */
+      /* 表示上下10 左右20 */
+      /* padding: 10px 20px; */
+
+      /* 1个 */
+      /* 表示上下右左都是10 */
+      /* padding: 10px; */
+    }
+  </style>
+</head>
+<body>
+  <div class="box">内边距padding学习</div>
+  <div class="one">padding理解</div>
+  <div class="two">设置元素盒子的padding</div>
+</body>
+</html>

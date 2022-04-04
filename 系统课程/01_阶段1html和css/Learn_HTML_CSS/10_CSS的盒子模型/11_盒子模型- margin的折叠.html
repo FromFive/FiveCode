@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 当两个兄弟元素之间设置上下margin时，会产生折叠，取其中最大的值。最好的方法是只设置其中一个元素的margin即可。 */
+    /* 父子元素之间也会有折叠现象，但是通常不推荐父子元素之间使用margin，最好时使用padding来设置。 */
+    .one{
+      height: 200px;
+      background-color: aqua;
+      margin-bottom: 30px;
+    }
+    .two{
+      height: 200px;
+      background-color: plum;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+</body>
+</html>
