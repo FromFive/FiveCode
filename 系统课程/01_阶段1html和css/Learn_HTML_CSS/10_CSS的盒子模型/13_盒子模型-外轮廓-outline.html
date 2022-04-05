@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 外轮廓不占据空间 */
+    .one{
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      border: 50px solid plum;
+      /* outline: 30px solid orange; */
+    }
+    /* 行内级非替换元素设置margin-top、margin- bottom无效。 */
+    a{
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 500px;
+      margin-left: 500px;
+    }
+    /* 去除a元素、input元素的focus轮廓效果 */
+    a,input{
+      outline: none;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <a href="#">百度一下</a>
+  <input type="text">
+</body>
+</html>
