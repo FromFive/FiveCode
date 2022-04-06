@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    div{
+      background-color: #f00;
+    }
+    /* 对于行内非替换元素，设置高度和宽度是无效的 */
+    .one{
+      background-color: aqua;
+      color: #fff;
+      /* 内容：width、height。设置无效 */
+      width: 300px;
+      height: 300px;
+
+      /* 内边距：padding。左右的内边距会撑开，且占据空间，如果同行有文字会被推开。上下内边距看起来变大了其实根本不占据空间，如果下上下有文字，他的背景色会被行内元素的覆盖。 */
+      /* padding: 20px; */
+
+      /* 边框：border。上下会被撑起来，但是不占据空间。左右会被撑开，但是占据空间。 */
+      /* border: 50px solid orange; */
+
+      /* 外边距：margin。上下的margin是不生效的 */
+      margin: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div>测试上下padding</div>
+  <span class="one">行内非替换元素的特性</span>
+  <span>测试左右padding</span>
+  <div>测试上下padding</div>
+</body>
+</html>

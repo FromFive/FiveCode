@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    /* 先整体后局部 */
+    .item{
+      background-color: #fff;
+      display: inline-block;
+      width: 234px;
+      height: 300px;
+      text-align: center;
+      padding: 10px 20px;
+      box-sizing: border-box;
+    }
+    .item img{
+      width: 160px;
+      height: 160px;
+    }
+    .item .desc{
+      color: #999;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .item .new{
+      color: #ff6700;
+    }
+    .item .old{
+      color: #999;
+      text-decoration: line-through;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <a class="item" href="https://www.mi.com/redmi-watch-mulan" target="_blank">
+    <img src="../image/盒子模型练习案例2.webp" alt="Redmi手表">
+    <h3>Redmi手表</h3>
+    <p class="desc">
+      35g超轻/1.4"大屏/多功能NFC/7天长续航
+    </p>
+    <div class="price">
+      <span class="new">2399元起</span>
+      <span class="old">2499元</span>
+    </div>
+  </a>
+</body>
+</html>

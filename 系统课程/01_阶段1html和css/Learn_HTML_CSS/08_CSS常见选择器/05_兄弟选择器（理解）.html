@@ -17,6 +17,7 @@
     /* 全兄弟选择器，id-three、five生效 */
     .box~div{
       font-size: 30px;
+      height: 50px;
     }
   </style>
 </head>
@@ -25,6 +26,9 @@
   <div id="two" class="box">相邻兄弟选择器</div>
   <div id="three" class="content">全兄弟选择器</div>
   <p id="four">哇哈哈哈哈</p>
-  <div id="five" >嘿嘿嘿</div>
+  <div id="five" >
+    嘿嘿嘿
+    <div>测试子元素会不会被影响</div>
+  </div>
 </body>
 </html>

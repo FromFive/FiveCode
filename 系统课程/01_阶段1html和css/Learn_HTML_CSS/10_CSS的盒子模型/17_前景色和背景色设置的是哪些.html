@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      width: 200px;
+      height: 200px;
+
+      /* 当设置元素背景色时，border颜色未设置但是有透明度，会有背景色的一部分。 =>背景色有设置到border下面。*/
+      /* background-color: #f00;
+      border: 10px solid rgba(0, 0, 0, .5); */
+
+      /* 当设置元素color时，border会跟随color颜色 */
+      color: aqua;
+      border: 10px solid;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+</body>
+</html>

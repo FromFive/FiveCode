@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      color: beige;
+      margin-bottom: 50px;
+
+      /* 水平方向偏移值、垂直方向偏移值、模糊半径、延伸半径。
+      阴影颜色跟随color的设置值。阴影可添加多个。 */
+      box-shadow: 10px 10px 10px,15px 15px 10px plum,20px 20px 10px azure,25px 25px 10px goldenrod;
+    }
+
+    .two{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      box-shadow: 10px 10px beige,15px 15px plum,20px 20px azure,25px 25px goldenrod;
+      margin-bottom: 50px;
+    }
+    /* 在线查看盒子阴影网站 */
+    .three{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      margin-bottom: 50px;
+      box-shadow: 5px 5px 0px 0px #289FED, 10px 10px 0px 0px #5FB8FF, 15px 15px 0px 0px #A1D8FF, 20px 20px 0px 0px #CAE6FF, 25px 25px 0px 0px #E1EEFF, 5px 5px 15px 5px rgba(0,0,0,0);
+    }
+
+    /* 向左右阴影的话写负数 */ 
+    .four{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      margin: 0 auto;
+      box-shadow: -10px -10px beige,-15px -15px plum,-20px -20px azure,-25px -25px goldenrod;
+    }
+    .five{
+      width: 200px;
+      height: 200px;
+      background-color: aqua;
+      box-shadow: 10px -20px beige,15px -25px plum,20px -30px azure,25px -35px goldenrod;
+    }
+  </style>
+</head>
+<body>
+  <div class="one">hhh</div>
+  <div class="two"></div>
+  <div class="three"></div>
+  <div class="four"></div>
+  <div class="five"></div>
+</body>
+</html>
