@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <style>
+    /* a{
+      display: inline-block;
+    } */
+    .item .author{
+      display: inline-block;
+    }
+    .item .info:hover,.item .author:hover{
+      color:#00AEEC;
+    }
+    .item{
+      width: 300px;
+      margin: 0 auto;
+    }
+    .item .album img{
+      width: 100%;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+    .item .info p{
+      font-size: 15px;
+      /* 单行显示省略号 */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      /* 多行显示省略号 */
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .item .author{
+      color: #888;
+      font-size: 13px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="item">
+    <div class="album">
+      <a href="https://www.bilibili.com/video/BV1NS4y1K7vY?spm_id_from=333.851.b_7265636f6d6d656e64.1">
+        <img src="../image/盒子模型练习案例3.webp" alt="">
+      </a>
+    </div>
+    <a class="info" href="https://www.bilibili.com/video/BV1NS4y1K7vY?spm_id_from=333.851.b_7265636f6d6d656e64.1">
+      <p>
+        这就是碳水炸弹天花板？10元一份根本吃不完哈哈哈哈啊哈哈哈哈哈哈哈哈哈红红火火恍恍惚惚或或或或或或
+      </p>
+    </a>
+    <a class="author" href="https://space.bilibili.com/29329085?spm_id_from=333.851.b_7265636f6d6d656e64.1">
+      <span class="nickname">Five</span>
+      <span class="date">4-6</span>
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one{
+      /* 没有宽高，背景图不显示 */
+      width: 1000px;
+      height: 1000px;
+      background-color: aqua;
+      background-image: url(../image/背景图2.webp);
+      /* 如果背景图尺寸小于宽高尺寸，默认图片会平铺,，可以设置不平铺 */
+      background-repeat: no-repeat;
+    }
+    /* 此处效果不会显示，因为行内级元素设置宽高不生效 */
+    span{
+      width: 1000px;
+      height: 1000px;
+      background-image: url(../image/背景图2.webp);
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <span></span>
+</body>
+</html>
