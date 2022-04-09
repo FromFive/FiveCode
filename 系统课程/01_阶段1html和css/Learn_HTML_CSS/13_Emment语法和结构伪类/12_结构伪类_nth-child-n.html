@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1、n:表示自然数从0开始数，则全部都变化 */
+        /* :nth-child(n){
+            color:red;
+        } */
+        /* 2、n:表示自然数从0开始数，则p元素下的内容全部都变化 */
+        /* p:nth-child(n){
+            color:red;
+        } */
+        /* 3、2n:表示自然数从0开始数，所有的偶数 */
+        /* 可以替换成even */
+        /* p:nth-child(2n){
+            color:red;
+        } */
+        p:nth-child(even){
+            color:red;
+        }
+        /* 4、2n+1：奇数 */
+        /* 可以替换成odd */
+         /* p:nth-child(2n+1){
+            color:blue;
+        } */
+        p:nth-child(odd){
+            color: blue;
+        }
+        /* 5、3n：0、3、6、9类推 */
+        /* 6、3n+2:2、5、8 */
+        p:nth-child(3n){
+            color:green;
+        }
+        /* 7、n前面可以是负号，如：-n+3表示选中前3个*/
+        p:nth-child(-n+3){
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+        <p>内容5</p>
+    </div>
+    <p>
+        <span>span内容1</span>
+        <span>span内容2</span>
+        <span>span内容3</span>
+        <span>span内容4</span>
+        <span>span内容5</span>
+    </p>
+    <div>
+        <strong>strong内容1</strong>
+        <strong>strong内容2</strong>
+    </div>
+</body>
+</html>

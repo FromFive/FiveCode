@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 分组：(div>(p>span)+h2+a)+p -->
+    <div>
+        <p><span>哈哈哈</span></p>
+        <h2></h2>
+        <a href=""></a>
+    </div>
+    <p></p>
+    <!-- 生成多层div>p*2 -->
+    <div>
+        <p>生成</p>
+        <p>多层</p>
+    </div>
+    <!-- 多层div>p>span^span -->
+    <div>
+        <p><span></span></p>
+        <span>生成多层</span>
+    </div>
+    <!-- 最外层的同级 div>p>span^^h1+strong-->
+    <div>
+        <p><span></span></p>
+    </div>
+    <h1></h1>
+    <strong></strong>
+</body>
+</html>

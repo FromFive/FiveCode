@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "iconfont"; /* Project id  */
+  src: url('iconfont.ttf?t=1649514166728') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-music:before {
+  content: "\e611";
+}
+
+.icon-musiclist:before {
+  content: "\e69c";
+}
+
+.icon-xiamimusic:before {
+  content: "\e6e3";
+}
+
+.icon-laugh-beam:before {
+  content: "\e585";
+}
+
+.icon-laugh:before {
+  content: "\e825";
+}
+

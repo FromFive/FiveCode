@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      margin: 30px 0;
+    }
+    /* 设置盒子的宽高和背景色。为了使盒子不被border撑开，设置为borderbox */
+    .one,.two,.three,.four{
+      width: 100px;
+      height: 100px;
+      background-color: #f00;
+      box-sizing: border-box;
+      
+    }
+    /* 设置边框宽度，并给四边设置不同的颜色，则可以画出以下的图形。 */
+    .one{
+      border: 30px solid;
+      border-right-color: aqua;
+      border-bottom-color: plum;
+      border-left-color: chocolate;
+      border-top-color:aquamarine;
+    }
+
+    /* 
+    在盒子一画出的图形基础上，可以看出，每个四周都是一个梯形。
+    要想获得一个独立的梯形，需要保留一个，并隐藏其他三边。则可以设置其他三边的背景色为透明色即transparent。去除三边颜色后会显示背景色，则将背景色也设置成透明色。
+     */
+    .two{
+      border: 30px solid;
+      background-color: transparent;
+      border-right-color: aqua;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-top-color:transparent;
+    }
+    /* 在border box下，边框一直变大，则会压缩里面的内容，因为此时设置的宽度就是包含了边框和内容的宽度的。当边框宽度达到正好是设置的宽度时，那么盒子里面就会出现4个三角形。隐藏其他三边的三角形就可以保留一个使用。 */
+    .three{
+      border: 50px solid;
+      background-color: transparent;
+      border-right-color: aqua;
+      border-bottom-color: transparent;
+      border-left-color: transparent;
+      border-top-color:transparent;
+    }
+    /* 将三角形旋转 */
+    /* 以中心点四分之一的位置旋转.没有transform-origin的值就是以三角形尖点旋转。 */
+    /* 旋转180度。 */
+    .three{
+      /* transform-origin: center 25%; */
+      transform: rotate(180deg);
+    }
+    .four{
+      border: 50px solid;
+      border-right-color: aqua;
+      border-bottom-color: plum;
+      border-left-color: chocolate;
+      border-top-color:aquamarine;
+    }
+  </style>
+</head>
+<body>
+  <div class="one"></div>
+  <div class="two"></div>
+  <div class="three"></div>
+  <div class="four"></div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择p作为第三个的元素，即文字内容2生效 */
+        p:nth-child(3){
+            color:green;
+        }
+        /* 只选择类型是 p元素的第三个元素 */
+        p:nth-of-type(3){
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>div1</div>
+        <p>内容1</p>
+        <span>我是span元素</span>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+        <p>内容5</p>
+        <p>内容6</p>
+        <p>内容7</p>
+        <p>内容8</p>
+        <p>内容9</p>
+    </div>
+    <p>
+        <span>span内容1</span>
+        <span>span内容2</span>
+        <span>span内容3</span>
+        <span>span内容4</span>
+        <span>span内容5</span>
+        <span>span内容6</span>
+    </p>
+    <div>
+        <strong>strong内容1</strong>
+        <strong>strong内容2</strong>
+    </div>
+</body>
+</html>

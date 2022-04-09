@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 选择p元素且是倒数第三个
+        p:nth-last-child(3){
+            color:red;
+        }
+        /* 只从p元素里选择倒数第三个 */
+        /* p:nth-last-of-type(3){
+            color:green;
+        }    */ 
+        :nth-of-type(2n){
+            color:blue;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div>div1</div>
+        <p>内容1</p>
+        <p>内容2</p>
+        <p>内容3</p>
+        <p>内容4</p>
+        <p>内容5</p>
+        <p>内容6</p>
+        <p>内容7</p>
+        <p>内容8</p>
+        <span>我是span元素</span>
+        <p>内容9</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p:empty{
+            width: 100px;
+            height:20px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <!--元素内容是空的 -->
+    <p></p>
+    <p>文字1</p>
+    <!-- 元素内容不是空的，因为有空格 -->
+    <p>    </p>
+    <!-- p元素内容不是空的，因为有span元素，span元素的内容是空的 -->
+    <p><span></span></p>
+    <p>文字2</p>
+</body>
+</html>

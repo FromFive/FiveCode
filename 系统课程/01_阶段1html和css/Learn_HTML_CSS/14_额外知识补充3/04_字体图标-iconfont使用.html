@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @font-face {
+      font-family: "iconfont";
+      src: url("./iconfont/iconfont.ttf");
+    }
+    .iconfont{
+      font-family: "iconfont";
+      font-style: normal;
+    }
+    .one{
+      font-size: 100px;
+      color: aqua;
+    }
+    /* 方法二：使用背景图片的方式引入 */
+    .icon{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-image: url("");
+    }
+    .music::before{
+      content: "\e69c";
+      font-size: 100px;
+      color: plum;
+    }
+  </style>
+</head>
+<body>
+  <!-- 方法一：将字体图标的对应字符实体添加在i元素作为内容，然后设置相关样式。 
+  跟引入字体一样，可以设置大小、颜色等。-->
+  <i class="iconfont one">&#xe611;</i>
+
+  <!-- 方法二：使用背景图片插入。 -->
+  <i class="iconfont icon"></i>
+
+  <!-- 方法三：不使用字符实体的方式。使用伪元素插入,content的内容是下载代码文件中的css文件中的内容进行拷贝。-->
+  <i class="iconfont music"></i>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 除了div之外，所有的元素，以下代码若不去除html和body元素，还是会全部生效*/
+        /* 第一种写法 */
+        /* :not(html):not(body):not(div){
+            color:red;
+        } */
+        /* 第二种写法 */
+        body :not(body):not(div){
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <div>文字1</div>
+    <p>文字2</p>
+    <span class="text">文字3</span>
+    <div>文字4</div>
+</body>
+</html>
