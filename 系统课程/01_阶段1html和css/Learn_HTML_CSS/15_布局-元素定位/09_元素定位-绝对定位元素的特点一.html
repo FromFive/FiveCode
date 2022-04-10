@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 800px;
+      height: 800px;
+      background-color: #f00;
+      position: relative;
+    }
+    .box{
+      width: 500px;
+      height: 500px;
+      background-color: #0f0;
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+    }
+    /* position为absolute或fixed的元素为绝对定位元素 */
+    /* 绝对定位元素可以随意设置宽高，如果没有设置，默认由内容决定。 */
+    /* 例如以下代码中的strong元素是行内非替换元素，设置成绝对定位后，就可以谁在宽高，原来的行内级很多特性会消失。 */
+    strong{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-color: aqua;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <span>我是span元素</span>
+      <strong>我是strong元素</strong>
+      <img src="../image/背景图6.gif" alt="">
+      <div>我是div元素</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 相对定位在微调位置时不会影响周围元素，即左移或右移或上下移动的时候不会将周围的元素挤开。 */
+    /* 相对定位是相对于元素本身的位置（元素本身左上角开始）移动。*/
+    strong{
+      position: relative;
+      left:30px;
+    }
+  </style>
+</head>
+<body>
+  <span>我是行内span元素</span>
+  <strong>我是行内strong元素</strong>
+  <img src="../image/背景图6.gif" alt="">
+  <div>我是块级div元素</div>
+</body>
+</html>

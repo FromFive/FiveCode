@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      width: 800px;
+      height: 300px;
+      background-color: #f00;
+      position: relative;
+    }
+    /* 当某元素为绝对定位元素时，
+    定位参照对象的宽度=绝对定位元素实际占用的宽度+left值+right值+margin-left值+margin-right值 */
+    /* 
+    例如这个例子：
+    1、如果没有设置绝对定位元素box的宽度，且left值和right值设置为0，margin left和margin right值也为0，那么定位参照对象的宽度800=绝对定位元素的宽度。
+    2、如果给绝对定位元素box设置一个宽度，例如200px，且left值和right值设置为0，margin left和margin right值也为0，此时定位参照对象的宽度即container的宽度800=绝对定位元素的宽度200，显然这个公式是不成立的。所以此时的显示效果是不一定的，交给浏览器决定。但是我猜想应该是在左上角显示，right不生效。但是在开发中，尽量不这样写。
+    3、同样，如果给绝对定位元素box设置一个宽度，例如200px，且left值和right值设置为0，margin left和margin right值也为auto，此时定位参照对象的宽度800=绝对定位元素的宽度200+left0+right0+margin-left auto+margin-right auto。此时绝对定位元素是水平居中显示的。
+    4、高度也是同样的公式：定位参照对象的高度=绝对定位元素的高度+top值+bottom值+margin-top值+margin-bottom值。如果给绝对定位元素设置一个高度，top和bottom值为0，margin-top和margin-bottom值为auto，那么此时绝对定位元素是垂直居中的。
+    5、如果结合第三条和第四条的设置原则，那么该绝对定位元素可以做到居中显示。而且此种方案兼容性很强。但是前提是必须设置绝对定位元素的宽高，且宽高小于定位参照对象的宽高。
+    6、如果绝对定位元素的宽度没有设置，left和right值为0，设置了margin left和margin right的值，那么此时浏览器会自动根据公式，计算出绝对定位元素的宽度，然后按照设置的margin值显示。高度同理。
+    7、理解公式！！！
+     */
+    .box{
+      background-color: #0f0;
+      height: 100px;
+
+      width: 200px;
+      /* width:auto; */
+      position: absolute;
+      left:0;
+      right:0;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

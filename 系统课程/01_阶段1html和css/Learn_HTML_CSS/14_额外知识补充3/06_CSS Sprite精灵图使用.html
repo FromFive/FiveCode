@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      background-color: #333;
+    }
+    /* 首先对引用精灵图的各个元素设置共同的class进行设置 */
+    .topbar{
+      background-image: url(../image/topbar-sprite.png);
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+    /* 然后对各个图进行各自的宽高和位置设置 */
+    i.hot-icon{
+      width: 26px;
+      height: 13px;
+      background-position: -192px 0;
+    }
+    i.logo-icon{
+      width: 157px;
+      height: 33px;
+      background-position: 0 -19px;
+    }
+    i.video-icon{
+      width: 90px;
+      height: 32px;
+      background-position: -100px -140px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <i class="topbar hot-icon"></i>
+    <i class="topbar logo-icon"></i>
+    <i class="topbar video-icon"></i>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+    }
+    /* 需求：当图片铺满，并且小窗口浏览，缩小浏览器时，一直适配显示中心内容，且底部没有滚动条。 */
+    /*
+    1、首先给父元素设置overflow，去掉因为盒子内部的图片无法换行出现的滚动条。
+    2、使用img元素在页面显示图片
+    3、对img元素进行相对定位
+    4、将图片向左移它本身宽度的一半
+    5、然后将图片再向右移相对于父元素一半的宽度
+    6、此时img元素和父元素的中心点始终在一条线上。
+    */
+    .box{
+      overflow: hidden;
+    }
+    .box img{
+      position: relative;
+      /* left: -960px; */
+      /* transform-translate是相对于元素本身计算百分比，并且以元素本身左上角的坐标点为起点，在水平方向上移动。负数就是向左移动。 */
+      transform: translate(-50%);
+      /* margin是相对于该元素的包含块即它的父元素移动。即移动div的50%宽度。 */
+      margin-left: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../image/mhxy.jpg" alt="">
+  </div>
+</body>
+</html>
