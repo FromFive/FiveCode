@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 公共css */
+    /* 大部分网站的每个页面都是展示固定的宽度，内容显示在中间，宽度都是一样的，所以可以抽取出来为公共代码复用。 */
+    .container{
+      width: 1190px;
+      height: 800px;
+      background-color: aqua;
+    }
+    /* 当一个固定宽度的盒子1190px内放了5个同样宽度的盒子共1150px时，并且设置了向左浮动，且父元素宽度大于5个子元素的宽度总和，那么右边会出现空隙40px。此时将这部分空隙均匀分配5个盒子中间，设置margin-right为10px。那么此时设置的是每个盒子距离右边都是10px，最后一个因为超出父元素的宽度会换行。而我们需要的实质上是40px。那么需要去除调每行展示的最后一个盒子的margin-right。有3中解决方案： */
+    /* 方案1：通过nth-child找到每5个的第五个进行单独设置margin-right为0 */
+    /* 但是这种方案，nth-child在某些浏览器会出现兼容性问题 */
+    .item:nth-child(5n){
+      margin-right: 0;
+    }
+
+    /* 方案2：找到每5个的第五个设置单独的类名last-item，然后也设置margin-right为0 */
+  /* 这种方案太麻烦,如果数据多,需要去添加类名,容易出错 */
+
+    /* 方案3:最巧妙的方案,很好用!!!在原父元素container的下面添加一个子元素,即多个子元素item的上面多了一个父元素,container称为他们的祖先元素.然后不设置这个新父元素box的宽度,此时它的宽度默认值是auto.在宽度是auto的情况下,在多个子元素item的margin-right设置为10px的基础上，设置该元素box的margin-right是负的10px，此时，多个子元素正好在页面中居中显示，并且没有换行。原因是，对于块级元素，父元素的宽度=子元素的宽度+margin-left+margin-right。box的父元素container的宽度是1190，我们设置的margin-right是-10，margin-left没有就是0，将数字代入公式，那么此时浏览器自动的会将auto根据公式计算转化为1190+10=1200.那么box的宽度就变成了1200，刚好可以放下他的多个子元素。 */
+    .box{
+      margin-right: -10px;
+    }
+    .item{
+      width: 230px;
+      height: 322px;
+      background-color: plum;
+      float: left;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="item item1">1</div>
+      <div class="item item2">2</div>
+      <div class="item item3">3</div>
+      <div class="item item4">4</div>
+      <div class="item item5">5</div>
+    </div>
+  </div>
+</body>
+</html>

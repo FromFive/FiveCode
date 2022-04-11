@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* z-index设置定位元素的层叠顺序。设置数值越大，层叠在最上面。如果数值相等，HTML结构中写在后面的那个元素在最上面 */
+    .item{
+      width: 100px;
+      height: 100px;
+      color: #fff;
+      position: fixed;
+    }
+    .box1{
+      background-color: #f00;
+      left: 0;
+      top:0;
+    }
+    .box2{
+      background-color: #0f0;
+      left: 20px;
+      top: 20px;
+      z-index: -10;
+    }
+    .box3{
+      background-color: #00f;
+      left: 40px;
+      top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="item box1">1</div>
+  <div class="item box2">2</div>
+  <div class="item box3">3</div>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 重置代码 */
+    a{
+      text-decoration: none;
+      color: #000;
+    }
+    /* 布局代码 */
+    /* 设置整体居中 */
+    .item{
+      width: 140px;
+      margin: 0 auto;
+    }
+    /* 因为设置封面图上的背景图覆盖，.cover是绝对定位，所以要设置父元素为定位元素。 */
+    .item .top{
+      position: relative;
+    }
+    /* 去除图片底部的间隙（后期学习，牵扯vertical-align） */
+    .item .top img{
+      display: block;
+    }
+    /* 设置封面图片上的背景图覆盖。*/
+    /* 
+    1、背景图使用精灵图和背景图引入，设置图片位置。
+    1.1首先设置宽高才能将引入的背景图显示出来。
+    1.2在多张图片合成的精灵图中找到使用图片的位置才能正确显示出来。
+    2、通过绝对定位的方式，让背景图脱离标准流，将背景图覆盖在图片上。
+    3、当头top、bottom、left、right为0，而且没有设置margin的情况下，绝对定位元素的宽高会占据父元素的宽高。所以此时正好覆盖在图片上。
+    4、因为点击背景图会跳转到其他地方，所以设置为a元素。
+     */
+    .item .top .cover{
+      /* width: 140px;
+      height: 140px; */
+      background-image: url("../image/music-sprite01.png");
+      background-position: 0 0;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    /* 设置图片底部的黑色框 */
+    /* 
+    1、通过精灵图和背景图的方式引入图片，设置图片位置。
+    1.1首先设置宽高才能将引入的背景图显示出来。
+    1.2在多张图片合成的精灵图中找到使用图片的位置才能正确显示出来。
+    2、通过绝对定位的当时，是这个黑色边框脱离标准流，将其放在图片上的下方。 */
+    .item .top .info{
+      background-image: url("../image/music-sprite01.png");
+      background-position: 0 -537px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height:27px;
+      line-height: 27px;
+      padding-left: 5px;
+    }
+    /* 设置黑色框里的图片和文字信息 */
+    /* 
+    1、通过精灵图和背景图的方式引入图片，设置图片位置
+    1.1首先设置宽高才能将引入的背景图显示出来。
+    1.2在多张图片合成的精灵图中找到使用图片的位置才能正确显示出来。
+    1.3但是使用的i元素是行内级元素所以需要设置display。
+    2、使用相对定位微调图标位置。
+    */
+    .item .top .info .icon_music{
+      display: inline-block;
+      width: 14px;
+      height: 11px;
+      background-image: url("../image/music-sprite02.png");
+      background-position: 0 -24px;
+
+      position: relative;
+      top:1px;
+    }
+    /* 设置文字大小 */
+    .item .top .info .count{
+      font-size: 14px;
+      margin-left: 4px;
+    }
+    /* 
+    1、通过精灵图和背景图的方式引入图片，设置图片位置
+    1.1首先设置宽高才能将引入的背景图显示出来。
+    1.2在多张图片合成的精灵图中找到使用图片的位置才能正确显示出来。
+    1.3但是使用的i元素是行内级元素所以需要设置display。
+    2、使用绝对定位使图片垂直居中。
+    2.1绝对定位元素高度已知，当它的top和bottom为0，且margin-top和margin-bottom为auto的时候，根据公式计算，图标可以垂直居中。
+    */
+    .item .top .info .icon_play{
+      display: inline-block;
+      width: 16px;
+      height: 17px;
+      background-image: url("../image/music-sprite02.png");
+      background-position: 0 0;
+
+      position: absolute;
+      right:10px;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+    }
+    /* 设置当鼠标放在图标上时，变换样式 */
+    /* 同样也是使用精灵图，因为都在一张图片中，所以只需要变化位置即可。 */
+    .item .top .info .icon_play:hover{
+      background-position: 0 -60px;
+    }
+    /* 设置底部文字的样式 */
+    /* 因为底部文字也是一个链接，所以使用a元素，但是margin-top对行内级非替换元素无效，所以设置其display为block */
+    .item .bottom{
+      display: block;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    /* 设置当鼠标放在底部文字时的样式 */
+    .item .bottom:hover{
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="item">
+    <div class="top">
+      <img src="../image/music_album01.jpg" alt="">
+      <a class="cover" href="https://music.163.com/#/playlist?id=520028010" target="_blank"></a>
+      <div class="info">
+        <i class="icon_music"></i>
+        <span class="count">62万</span>
+        <i class="icon_play"></i>
+      </div>
+    </div>
+    <a class="bottom" href="https://music.163.com/#/playlist?id=520028010" target="_blank">
+      天气好的话，把耳机分给我一半吧
+    </a>
+  </div>
+</body>
+</html>

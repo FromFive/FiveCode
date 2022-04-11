@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* .box{
+      font-size: 0;
+    } */
+    span{
+      background-color: aqua;
+      /* font-size: 16px; */
+      float: left;
+    }
+  </style>
+</head>
+<body>
+  <!-- 因为行内级元素、inline-block元素在编写时换行，浏览器在解析时将换行符即空格也解析了，所以通常页面中这种元素之间会产生间隙。
+    行内级元素、inline-block元素水平间隙问题的解决方案：
+    1、删除换行符（空格）--不推荐。
+    2、设置父元素的字体大小为0，但是要在子元素中设置回来。
+    3、通过浮动将元素统一往一个方向浮动。
+    4、flex布局。
+   -->
+  <div class="box">
+    <span>哈哈哈</span>
+    <span>嘿嘿嘿</span>
+    <span>嘻嘻嘻</span>
+  </div>
+</body>
+</html>
