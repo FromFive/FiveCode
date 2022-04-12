@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 浮动元素之间不能层叠，如果全部向左浮动，都会脱离标准流。后浮动的元素会紧贴着前一个浮动的元素（左浮找左浮，右浮找右浮。） */
+    /* 如果水平方向不能显示开浮动元素，它会向下移动，直到有充足空间显示开。 */
+    .container{
+      width: 800px;
+      height: 800px;
+      background-color: aqua;
+    }
+    .box{
+      width: 200px;
+      height: 100px;
+      background-color: 
+      plum;
+      float: left;
+      margin: 1px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box box1">1</div>
+    <div class="box box2">2</div>
+    <div class="box box3">3</div>
+    <div class="box box4">4</div>
+  </div>
+</body>
+</html>
