@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    /* 设置最外层顶部样式 */
+    /* 整体高度是70，其中包含边框是1px，所以其余元素的高度是69px */
+    .top{
+      height: 70px;
+      background-color: #242424;
+      box-sizing: border-box;
+      border-bottom: 1px solid #000;
+    }
+    /* 设置整体中间的topbar样式 */
+    /* 整体整体高度70，其中底部有边框是1，所以其他元素的高度只有69. */
+    /* topbar里分成左右两个bar，所以用flex布局对这左右bar进行控制。 */
+    /* 当只有两个元素的时候，设置justify content为space-between为主轴上的对齐方式。 */
+    /* 因为bar-left和bar-right是没有设置高度的，默认值是auto，所以align- items默认值是normal，效果和strekth一样是拉伸的沾满父元素的，所以如果里面有内容会显示在顶部。因此要设置其父元素的topbar的行高宇高度一致为69，可以使内容居中。 */
+    /* 父元素设置了行高后，子元素可以继承。但是行高对行内非替换元素是不生效的，因此要将行内非替换元素的元素类型改为block。 */
+    .topbar{
+      display: flex;
+      justify-content: space-between;
+      height: 69px;
+      line-height: 69px;
+      background-color: #f00;
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- 1、最外层为占据整行的top，背景色为黑色。 -->
+  <!-- 2、整行top里有居中显示的topbar，宽度是1100. -->
+  <!-- 2.1topbar中氛围左右两部分barleft和barright，因此要对topbar设置为flex。 -->
+  <!-- 2.1.1barleft中又分为两部分，一个是h1的logo并包含一个链接，一个是列表也包含链接。 -->
+  <!-- 很多网站中对logo部分使用h元素是用来seo优化。 -->
+  <!-- 2.1.2barright中是一个搜索盒子，里面有一个input；剩下两个是a链接。 -->
+  <!-- 3、导航里层是列表，包含链接。因为hover状态位置不同，链接中又包含span -->
+  <div class="top">
+    <div class="topbar wrapper_01">
+      <div class="bar_left">bar_left</div>
+      <div class="bar_right">barright</div>
+    </div>
+  </div>
+  <div class="nav">
+    <div class="navbar wrapper_01">
+    </div>
+  </div>
+</body>
+</html>
