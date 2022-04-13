@@ -1,4 +1,14 @@
-.mi_wraper{
+.mi_wrapper{
   width: 1226px;
   margin: 0 auto;
+}
+.clear_fix::after{
+content: "";
+display: block;
+clear: both;
+visibility: hidden;
+height: 0;
+}
+.clear_fix{
+  *zoom: 1;
 }

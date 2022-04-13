@@ -27,9 +27,148 @@
       justify-content: space-between;
       height: 69px;
       line-height: 69px;
-      background-color: #f00;
+      /* background-color: #f00; */
     }
-    
+    .top .topbar .bar_left{
+      display: flex;
+    }
+    .top .topbar .bar_left .logo a{
+      display: block;
+      width: 176px;
+      text-indent: -9999px;
+      background-image: url("../image/topbar-sprite.png");
+      background-position: 0 0;
+    }
+    .top .topbar .bar_left .list{
+      display: flex;
+      position: relative;
+    }
+    .top .topbar .bar_left .list .item{
+      display: block;
+      font-size: 14px;
+      color:#ccc;
+      padding: 0 18px;
+      position: relative;
+    }
+    .top .topbar .bar_left .list .item:hover,
+    .top .topbar .bar_left .list .item.active
+    {
+      background-color: #000;
+      color:#fff;
+    }
+    .top .topbar .bar_left .list .item.active::after{
+      display: inline-block;
+      content: "";
+      width: 12px;
+      height: 7px;
+      background: url("../image/topbar-sprite.png") -226px 0;
+      position: absolute;
+      top: 64px;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+    .top .topbar .bar_left .list .icon-hot{
+      display: inline-block;
+      width: 28px;
+      height: 19px;
+      background: url("../image/topbar-sprite.png") -190px 0;
+      position: absolute;
+      top:18px;
+      right: -20px;
+    }
+    /* topbar_bar_right */
+    .top .topbar .bar_right{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      /* padding-right:20px; */
+    }
+    .top .topbar .bar_right .search{
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      width: 158px;
+      height: 32px;
+      background: url("../image/topbar-sprite.png") 0 -99px;
+      background-color: #fff;
+      border-radius: 32px;
+      box-sizing: border-box;
+      padding-right: 10px;
+    }
+    .top .topbar .bar_right .search input{
+      width: 120px;
+    }
+    .top .topbar .bar_right .search input::-webkit-input-placeholder{
+      
+    }
+    .top .topbar .bar_right .anthor a{
+      display: block;
+      width: 90px;
+      height: 32px;
+      line-height: 32px;
+      text-align: center;
+      color: #fff;
+      box-sizing: border-box;
+      border: 1px solid #4F4F4F;
+      border-radius: 20px;
+      margin: 0 20px;
+    }
+    .top .topbar .bar_right .login a{
+      color:#787878
+    }
+    .top .topbar .bar_right .login:hover a{
+      color: #999;
+    }
+    .top .topbar .bar_right .login a:hover{
+      color: #787878;
+      text-decoration: underline;
+    }
+
+    /* nav样式 */
+    .nav{
+      height: 35px;
+      box-sizing: border-box;
+      background-color:#C20C0C;
+      border-bottom: 1px solid #a40011;
+    }
+    .nav .navbar{
+      box-sizing: border-box;
+      padding:0 180px;
+    }
+    .nav .navbar .list{
+      display: flex;
+    }
+    .nav .navbar .list .item{
+      display: block;
+    }
+    .nav .navbar .list .item span{
+      display: inline-block;
+      height: 20px;
+      line-height: 21px;
+      color:#fff;
+      border-radius: 20px;
+      padding: 0 13px;
+      margin: 7px 17px;
+    }
+    .nav .navbar .list .nav-icon span{
+      position: relative;
+    }
+    .nav .navbar .list .nav-icon span::after{
+      display: inline-block;
+      content: "";
+      width: 8px;
+      height: 8px;
+      background: url("../image/navbar-icon.png");
+      background-size: cover;
+      position: absolute;
+      top:2px;
+    }
+    .nav .navbar .list .item:hover span,
+    .nav .navbar .list .item.active span{
+      background-color: #9B0909;
+    }
+
   </style>
 </head>
 <body>
@@ -42,12 +181,50 @@
   <!-- 3、导航里层是列表，包含链接。因为hover状态位置不同，链接中又包含span -->
   <div class="top">
     <div class="topbar wrapper_01">
-      <div class="bar_left">bar_left</div>
-      <div class="bar_right">barright</div>
+      <div class="bar_left">
+        <h1 class="logo">
+          <a href="#">
+            网易云音乐
+          </a>
+        </h1>
+        <ul class="list">
+          <li><a href="#" class="item active">发现音乐</a></li>
+          <li><a href="#" class="item">我的音乐</a></li>
+          <li><a href="#" class="item">关注</a></li>
+          <li><a href="#" class="item">商城</a></li>
+          <li><a href="#" class="item">音乐人</a></li>
+          <li>
+            <a href="#" class="item">
+            下载客户端
+            </a>
+            <i class="icon-hot"></i>
+          </li>
+        </ul>
+      </div>
+      <div class="bar_right">
+        <div class="search">
+          <input id="info" name="srch" type="text" placeholder="音乐/视频/电台/用户">
+          <!-- <label for="info">音乐/视频/电台/用户</label> -->
+        </div>
+        <div class="anthor">
+          <a href="#">创作者中心</a>
+        </div>
+        <div class="login">
+          <a href="#">登录</a>
+        </div>
+      </div>
     </div>
   </div>
   <div class="nav">
     <div class="navbar wrapper_01">
+      <ul class="list">
+        <li><a href="#" class="item active"><span>推荐</span></a></li>
+        <li><a href="#" class="item"><span>排行榜</span></a></li>
+        <li><a href="#" class="item nav-icon"><span>歌单</span></a></li>
+        <li><a href="#" class="item"><span>主播电台</span></a></li>
+        <li><a href="#" class="item"><span>歌手</span></a></li>
+        <li><a href="#" class="item"><span>新碟上架</span></a></li>
+      </ul>
     </div>
   </div>
 </body>

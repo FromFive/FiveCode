@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .wear{
+      background-color: aqua;
+      margin-top: 30px;
+    }
+    .wear .header{
+      height: 58px;
+      line-height: 58px;
+    }
+    .wear .header .left_area{
+      float: left;
+    }
+    .wear .header .right_area{
+      float: right;
+    }
+    .wear .header .right_area .item{
+      display: inline-block;
+    }
+    .wear .header .right_area .item:hover,
+    .wear .header .right_area .item.active{
+      color: #ff6700;
+      border-bottom: 2px solid #ff6700;
+    }
+  </style>
+</head>
+<body>
+  <div class="mi_wrapper wear">
+      <div class="header clear_fix">
+        <div class="left_area">
+          <h2 class="title">智能穿戴</h2>
+        </div>
+        <div class="right_area">
+          <ul class="tab">
+            <li class="item active hot">热门</li>
+            <li class="item info">穿戴</li>
+        </ul>
+        </div>
+      </div>
+      <div class="list"></div>
+  </div>
+</body>
+</html>
