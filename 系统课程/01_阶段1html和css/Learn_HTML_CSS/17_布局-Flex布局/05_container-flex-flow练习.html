@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* flex flow是flex direction和flex wrap的简写。顺序任意，可省略。 */
+    .container{
+      display: flex;
+      flex-flow: column wrap-reverse;
+      width: 800px;
+      height: 800px;
+      background-color: aqua;
+    }
+    .item{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item3">4</div>
+    <div class="item item3">5</div>
+  </div>
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

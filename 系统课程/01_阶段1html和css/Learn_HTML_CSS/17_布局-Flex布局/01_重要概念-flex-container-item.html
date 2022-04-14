@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* flex container：开启了flex布局的元素 */
+    /* flex items：flex container里面的直接子元素 */
+    /* flex items的布局将受flex container属性的设置来进行控制和布局。 */
+    /* flex item不再严格区分块级元素和行内级元素。 */
+    /* flex item默认情况下是包裹内容的，但是可以设置宽度和高度。 */
+    /* 如果flex items宽度总和大于flex container的宽度，那么在flex布局下，items会自动被收缩以显示在container里。 */
+    .container{
+      display: flex;
+      width: 800px;
+      height: 800px;
+      background-color: aqua;
+    }
+    .item{
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3</div>
+    <div class="item item3">4</div>
+    <div class="item item3">5</div>
+  </div>
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>
