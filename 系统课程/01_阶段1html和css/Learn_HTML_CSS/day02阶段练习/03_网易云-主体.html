@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .area{
+      display: flex;
+      justify-content: space-between;
+      height: 800px;
+      border:1px solid #d3d3d3;
+      border-width: 0 1px;
+      background-image: url("../image/网易云/main-wrap.png");
+      background-color: aqua;
+    }
+    .main .area .area-left{
+      width: 729px;
+    }
+    .main .area .area-right .user-login{
+      width: 250px;
+      height: 126px;
+      background-image: url("../image/网易云/main-sprite.png");
+    }
+    .main .area .area-right .user-login .note{
+      font-size: 12px;
+      width: 205px;
+      margin: 0 auto;
+      padding-top: 16px;
+      line-height: 22px;
+    }
+    .main .area .area-right .user-login .btn{
+      display: block;
+      width: 100px;
+      height: 31px;
+      line-height: 31px;
+      text-align: center;
+      color: #fff;
+      margin: 15px auto;
+      text-shadow: 0 1px 0 #8a060b;
+      background: url("../image/网易云/main-sprite.png") 0 -195px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="area wrapper_02">
+      <div class="area-left"></div>
+      <div class="area-right">
+        <div class="user-login">
+          <p class="note">
+            登录网易云音乐，可以享受无限收藏的乐趣，并且无限同步到手机
+          </p>
+          <a href="#" class="btn">
+            用户登录
+          </a>
+        </div>
+        <div class="singer-list">
+          <div class="singer-top">
+            <h3 class="title">
+              <span class="info">入驻歌手</span>
+              <a href="" class="btn">查看全部&gt;</a>
+            </h3>
+          </div>
+          <div class="singer-bottom"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

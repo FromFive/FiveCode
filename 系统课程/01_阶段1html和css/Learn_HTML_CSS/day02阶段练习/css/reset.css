@@ -1,4 +1,4 @@
-body,h1,ul,li{
+body,h1,h2,h3,h4,h5,h6,ul,li{
   margin: 0;
   padding: 0;
 }
@@ -14,4 +14,8 @@ ul,li{
 input{
   outline: none;
   border: none;
+}
+/* 重置因图片基线对齐的问题导致的图片底部有间隙的问题。 */
+img{
+  display: block;
 }
