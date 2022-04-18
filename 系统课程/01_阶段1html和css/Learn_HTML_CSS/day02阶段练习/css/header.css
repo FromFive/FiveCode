@@ -1,0 +1,22 @@
+.header_type_01{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* height: 23px; */
+  /* line-height: 23px; */
+  font-size: 12px;
+  padding-bottom: 4px;
+  /* box-sizing: border-box; */
+  border-bottom: 1px solid #ccc;
+}
+.header_type_01 .title{
+  color: #333;
+  font-size: 12px;
+}
+.header_type_01 .more{
+  color: #666;
+  font-weight: normal;
+}
+.header_type_01 .more:hover{
+  text-decoration: underline;
+}

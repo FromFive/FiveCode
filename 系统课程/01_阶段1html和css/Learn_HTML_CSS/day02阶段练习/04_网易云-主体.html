@@ -43,7 +43,10 @@
       text-shadow: 0 1px 0 #8a060b;
       background: url("../image/网易云/main-sprite.png") 0 -195px;
     }
-    .main .area .area-right .singer .singer-top{
+    .main .area .area-right .user-login .btn:hover{
+      background-position: -110px -195px;
+    }
+    .main .area .area-right .singer .header_type_01{
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -56,20 +59,20 @@
       box-sizing: border-box;
       border-bottom: 1px solid #ccc;
     }
-    .main .area .area-right .singer .singer-top .info{
+    .main .area .area-right .singer .header_type_01 .info{
       color: #333;
     }
-    .main .area .area-right .singer .singer-top .btn{
+    .main .area .area-right .singer .header_type_01 .btn{
       color: #666;
       font-weight: normal;
     }
-    .main .area .area-right .singer .singer-top .btn:hover{
+    .main .area .area-right .singer .header_type_01 .btn:hover{
       text-decoration: underline;
     }
-    .main .area .area-right .singer .singer-list{
-      /* background-color: orange; */
-      /* margin: 6px 0 14px 20px; */
-    }
+    /* .main .area .area-right .singer .singer-list{
+      background-color: orange;
+      margin: 6px 0 14px 20px;
+    } */
     .main .area .area-right .singer .singer-list li{
       width: 210px;
       height: 62px;
@@ -81,7 +84,6 @@
     }
     .main .area .area-right .singer .singer-list .item{
       display: flex;
-      /* justify-content: space-between; */
     }
     .main .area .area-right .singer .singer-list .item .album img{
       width: 62px;
@@ -128,8 +130,8 @@
           </a>
         </div>
         <div class="singer">
-          <div class="singer-top">
-            <span class="info">入驻歌手</span>
+          <div class="header_type_01">
+            <h3 class="info">入驻歌手</h3>
             <a href="" class="btn">查看全部 &gt;</a>
           </div>
           <ul class="singer-list">

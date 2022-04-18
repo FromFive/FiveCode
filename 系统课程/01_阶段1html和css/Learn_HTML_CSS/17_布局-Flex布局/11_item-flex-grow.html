@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* flexitems的属性：flex-grow.
+    当只给某一个item设置grow值时，表示这个item占据了剩余空间的全部。
+    当给所有item设置同一个grow值时，会将剩余的空间均分分配各每个item。
+    grow值可设置正小数、正整数、和0.默认值是0 
+    扩展后的最终size不能超过max-width和max-height。*/
+    .container{
+      display: flex;
+      width: 500px;
+      height: 500px;
+      background-color: aqua;
+    }
+    .item{
+      width: 120px;
+      height: 120px;
+      flex-grow: 1;
+    }
+    .item1{
+      max-width: 150px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">3xx</div>
+  </div>
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>

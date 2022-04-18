@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* flexitems的属性：order，设置元素的顺序。正整数，负整数和0. */
+    /* 默认是0，数字越小越往前。 */
+    .container{
+      display: flex;
+      width: 500px;
+      height: 500px;
+      background-color: aqua;
+    }
+    .item{
+      width: 120px;
+      height: 120px;
+    }
+    .item1{
+      order: 5;
+    }
+    .item2{
+      order: 3;
+    }
+    .item3{
+      order: -1;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="item item1">1</div>
+    <div class="item item2">2</div>
+    <div class="item item3">xx</div>
+  </div>
+  <script src="./js/itemRandomColor.js"></script>
+</body>
+</html>
