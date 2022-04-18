@@ -10,3 +10,32 @@
   width: 982px;
   margin: 0 auto;
 }
+.btn_sprite{
+  display: inline-block;
+  background: url(../../image/网易云/button-sprite.png);
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+}
+.btn_type_01_sup{
+  background-position: right -100px;
+   /* 加一个内边距，让按钮的最右边显示出来不被覆盖。 */
+  padding-right: 5px;
+}
+ /* i设置为inline-block的话，高度和宽度还是包裹内容的，所以需要设置为block。 */
+.btn_type_01_sub{
+  display: block;
+  background-position: 0 -59px;
+  padding-left: 3px;
+  height: 31px;
+}
+.btn_type_favor_sup{
+  padding-right: 5px;
+  background-position: right -1020px;
+}
+.btn_type_favor_sub{
+  display: inline-block;
+  padding-left: 28px;
+  padding-right: 3px;
+  background-position: 0 -977px;
+}
