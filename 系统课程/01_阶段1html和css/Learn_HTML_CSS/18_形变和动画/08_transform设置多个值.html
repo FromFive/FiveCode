@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    .container{
+      display: inline-block;
+      border: 2px solid chocolate;
+    }
+    .box{
+      width: 200px;
+      height: 100px;
+      background-color: aqua;
+    }
+    /* 多个值用空格分隔 */
+    .box:hover{
+      transform: translate(120px,120px) scale(0.5,0.5) rotate(270deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>
