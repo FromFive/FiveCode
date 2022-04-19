@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    .container{
+      display: inline-block;
+      border: 5px solid aqua;
+    }
+    .box1,.box2{
+      width: 100px;
+      height: 100px;
+      /* border: 2px solid chocolate; */
+      background-color: plum;
+    }
+    /* scale修改元素的大小。 */
+    /* 0-1,对元素缩放 */
+    .box1{
+      transform: scale(0.5,0.5);
+    }
+    /* 大于1，对元素放大 */
+    .box2:hover{
+      transform: scale(1.1,1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+  </div>
+  <div class="container">
+    <div class="box2"></div>
+  </div>
+</body>
+</html>

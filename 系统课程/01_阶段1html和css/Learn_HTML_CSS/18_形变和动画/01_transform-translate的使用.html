@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container{
+      display: inline-block;
+      border: 2px solid chocolate;
+    }
+    /* translate位移 */
+    /* 一个值：只在x轴上位移 */
+    /* 两个值：在x轴和y轴上位移 */
+    /* 可以写具体数值或者百分比。百分比相对于位移元素自身的宽度和高度 */
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: aqua;
+      /* transform: translate(50px); */
+      /* transform: translate(50px,30px); */
+      transform: translate(30%);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box"></div>
+  </div>
+</body>
+</html>

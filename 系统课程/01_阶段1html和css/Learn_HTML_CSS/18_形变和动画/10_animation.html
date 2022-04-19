@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+    width: 200px;
+    height: 100px;
+    background-color: plum;
+    animation-name: moveAnim;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    
+  }
+  @keyframes moveAnim {
+    0%{
+      transform: translate(0,0);
+    }
+    33%{
+      transform: translate(0,400px);
+    }
+    66%{
+      transform: translate(400px,400px);
+    }
+    100%{
+      transform: translate(400px,0);
+    }
+  }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+</body>
+</html>

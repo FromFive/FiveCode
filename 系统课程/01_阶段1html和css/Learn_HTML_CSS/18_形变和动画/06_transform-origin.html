@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+      padding-top: 100px;
+    }
+    .container{
+      display: inline-block;
+      border: 5px solid aqua;
+    }
+    .box1{
+      width: 100px;
+      height: 50px;
+      background-color: plum;
+
+      /* 修改坐标原点的位置 */
+      /* 可以是具体数值、关键字、百分比（参考元素本身大小） */
+      /* 默认值是center center */
+      /* 当设置一个值时是x轴的起点，y轴默认是center
+      当设置两个值时，分别是x、y轴的 */
+      /* transform-origin: center top; */
+      transform-origin: 100%;
+      /* transform-origin: 0 0; */
+    }
+    
+    .container .box1:hover{
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+  </div>
+  </div>
+</body>
+</html>
