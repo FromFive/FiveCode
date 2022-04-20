@@ -13,11 +13,13 @@
     animation-name: moveAnim;
     animation-duration: 2s;
     animation-timing-function: ease;
-    
+    animation-iteration-count: 2;
+    animation-direction: reverse;
+    animation-fill-mode: backwards;
   }
   @keyframes moveAnim {
     0%{
-      transform: translate(0,0) scale(0.5,0.5);
+      transform: translate(0,0);
     }
     33%{
       transform: translate(0,400px) scale(1.2,1.2);
