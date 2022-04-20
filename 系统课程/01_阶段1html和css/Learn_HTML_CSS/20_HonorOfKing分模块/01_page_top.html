@@ -17,7 +17,6 @@
       justify-content: space-between;
       height: 41px;
       line-height: 41px;
-      background-color: #f00;
     }
     .top .left-area {
       display: flex;
@@ -30,17 +29,49 @@
       background: url(./img/top-logo.png) no-repeat;
     }
     .top .right-area {
+      position: relative;
       display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+      color: #464646;
+    }
+    .top .right-area .growth a{
+      display: block;
+      padding-left: 30px;
+    }
+    .top .right-area .growth:hover a {
+      color: #ff4e00;
     }
     .top .right-area .growth .icon-grow {
       position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
       display: inline-block;
       width: 30px;
       height: 30px;
       background: url(./img/top_sprite.png) no-repeat -30px 0;
     }
-    .top .right-area .rank {
+    .top .right-area .rank a{
+      position: relative;
+      display: block;
       margin-left: 20px;
+      padding-right: 25px;
+    }
+    .top .right-area .rank a::after {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      content: "";
+      width: 30px;
+      height: 30px;
+      background: url(./img/top_sprite.png) no-repeat 0 0;
+      opacity: .1;
+      transform: rotate(90deg);
     }
   </style>
 </head>
@@ -58,10 +89,10 @@
       <div class="right-area">
         <div class="growth">
           <i class="icon-grow"></i>
-          成长守护平台
+          <a href="#">成长守护平台</a>
         </div>
         <div class="rank">
-          腾讯游戏排行榜
+          <a href="#">腾讯游戏排行榜</a>
         </div>
       </div>
     </div>

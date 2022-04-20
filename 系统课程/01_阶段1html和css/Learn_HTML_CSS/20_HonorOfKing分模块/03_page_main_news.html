@@ -4,11 +4,55 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>王者荣耀-main</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .news-section {
+      display: flex;
+      height: 342px;
+    }
+    .main .news-section .banner {
+      width: 604px;
+      background-color: orange;
+    }
+    .main .news-section .news {
+      flex: 1;
+      background-color: aqua;
+    }
+    .main .news-section .download {
+      width: 236px;
+      background-color: plum;
+    }
+    .main .news-section .download a{
+      display: block;
+      background: url(./img/index_sprite.png) no-repeat;
+    }
+    .main .news-section a.download-btn {
+      height: 128px;
+      background-position: 0 -219px;
+    }
+    .main .news-section a.guard-btn {
+      height: 106px;
+      background-position: 0 -350px;
+    }
+    .main .news-section a.exprenise-btn {
+      height: 108px;
+      background-position:0 -461px;
+    }
+  </style>
 </head>
 <body>
   <div class="main main_wrapper">
-    <div class="news-section"></div>
+    <div class="news-section">
+      <div class="banner"></div>
+      <div class="news"></div>
+      <div class="download">
+        <a href="" class="download-btn"></a>
+        <a href="" class="guard-btn"></a>
+        <a href="" class="exprenise-btn"></a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
