@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./css/common.css">
   <style>
     .main .news-section {
+      position: relative;
       display: flex;
       height: 342px;
       background: url(./img/main_bg.png) no-repeat;
@@ -111,13 +112,59 @@
       color: #b8b9c5;
     }
     .main .news .slide-list{
+      display: flex;
       width: 500%;
     }
     .main .news .slide-list .list{
       width: 20%;
     }
-    .main .news .slide-list .list-sp {
-
+    .main .news .slide-list .list li{
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 11px;
+    }
+    .main .news .slide-list .line-sp {
+      margin-top: 18px;
+      padding: 0 15px;
+      height: 36px;
+      line-height: 36px;
+      background: #414046;
+    }
+    .main .news .slide-list .txt {
+      color: #b8b9c5;
+      font-size: 14px;
+    }
+    .main .news .slide-list .type {
+      display: inline-block;
+      vertical-align: top;
+      width: 32px;
+      line-height: 16px;
+      margin-top: 2px;
+      margin-right: 5px;
+      border: 1px solid currentColor;
+      border-radius: 2px;
+      text-align: center;
+      color: #ff3636;
+      font-size: 12px;
+    }
+    .main .news .slide-list .type.notice {
+      color: #f4be19;
+    }
+    .main .news .slide-list .title {
+      display: inline-block;
+      vertical-align: top;
+      width: 230px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .main .news .slide-list .line-sp a{
+      color: #f3c258;
+      font-size: 18px;
+    }
+    .main .news .slide-list .time {
+      color: #999;
+      font-size: 12px;
     }
     .main .news-section .download {
       width: 236px;
@@ -137,6 +184,23 @@
     .main .news-section a.exprenise-btn {
       height: 108px;
       background-position:0 -461px;
+    }
+    .main .age {
+      position: absolute;
+      top: 0;
+      right: -58px;
+      width: 53px;
+      height: 68px;
+      background: url(./img/age_notice.png);
+    }
+    .main .addict {
+      position: absolute;
+      top: 78px;
+      right: -58px;
+      width: 53px;
+      height: 47px;
+      background: url(./img/addict.png) no-repeat;
+      background-size: contain;
     }
   </style>
 </head>
@@ -181,8 +245,61 @@
         <a href="#" class="more">...</a>
         <div class="content">
           <div class="slide-list">
-            <ul class="list">
-              <li class="line-sp">4月21日全服不停机更新公告</li>
+            <ul class="list list1">
+              <li class="line-sp">
+                <a href="#" class="txt">
+                  <span class="title">4月21日全服不停机更新公告</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type hot">热门</span>
+                  <span class="title">最新BUG修复进展【老亚瑟的答疑时间】</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type hot">热门</span>
+                  <span class="title">王者改娃达人言吾豪I 《营地·人物》</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type hot">热门</span>
+                  <span class="title">桑启上线峡谷  玩法攻略等你来取</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type hot">热门</span>
+                  <span class="title">狄某有话说 | 牛魔：你们打，我在泉水指挥</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type notice">公告</span>
+                  <span class="title">4月14日正式服“萤火不灭”版本更新公告</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type hot">热门</span>
+                  <span class="title">2022金瞳奖青年赛道王者荣耀命题公布</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
+              <li>
+                <a href="#" class="txt">
+                  <span class="type notice">公告</span>
+                  <span class="title">4月8日抢先服版本更新公告</span>
+                </a>
+                <span class="time">04/19</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -192,6 +309,8 @@
         <a href="" class="guard-btn"></a>
         <a href="" class="exprenise-btn"></a>
       </div>
+      <div class="age"></div>
+      <a href="#" class="addict"></a>
     </div>
   </div>
 </body>
