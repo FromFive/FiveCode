@@ -11,18 +11,116 @@
     .main .news-section {
       display: flex;
       height: 342px;
+      background: url(./img/main_bg.png) no-repeat;
     }
     .main .news-section .banner {
-      width: 604px;
-      background-color: orange;
+      width: 605px;
+      background-color: #000;
+    }
+    .main .banner .img-list {
+      display: flex;
+      overflow: hidden;
+      height: 298px;
+    }
+    .main .banner .img-list .item{
+      /* position: relative;
+      animation: animateImg 2s linear infinite; */
+      display: block;
+      flex-shrink: 0;
+      width: 100%;
+    }
+    /* .main .banner .img-list .item:hover{
+      animation-play-state: paused;
+    } */
+    /* @keyframes animateImg {
+      from {
+        transform: translate(0);
+      }
+      33% {
+        transform: translate(-604px);
+      }
+      66% {
+        transform: translate(-604px);
+      }
+      100% {
+       transform: translate(0);
+      }
+    } */
+    .main .banner .img-list .item img { 
+      width: 100%;
+    }
+    .main .banner .nav {
+      display: flex;
+      justify-content: space-between;
+      height: 44px;
+      line-height: 44px;
+      text-align: center;
+    }
+    .main .banner .nav a {
+      display: block;
+      width: 20%;
+      font-size: 14px;
+      color: #b1b2be;
+    }
+    .main .banner .nav a:hover,
+    .main .banner .nav a.active {
+      background: rgba(255,255,255,0.15);
+      color: #f3c258;
     }
     .main .news-section .news {
+      position: relative;
       flex: 1;
-      background-color: aqua;
+      padding: 0 17px;
+    }
+    .main .news .newsTab{
+      display: flex;
+      height: 48px;
+      border-bottom: 1px solid #000;
+    }    
+    .main .news .newsTab .item {
+      padding-bottom: 3px;
+      width: 16%;
+      height: 45px;
+      line-height: 45px;
+      text-align: center;
+      font-size: 14px;
+    }
+    .main .news .newsTab .item:hover,
+    .main .news .newsTab .item.active {
+      padding: 0;
+      border-bottom: 3px solid #f3c258;
+    }
+    .main .news .newsTab .item a {
+      display: block;
+      color: #b8b9c5;
+    }
+    .main .news .newsTab .item:hover a,
+    .main .news .newsTab .item.active a{
+      color: #f3c258;
+    }
+    .main .news .newsTab >* {
+      transition: all .225s ease-out;
+    }
+    .main .news .more {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      width: 52px;
+      font-size: 14px;
+      text-align: center;
+      color: #b8b9c5;
+    }
+    .main .news .slide-list{
+      width: 500%;
+    }
+    .main .news .slide-list .list{
+      width: 20%;
+    }
+    .main .news .slide-list .list-sp {
+
     }
     .main .news-section .download {
       width: 236px;
-      background-color: plum;
     }
     .main .news-section .download a{
       display: block;
@@ -45,8 +143,50 @@
 <body>
   <div class="main main_wrapper">
     <div class="news-section">
-      <div class="banner"></div>
-      <div class="news"></div>
+      <div class="banner">
+        <div class="img-list">
+          <a title="桑启的旅途故事" href="#" class="item">
+            <img src="./img/banner1.jpeg" alt="">
+          </a>
+          <a title="结伴同游千窟" href="#" class="item">
+            <img src="./img/banner2.jpeg" alt="">
+          </a>
+        </div>
+        <div class="nav">
+          <a href="#" class="active">桑启的旅途故事</a>
+          <a href="#">结伴同游千窟</a>
+          <a href="#">谁称为版本之子</a>
+          <a href="#">荣耀大话王</a>
+          <a href="#">王者炸麦了</a>
+        </div>
+      </div>
+      <div class="news">
+        <ul class="newsTab">
+         <li class="item active">
+           <a href="#">热门</a>
+         </li>
+         <li class="item">
+          <a href="#">新闻</a>
+         </li>
+         <li class="item">
+          <a href="#">公告</a>
+         </li>
+         <li class="item">
+          <a href="#">活动</a>
+         </li>
+         <li class="item">
+          <a href="#">赛事</a>
+         </li>
+        </ul>
+        <a href="#" class="more">...</a>
+        <div class="content">
+          <div class="slide-list">
+            <ul class="list">
+              <li class="line-sp">4月21日全服不停机更新公告</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <div class="download">
         <a href="" class="download-btn"></a>
         <a href="" class="guard-btn"></a>
