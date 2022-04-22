@@ -14,174 +14,114 @@
       height: 342px;
       background: url(./img/main_bg.png) no-repeat;
     }
-    .main .news-section .banner {
+    .news-section .banner {
       width: 605px;
-      background-color: #000;
     }
-    .main .banner .img-list {
+    .news-section .banner .img-list {
       display: flex;
-      overflow: hidden;
+      width: 604px;
       height: 298px;
+      overflow: hidden;
     }
-    .main .banner .img-list .item{
-      /* position: relative;
-      animation: animateImg 2s linear infinite; */
-      display: block;
+    .news-section .banner .img-list .item {
       flex-shrink: 0;
       width: 100%;
     }
-    /* .main .banner .img-list .item:hover{
-      animation-play-state: paused;
-    } */
-    /* @keyframes animateImg {
-      from {
-        transform: translate(0);
-      }
-      33% {
-        transform: translate(-604px);
-      }
-      66% {
-        transform: translate(-604px);
-      }
-      100% {
-       transform: translate(0);
-      }
-    } */
-    .main .banner .img-list .item img { 
+    .news-section .banner .img-list .item a {
+      display: block;
+    }
+    .news-section .banner .img-list .item img { 
       width: 100%;
     }
-    .main .banner .nav {
+    .news-section .banner .title-list {
       display: flex;
-      justify-content: space-between;
       height: 44px;
       line-height: 44px;
+    }
+    .news-section .banner .title-list .item {
+      flex: 1;
       text-align: center;
     }
-    .main .banner .nav a {
+    .news-section .banner .title-list .item a {
       display: block;
-      width: 20%;
-      font-size: 14px;
       color: #b1b2be;
     }
-    .main .banner .nav a:hover,
-    .main .banner .nav a.active {
-      background: rgba(255,255,255,0.15);
+    .news-section .banner .title-list .item a:hover,
+    .news-section .banner .title-list .item.active a {
       color: #f3c258;
+      background: rgba(255,255,255,0.15);
     }
-    .main .news-section .news {
-      position: relative;
+    .news-section .news {
       flex: 1;
       padding: 0 17px;
+      overflow: hidden;
     }
-    .main .news .newsTab{
+    .news-section .news .tab-list{
       display: flex;
       height: 48px;
       border-bottom: 1px solid #000;
     }    
-    .main .news .newsTab .item {
-      padding-bottom: 3px;
-      width: 16%;
-      height: 45px;
-      line-height: 45px;
-      text-align: center;
-      font-size: 14px;
+    .news-section .news .tab-list .item {
+      width: 52px;
     }
-    .main .news .newsTab .item:hover,
-    .main .news .newsTab .item.active {
-      padding: 0;
+    /* 设置了a元素的高度是包含了边框的高度后，边框动画就会从下面出来。 */
+    .news-section .news .tab-list .item a {
+      display: block;
+      height: 48px;
+      box-sizing: border-box;
+      line-height: 45px;
+      color: #b8b9c5;
+      text-align: center;
+      transition: border-bottom 225ms ease-out;
+    }
+    .news-section .news .tab-list .item:not(.more) a:hover,
+    .news-section .news .tab-list .item.active a {
+      color: #f3c258;
       border-bottom: 3px solid #f3c258;
     }
-    .main .news .newsTab .item a {
-      display: block;
-      color: #b8b9c5;
-    }
-    .main .news .newsTab .item:hover a,
-    .main .news .newsTab .item.active a{
-      color: #f3c258;
-    }
-    .main .news .newsTab >* {
-      transition: all .225s ease-out;
-    }
-    .main .news .more {
-      position: absolute;
-      top: 10px;
-      right: 20px;
-      width: 52px;
-      font-size: 14px;
-      text-align: center;
-      color: #b8b9c5;
-    }
-    .main .news .slide-list{
-      display: flex;
-      width: 500%;
-    }
-    .main .news .slide-list .list{
-      width: 20%;
-    }
-    .main .news .slide-list .list li{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 11px;
-    }
-    .main .news .slide-list .line-sp {
-      margin-top: 18px;
-      padding: 0 15px;
+    .news-section .news .notice {
       height: 36px;
       line-height: 36px;
+      margin-top: 18px;
+      padding: 0 15px;
       background: #414046;
     }
-    .main .news .slide-list .txt {
-      color: #b8b9c5;
-      font-size: 14px;
-    }
-    .main .news .slide-list .type {
-      display: inline-block;
-      vertical-align: top;
-      width: 32px;
-      line-height: 16px;
-      margin-top: 2px;
-      margin-right: 5px;
-      border: 1px solid currentColor;
-      border-radius: 2px;
-      text-align: center;
-      color: #ff3636;
-      font-size: 12px;
-    }
-    .main .news .slide-list .type.notice {
-      color: #f4be19;
-    }
-    .main .news .slide-list .title {
-      display: inline-block;
-      vertical-align: top;
-      width: 230px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-    .main .news .slide-list .line-sp a{
+    .news-section .news .notice a {
+      display: block;
       color: #f3c258;
       font-size: 18px;
     }
-    .main .news .slide-list .time {
+    .news-section .news .news-list .item{
+      display: flex;
+      margin-top: 11px;
+      overflow: hidden;
+    }
+    .news-section .news .news-list .item .desc{
+      flex: 1;
+      padding-right: 20px;
+      color: #b8b9c5;
+      
+    }
+    .news-section .news .news-list .time {
       color: #999;
       font-size: 12px;
     }
-    .main .news-section .download {
+    .news-section .download {
       width: 236px;
     }
-    .main .news-section .download a{
+    .news-section .download a{
       display: block;
       background: url(./img/index_sprite.png) no-repeat;
     }
-    .main .news-section a.download-btn {
+    .news-section a.download-btn {
       height: 128px;
       background-position: 0 -219px;
     }
-    .main .news-section a.guard-btn {
+    .news-section a.guard-btn {
       height: 106px;
       background-position: 0 -350px;
     }
-    .main .news-section a.exprenise-btn {
+    .news-section a.exprenise-btn {
       height: 108px;
       background-position:0 -461px;
     }
@@ -208,24 +148,39 @@
   <div class="main main_wrapper">
     <div class="news-section">
       <div class="banner">
-        <div class="img-list">
-          <a title="桑启的旅途故事" href="#" class="item">
-            <img src="./img/banner1.jpeg" alt="">
-          </a>
-          <a title="结伴同游千窟" href="#" class="item">
-            <img src="./img/banner2.jpeg" alt="">
-          </a>
-        </div>
-        <div class="nav">
-          <a href="#" class="active">桑启的旅途故事</a>
-          <a href="#">结伴同游千窟</a>
-          <a href="#">谁称为版本之子</a>
-          <a href="#">荣耀大话王</a>
-          <a href="#">王者炸麦了</a>
-        </div>
+        <ul class="img-list">
+          <li class="item">
+            <a title="桑启的旅途故事" href="#" >
+              <img src="./img/banner1.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner2.jpeg" alt="">
+            </a>
+          </li>
+        </ul>
+        <ul class="title-list">
+          <li class="item active">
+            <a href="#" class="active">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="#">结伴同游千窟</a>
+          </li>
+          <li class="item">
+            <a href="#">谁称为版本之子</a>
+          </li>
+          <li class="item">
+            <a href="#">荣耀大话王</a>
+          </li>
+          <li class="item">
+            <a href="#">王者炸麦了</a>
+          </li>
+          
+        </ul>
       </div>
       <div class="news">
-        <ul class="newsTab">
+        <ul class="tab-list">
          <li class="item active">
            <a href="#">热门</a>
          </li>
@@ -241,68 +196,57 @@
          <li class="item">
           <a href="#">赛事</a>
          </li>
+         <li class="item more">
+          <a href="#">...</a>
+         </li>
         </ul>
-        <a href="#" class="more">...</a>
-        <div class="content">
-          <div class="slide-list">
-            <ul class="list list1">
-              <li class="line-sp">
-                <a href="#" class="txt">
-                  <span class="title">4月21日全服不停机更新公告</span>
-                </a>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type hot">热门</span>
-                  <span class="title">最新BUG修复进展【老亚瑟的答疑时间】</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type hot">热门</span>
-                  <span class="title">王者改娃达人言吾豪I 《营地·人物》</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type hot">热门</span>
-                  <span class="title">桑启上线峡谷  玩法攻略等你来取</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type hot">热门</span>
-                  <span class="title">狄某有话说 | 牛魔：你们打，我在泉水指挥</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type notice">公告</span>
-                  <span class="title">4月14日正式服“萤火不灭”版本更新公告</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type hot">热门</span>
-                  <span class="title">2022金瞳奖青年赛道王者荣耀命题公布</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-              <li>
-                <a href="#" class="txt">
-                  <span class="type notice">公告</span>
-                  <span class="title">4月8日抢先服版本更新公告</span>
-                </a>
-                <span class="time">04/19</span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <p class="notice">
+          <a href="#" class="nowrap_ellipsis">4月21日全服不停机公告</a>
+        </p>
+        <ul class="news-list">
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              最新BUG修复进展【老亚瑟的答疑时间】
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              王者改娃达人言吾豪I 《营地·人物》
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              桑启上线峡谷  玩法攻略等你来取
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              狄某有话说 | 牛魔：你们打，我在泉水指挥
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_notice">
+              4月14日正式服“萤火不灭”版本更新公告
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              2022金瞳奖青年赛道王者荣耀命题公布
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_notice">
+              4月8日抢先服版本更新公告
+            </a>
+            <span class="time">04/19</span>
+          </li>
+        </ul>
       </div>
       <div class="download">
         <a href="" class="download-btn"></a>

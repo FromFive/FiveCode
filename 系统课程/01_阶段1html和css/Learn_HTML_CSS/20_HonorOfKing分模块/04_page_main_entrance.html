@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-主体-快速入口</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .entrance-section {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    /* font-size为0，目的是解决a元素即inline-block的水平间隙问题
+    也可以用弹性布局。 */
+    .main .entrance-section .item{
+      width: 291px;
+      height: 134px;
+    }
+    .main .entrance-section a{
+      display: block;
+      height: 100%;
+      overflow: hidden;
+    }
+    .main .entrance-section a img {
+      width: 100%;
+      height: 100%;
+      transition: transform 200ms ease;
+    }
+    .main .entrance-section a:hover img {
+      transform: scale(1.1,1.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="main main_wrapper">
+    <ul class="entrance-section">
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance1.jpeg" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance2.png" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance3.png" alt="">
+        </a>
+      </li>
+      <li class="item">
+        <a href="#">
+          <img src="./img/entrance4.png" alt="">
+        </a>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>

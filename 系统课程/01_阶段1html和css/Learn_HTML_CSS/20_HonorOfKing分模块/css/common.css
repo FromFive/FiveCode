@@ -1,3 +1,6 @@
+body {
+  font:14px "Microsoft YaHei",Tahoma,"simsun",sans-serif;
+}
 .top_wrapper {
   width: 980px;
   margin: 0 auto;
@@ -6,7 +9,50 @@
 width: 1300px;
 margin: 0 auto;
 }
-.main_wrapper{
+.main_wrapper {
   width: 1200px;
   margin: 0 auto;
+}
+/* 单行文本省略显示抽取 */
+.nowrap_ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/* 共同图标样式抽取 */
+.news_type::before {
+  display: inline-block;
+  width: 32px;
+  height: 16px;
+  margin-right: 2px;
+  line-height: 16px;
+  text-align: center;
+  font-size: 12px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+}
+.news_type_hot::before {
+  content: "热门";
+  color: #ff3636;
+  border-color: currentColor;
+}
+.news_type_notice::before {
+  content: "公告";
+  color: #f4be19;
+  border-color: currentColor;
+}
+.news_type_news::before {
+  content: "新闻";
+  color: #1e96ab;
+  border-color: currentColor;
+}
+.news_type_match::before {
+  content: "赛事";
+  color: #4d9cff;
+  border-color: currentColor;
+}
+.news_type_optimize::before {
+  content: "优化";
+  color: #f09a37;
+  border-color: currentColor;
 }
