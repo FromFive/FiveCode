@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-主体-content</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/video.css">
+  <style>
+    .main .section-content {
+      display: flex;
+      justify-content: space-between;
+    }
+    .main .section-content .left-content {
+      width: 872px;
+      height: 800px;
+      /* background-color: aqua; */
+    }
+    .main .match-center {
+      margin-bottom: 50px;
+    }
+    .main .match-news {
+      display: flex;
+      height: 260px;
+      margin: 20px 0;
+    }
+    .main .match-news .news-left {
+      width: 211px;
+    }
+    .main .match-news .news-right {
+      flex: 1;
+      overflow: hidden;
+      padding: 0 15px;
+    }
+    .main .match-news .news-right .sup-title{
+      padding-right: 60px;
+      font-size: 24px;
+    }
+    .main .match-news .news-right .sub-title {
+      padding-right: 180px;
+      color: #666;
+    }
+    .main .match-news .news-right .sub-title a{
+      color: #666;
+    }
+
+    .main .match-news .news-right .news-list .item{
+      display: flex;
+      align-items: center;
+      margin-top: 11px;
+    }
+    .main .match-news .news-right .news-list .item .desc{
+      flex: 1;
+      padding-right: 60px;
+      color: #333;
+    }
+    .main .match-news .news-right .news-list .item .desc:hover {
+      text-decoration: underline;
+    }
+    .main .match-news .news-right .news-list .time {
+      color: #b8b9c5;
+      font-size: 12px;
+    }
+
+    .main .section-content .right-content {
+      width: 295px;
+      height: 800px;
+      background-color: plum;
+    }
+    .main .section-content .right-content .new-hero {
+      margin-top: 20px;
+    }
+    .main .section-content .right-content .new-hero img {
+      width: 100%;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .main .section-content .right-content .hero-info {
+      height: 47px;
+      padding: 25px 15px;
+      border: 1px solid #e5e5e5;
+      border-top: none;
+      border-radius: 0 0 2px 2px;
+    }
+    .main .section-content .right-content .hero-info .update {
+      color: #999;
+      font-size: 12px;
+    }
+    .main .section-content .right-content .hero-list {
+      display: flex;
+      justify-content: space-between;
+      height: 173px;
+      margin-top: 30px;
+    }
+    .main .section-content .right-content .hero-list .item {
+      position: relative;
+    }
+    .main .section-content .right-content .hero-list .item .cover {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      color: #f3c258;
+      text-align: center;
+      line-height: 173px;
+      background: rgba(0,0,0,.8);
+    }
+    .main .section-content .right-content .hero-list .item:hover .cover {
+      display: block;
+      /* opacity: 1; */
+      animation: skinItemAnim 300ms ease-in-out forwards;
+    }
+    @keyframes skinItemAnim {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="main main_wrapper">
+    <div class="section-content">
+      <div class="left-content">
+        <div class="content-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title">内容中心</h3>
+            </div>
+            <div class="header_right">
+              <a href="#" class="more">更多</a>
+            </div>
+          </div>
+          <div class="tab_control">
+            <div class="item active">精品栏目</div>
+            <div class="line"></div>
+            <div class="item">赛事精品</div>
+            <div class="line"></div>
+            <div class="item">英雄攻略</div>
+          </div>
+          <div class="keyword">
+            <div class="item active">最新</div>
+            <div class="item">马菠萝奇闻录</div>
+            <div class="item">王者克制论</div>
+            <div class="item">王者视角</div>
+            <div class="item">策见打</div>
+            <div class="item">峡谷460</div>
+            <div class="item">百星王者带你飞</div>
+            <div class="item">狄仁杰封神榜</div>
+            <div class="item">峡谷460</div>
+            <div class="item">百星王者带你飞</div>
+            <div class="item">狄仁杰封神榜</div>
+          </div>
+          <div class="video_list">
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="match-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title title_icon_match">赛事中心</h3>
+            </div>
+            <div class="header_right">
+              <a href="#" class="more">更多</a>
+            </div>
+          </div>
+          <div class="tab_control">
+            <div class="item item_wrap active">KPL</div>
+            <div class="line"></div>
+            <div class="item item_wrap">挑战者杯</div>
+            <div class="line"></div>
+            <div class="item item_wrap">K甲联赛</div>
+            <div class="line"></div>
+            <div class="item item_wrap">城市赛</div>
+            <div class="line"></div>
+            <div class="item item_wrap">高校联赛</div>
+            <div class="line"></div>
+            <div class="item item_wrap">TGA</div>
+            <div class="line"></div>
+            <div class="item item_wrap">微信游戏邀请赛</div>
+          </div>
+          <div class="match-news">
+            <a href="#" class="news-left">
+              <img src="./img/match_01.jpeg" alt="">
+            </a>
+            <div class="news-right">
+              <div class="sup-title nowrap_ellipsis">
+                <a href="#">
+                  今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                </a>
+              </div>
+              <div class="sub-title nowrap_ellipsis">
+                <a href="#">
+                  请各位召唤师们畅所欲言对于4月23日19:00 广州TTG vs 北京WB的赛果预测及看法
+                </a>
+              </div>
+              <ul class="news-list">
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+                <li class="item">
+                  <span class="news_type_match">KPL</span>
+                  <a href="#" class="desc nowrap_ellipsis">
+                    最新BUG修复进展【老亚瑟的答疑时间】今日预报丨奇迹从对抗路开始，北京WB、广州TTG谁能晋级？
+                  </a>
+                  <span class="time">04/19</span>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="video_list">
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+            <a class="video_item" href="#">
+              <div class="album">
+                <img src="./img/video_album_01.png" alt="">
+                <div class="play_bar">
+                  <span class="count">471.6万</span>
+                  <span class="date">2020-08-29</span>
+                </div>
+                <div class="cover">
+                  <i class="icon_play"></i>
+                </div>
+              </div>
+              <div class="desc">
+                【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="right-content">
+        <div class="skin-center">
+          <div class="section_header">
+            <div class="header_left">
+              <h3 class="title title_icon_skin">内容中心</h3>
+            </div>
+            <div class="header_right">
+              <a href="#" class="more">更多</a>
+            </div>
+          </div>
+          <div class="tab_control">
+            <div class="item active">最新英雄</div>
+            <div class="line"></div>
+            <div class="item">最新皮肤</div>
+            <div class="line"></div>
+            <div class="item">周免皮肤</div>
+          </div>
+
+          <div class="new-hero">
+            <img src="./img/hero_01.webp" alt="">
+            <div class="hero-info">
+              <h3 class="hero-name">新英雄：桑启</h3>
+              <span class="update">上线时间：2022.4.14</span>
+            </div>
+            <ul class="hero-list">
+              <li class="item">
+                <a href="#">
+                  <img src="./img/hero_02.webp" alt="">
+                </a>
+                <div class="cover">暃</div>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="./img/hero_02.webp" alt="">
+                </a>
+                <div class="cover">金蝉</div>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="./img/hero_02.webp" alt="">
+                </a>
+                <div class="cover">云缨</div>
+              </li>
+              <li class="item">
+                <a href="#">
+                  <img src="./img/hero_02.webp" alt="">
+                </a>
+                <div class="cover">艾琳</div>
+              </li>
+            </ul>
+          </div>
+          
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

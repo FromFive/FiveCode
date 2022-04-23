@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-视频选项</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    /* 视频有固定宽度，但是高度应该是由内容撑起来的。所以先不设置高度。 */
+    .video_item {
+      display: block;
+      width: 212px;
+    }
+    /* 设置图片圆角，超出部分要隐藏 */
+    .video_item .album {
+      position: relative;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .video_item .album img {
+      width: 100%;
+    }
+    .video_item .album .play_bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      height: 22px;
+      padding: 0 10px;
+      line-height: 22px;
+      color: #fff;
+      font-size: 12px;
+      background: rgba(0,0,0,.6);
+    }
+    .video_item .album .play_bar .count {
+      padding-left: 15px;
+      background: url(./img/index_sprite.png) no-repeat -256px -59px;
+    }
+    .video_item .desc {
+      margin-top: 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .video_item .album .cover {
+      display: none;
+      opacity: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.6);
+      /* transition: opacity 300ms ease; */
+    }
+    .video_item:hover .album .cover {
+      /* opacity: 1; */
+      display: block;
+      animation: itemCoverAnim 400ms ease-in-out forwards;
+    }
+    @keyframes itemCoverAnim {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+    .video_item .album .cover i {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      width: 40px;
+      height: 40px;
+      background: url(./img/index_sprite.png) no-repeat -192px -64px;
+    }
+  </style>
+</head>
+<body>
+  <a class="video_item" href="#">
+    <div class="album">
+      <img src="./img/video_album_01.png" alt="">
+      <div class="play_bar">
+        <span class="count">471.6万</span>
+        <span class="date">2020-08-29</span>
+      </div>
+      <div class="cover">
+        <i class="play"></i>
+      </div>
+    </div>
+    <div class="desc">
+      【王者克制论】中单法师怎么样？李九教你法王制霸峡谷诸葛亮123哈哈哈哈哈哈哈哈哈哈哈哈哈
+    </div>
+  </a>
+</body>
+</html>
