@@ -67,6 +67,13 @@ margin: 0 auto;
 .section_header .header_left .title_icon_skin {
   background-position: 0 -140px;
 }
+.section_header .header_left .title_icon_sche {
+  background-position: -155px -104px;
+}
+.section_header .header_right {
+  display: flex;
+  align-items: center;
+}
 .section_header .header_right .more {
   display: block;
   padding-left: 22px;
@@ -133,4 +140,21 @@ margin: 0 auto;
   background: #e3e3e3;
   border: 2px solid #e3e3e3;
   border-radius: 10px;
+}
+.icon_type {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  margin-right: 2px;
+  /* vertical-align: middle; */
+  background: url(../img/index_sprite.png) no-repeat;
+}
+.icon_type_hot {
+  background-position: -163px -68px;
+}
+.icon_type_fans {
+  background-position: -137px -68px;
+}
+.icon_type_guard {
+  background-position: -136px -5px;
 }
