@@ -5,12 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="./css/reset.css">
   <style>
     .right-nav {
       position: fixed;
       top: 50%;
       transform: translate(0,-50%);
-      right: 0;
+      right: 30px;
       width: 254px;
       height: 494px;
       background: url(./img/r_navBg.png) no-repeat;
@@ -22,7 +23,7 @@
       margin-left: 24px;
       margin-top: 15px;
     }
-    .right-nav .r-dj .info {
+    /* .right-nav .r-dj .info {
       position: absolute;
       top: 37px;
       left: 12px;
@@ -33,8 +34,50 @@
       font-weight: 700;
       line-height: 18px;
       text-indent: 2px;
+    } */
+    .right-nav .r-dj .right-list {
+      position: relative;
+      left: 66px;
     }
-    .rught-nav .
+    .right-nav .r-dj .right-list .item {
+      width: 117px;
+      height: 38px;
+      background: url(./img/r_all.png) no-repeat;
+    }
+    .right-nav .r-dj .right-list .item a {
+      display: block;
+      height: 100%;
+    }
+    .right-nav .r-dj .right-list .item.code {
+      height: 116px;
+      text-align: center;
+      background-position: 0 -3px;
+    }
+    .right-nav .r-dj .right-list .item.code img{
+      display: inline-block;
+      width: 111px;
+      height: 110px;
+      margin-top: 2px;
+    }
+    .right-nav .r-dj .right-list .item.weibo {
+      background-position: -122px -120px;
+    }
+    
+    .right-nav .r-dj .right-list .item.weibo:hover {
+      background-position: -122px -240px;
+    }
+    .right-nav .r-dj .right-list .item.wechat {
+      background-position: -122px -160px;
+    }
+    .right-nav .r-dj .right-list .item.wechat:hover {
+      background-position: -122px -200px;
+    }
+    .right-nav .r-dj .right-list .item.video {
+      background-position: -122px 0px;
+    }
+    .right-nav .r-dj .right-list .item.video:hover {
+      background-position: -122px -42px;
+    }
   </style>
 </head>
 <body>
@@ -42,7 +85,21 @@
     <div class="r-dj">
       <img src="./img/r_dj.png" alt="">
       <ul class="right-list">
-        <li class="item code"></li>
+        <li class="item code">
+          <img src="./img/r_code.webp" alt="">
+        </li>
+        <li class="item weibo">
+          <a href="#"></a>
+          <div class="cover">
+            <img src="" alt="">
+          </div>
+        </li>
+        <li class="item wechat">
+          <div ></div>
+        </li>
+        <li class="item video">
+          <div></div>
+        </li>
       </ul>
     </div>
   </div>
