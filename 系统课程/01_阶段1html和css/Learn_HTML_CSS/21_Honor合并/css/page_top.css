@@ -1,0 +1,96 @@
+@charset "UTF-8";
+ /* 顶部整体区域布局以及wrapper抽取和样式重置 */
+.top {
+  border-bottom: 1px solid #f5f5f5;
+}
+.top .area {
+  display: flex;
+  justify-content: space-between;
+  height: 41px;
+  line-height: 41px;
+}
+.top .left-area {
+  display: flex;
+}
+.top .left-area .logo a{
+  position: relative;
+  z-index: 11;
+  display: flex;
+  width: 150px;
+  height: 100%;
+  text-indent: -9999px;
+  background: url(../img/top-logo.png) no-repeat;
+}
+.top .left-area .recommend {
+  position: relative;
+}
+.top .left-area .recommend .recommend-ad {
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  left: -150px;
+  display: none;
+}
+.top .left-area .recommend:hover .recommend-ad {
+  display: block;
+}
+.top .right-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 400;
+  color: #464646;
+}
+.top .right-area .growth a{
+  display: block;
+  padding-left: 30px;
+}
+.top .right-area .growth:hover a {
+  color: #ff4e00;
+}
+.top .right-area .growth .icon-grow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 30px;
+  height: 30px;
+  background: url(../img/top_sprite.png) no-repeat -30px 0;
+}
+.top .right-area .rank a{
+  position: relative;
+  display: block;
+  margin-left: 20px;
+  padding-right: 25px;
+}
+.top .right-area .rank a::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  content: "";
+  width: 30px;
+  height: 30px;
+  background: url(../img/top_sprite.png) no-repeat 0 0;
+  opacity: .1;
+  transform: rotate(90deg);
+}
+/* 代码合并后，这里的下拉框会被header覆盖。因为header在它之后设置的相对定位，会层叠这里。所以需要微调设置z-index。 */
+.top .right-area .rank a .dropdown {
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 41px;
+  display: none;
+}
+.top .right-area .rank a .dropdown iframe{
+  width: 708px;
+  height: 582px;
+}
+.top .right-area .rank a:hover .dropdown {
+  display: block;
+  animation: opacityAnim 300ms ease-in-out forwards;
+}

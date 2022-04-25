@@ -1,0 +1,25 @@
+@charset "UTF-8";
+.main .entrance-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+/* font-size为0，目的是解决a元素即inline-block的水平间隙问题
+也可以用弹性布局。 */
+.main .entrance-section .item{
+  width: 291px;
+  height: 134px;
+}
+.main .entrance-section a{
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+.main .entrance-section a img {
+  width: 100%;
+  height: 100%;
+  transition: transform 200ms ease;
+}
+.main .entrance-section a:hover img {
+  transform: scale(1.1,1.1);
+}

@@ -1,0 +1,118 @@
+@charset "UTF-8";
+.main .section-content .right-content .skin-center {
+  margin-bottom: 30px;
+}
+.skin-center .new-hero {
+  margin-top: 20px;
+}
+.skin-center .new-hero .album {
+  display: block;
+}
+.skin-center .new-hero img {
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.skin-center .new-hero .hero-info {
+  height: 47px;
+  padding: 25px 15px;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  border-radius: 0 0 2px 2px;
+}
+.skin-center .new-hero .hero-info .hero-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+.skin-center .new-hero .hero-info .update {
+  color: #999;
+  font-size: 12px;
+}
+.skin-center .hero-list {
+  display: flex;
+  justify-content: space-between;
+  height: 173px;
+  margin-top: 30px;
+}
+/* .skin-center .new-hero .hero-list .item {
+} */
+.skin-center .new-hero .hero-list .item a {
+  position: relative;
+  display: block;
+}
+/* 动画方式一：使用transition给opacity加动画。初始opacity为0，hover时opacity为1. */
+/* 动画方式二：初始display为none，opacity为0，在hover状态时display为flex，并执行animation动画。*/
+/* 遮盖层上的文字可以用flex设置居中，也可以使用行高和行内文本对齐设置居中 */
+.skin-center .new-hero .hero-list .item a .cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  writing-mode: vertical-lr;
+  letter-spacing: 5px;
+  color: #f3c258;
+  /* text-align: center; */
+  /* line-height: 173px; */
+  background: rgba(0,0,0,.8);
+  transition: opacity 300ms ease-in-out;
+}
+.skin-center .new-hero .hero-list .item:hover a .cover {
+  opacity: 1;
+  /* display: flex; */
+  /* animation: opacityAnim 300ms ease-in-out forwards; */
+}
+.main .right-content .kpl-center .ticket {
+  box-sizing: border-box;
+  width: 70px;
+  height: 22px;
+  margin-right: 8px;
+  border: 1px solid #f3c258;
+  border-radius: 3px;
+  color: #323235;
+  text-align: center;
+  line-height: 19px;
+  text-indent: 20px;
+  background: url(../img/index_sprite.png) no-repeat -243px -85px;
+}
+.main .right-content .kpl-center .sche-time {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+.main .right-content .kpl-center .sche-time thead {
+  height: 29px;
+  line-height: 29px;
+  color: #999;
+  background: #f5f5f5;
+}
+.main .right-content .kpl-center .sche-time tbody tr { 
+  border-bottom: 1px solid #e5e5e5;
+}
+.main .right-content .kpl-center .sche-time tbody td {
+  padding: 10px 0;
+  font-size: 12px;
+}
+.main .right-content .kpl-center .sche-time tbody .team{
+  margin-bottom: 5px;
+}
+.main .right-content .kpl-center .sche-time tbody img {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+.main .right-content .kpl-center .sche-time td:nth-child(2n) {
+  width: 83px;
+}
+.main .right-content .kpl-center .sche-time td:nth-child(3) {
+  color: #f3c258;
+  font-family: 14px;
+}
+.main .right-content .kpl-center .match-schedule {
+  display: block;
+  margin-top: 10px;
+}

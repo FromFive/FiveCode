@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="./css/reset.css">
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/video.css">
+  <link rel="stylesheet" href="./css/animation.css">
   <style>
     .main .section-content {
       display: flex;
@@ -15,8 +16,6 @@
     }
     .main .section-content .left-content {
       width: 872px;
-      height: 800px;
-      /* background-color: aqua; */
     }
     .main .match-center {
       margin-bottom: 50px;
@@ -66,7 +65,6 @@
 
     .main .section-content .right-content {
       width: 295px;
-      height: 800px;
     }
     .main .section-content .right-content .skin-center {
       margin-bottom: 30px;
@@ -133,15 +131,7 @@
     .skin-center .new-hero .hero-list .item:hover a .cover {
       opacity: 1;
       /* display: flex; */
-      /* animation: skinItemAnim 300ms ease-in-out forwards; */
-    }
-    @keyframes skinItemAnim {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
+      /* animation: opacityAnim 300ms ease-in-out forwards; */
     }
     .main .right-content .kpl-center .ticket {
       box-sizing: border-box;

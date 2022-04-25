@@ -1,0 +1,135 @@
+@charset "UTF-8";
+.main .news-section {
+  position: relative;
+  display: flex;
+  height: 342px;
+  background: url(../img/main_bg.png) no-repeat;
+}
+.news-section .banner {
+  width: 605px;
+}
+.news-section .banner .img-list {
+  display: flex;
+  width: 604px;
+  height: 298px;
+  overflow: hidden;
+}
+.news-section .banner .img-list .item {
+  flex-shrink: 0;
+  width: 100%;
+}
+.news-section .banner .img-list .item a {
+  display: block;
+}
+.news-section .banner .img-list .item img { 
+  width: 100%;
+}
+.news-section .banner .title-list {
+  display: flex;
+  height: 44px;
+  line-height: 44px;
+}
+.news-section .banner .title-list .item {
+  flex: 1;
+  text-align: center;
+}
+.news-section .banner .title-list .item a {
+  display: block;
+  color: #b1b2be;
+}
+.news-section .banner .title-list .item a:hover,
+.news-section .banner .title-list .item.active a {
+  color: #f3c258;
+  background: rgba(255,255,255,0.15);
+}
+.news-section .news {
+  flex: 1;
+  padding: 0 17px;
+  overflow: hidden;
+}
+.news-section .news .tab-list{
+  display: flex;
+  height: 48px;
+  border-bottom: 1px solid #000;
+}    
+.news-section .news .tab-list .item {
+  width: 52px;
+}
+/* 设置了a元素的高度是包含了边框的高度后，边框动画就会从下面出来。 */
+.news-section .news .tab-list .item a {
+  display: block;
+  height: 48px;
+  box-sizing: border-box;
+  line-height: 45px;
+  color: #b8b9c5;
+  text-align: center;
+  transition: border-bottom 225ms ease-out;
+}
+.news-section .news .tab-list .item:not(.more) a:hover,
+.news-section .news .tab-list .item.active a {
+  color: #f3c258;
+  border-bottom: 3px solid #f3c258;
+}
+.news-section .news .notice {
+  height: 36px;
+  line-height: 36px;
+  margin-top: 18px;
+  padding: 0 15px;
+  background: #414046;
+}
+.news-section .news .notice a {
+  display: block;
+  color: #f3c258;
+  font-size: 18px;
+}
+.news-section .news .news-list .item{
+  display: flex;
+  margin-top: 11px;
+  overflow: hidden;
+}
+.news-section .news .news-list .item .desc{
+  flex: 1;
+  padding-right: 20px;
+  color: #b8b9c5;
+  
+}
+.news-section .news .news-list .time {
+  color: #999;
+  font-size: 12px;
+}
+.news-section .download {
+  width: 236px;
+}
+.news-section .download a{
+  display: block;
+  background: url(../img/index_sprite.png) no-repeat;
+}
+.news-section a.download-btn {
+  height: 128px;
+  background-position: 0 -219px;
+}
+.news-section a.guard-btn {
+  height: 106px;
+  background-position: 0 -350px;
+}
+.news-section a.exprenise-btn {
+  height: 108px;
+  background-position:0 -461px;
+}
+.main .age {
+  position: absolute;
+  top: 0;
+  right: -58px;
+  width: 53px;
+  height: 68px;
+  background: url(../img/age_notice.png);
+}
+.main .addict {
+  position: absolute;
+  top: 78px;
+  right: -58px;
+  width: 53px;
+  height: 47px;
+  background: url(../img/addict.png) no-repeat;
+  background-size: contain;
+}
