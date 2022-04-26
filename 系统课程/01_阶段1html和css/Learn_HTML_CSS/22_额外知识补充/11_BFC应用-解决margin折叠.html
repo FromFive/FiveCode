@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    例如，设置box1和box2，此时这两个盒子是在html的bfc环境中布局。如果给盒子1设置marginbotto，给盒子2设置margintop，此时在同一个bfc中，上下的margin会产生折叠，其中最大值的外边距会生效。那解决折叠问题就需要让这两个盒子在不同的bfc中。
+    解决方案：可以给box1在外层包一层container的盒子，然后设置container的overflow为hidden，形成bfc环境，此时box1在container的bfc中，box2依然在html的bfc中，这种情况下，box1的margin-bottom和box2的margin都会生效，不会有折叠。 
+    */
+    .container {
+      overflow: hidden;
+    }
+    .box1 {
+      width: 400px;
+      height: 200px;
+      background-color: plum;
+      margin-bottom: 30px;
+    }
+    .box2 {
+      width: 500px;
+      height: 100px;
+      background-color: aqua;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"></div>
+  </div>
+  <div class="box2"></div>
+</body>
+</html>

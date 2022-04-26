@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      margin-bottom: 5px;
+    }
+    /* grandient是<image>的一种自类型，需要在background-image上设置 */
+    /*linear- grandient是线性渐变，默认从上到下渐变。可改变渐变方向，往哪个方向渐变用to标记。  */
+    .box1 {
+      background-image: linear-gradient(plum,aqua);
+    }
+    /* 从左向右渐变 */
+    .box2 {
+      background-image: linear-gradient(to right,plum,aqua);
+    }
+    /* 斜对角渐变 */
+    .box3 {
+      background-image: linear-gradient(to left bottom ,plum, aqua);
+    }
+    .item {
+      display: inline-block;
+      width: 200px;
+      height: 100px;
+    }
+    /* 以原点位置开始渐变，可改变原点位置，用at标记 */
+    .item1 {
+      background-image: radial-gradient(plum,aqua);
+    }
+    .item2 {
+      background-image: radial-gradient(at 0% 50%,plum,aqua);
+    }
+    .item3 {
+      background-image: radial-gradient(at 0 0,plum,aqua);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2"></div>
+  <div class="box3"></div>
+  <div class="item item1"></div>
+  <div class="item item2"></div>
+  <div class="item item3"></div>
+</body>
+</html>
