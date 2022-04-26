@@ -1,6 +1,6 @@
 @charset "UTF-8";
 .main {
-  background: url(../img/bg-image02.jpg) no-repeat center top;
+  background: url(../img/bg-image02.jpg) no-repeat center top/100%;
 }
 .main .link {
   display: block;
