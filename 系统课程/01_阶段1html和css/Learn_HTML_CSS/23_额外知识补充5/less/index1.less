@@ -1,0 +1,12 @@
+@vwUnit: 3.75;
+.pxToVw(@px) {
+  result: 1vw * (@px / @vwUnit);
+}
+.box {
+  width: .pxToVw(100)[result];
+  height:  .pxToVw(100)[result];
+  background-color: plum;
+}
+p {
+  font-size: .pxToVw(14)[result];
+}

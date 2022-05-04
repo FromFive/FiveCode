@@ -1,0 +1,25 @@
+//继承
+.box_border {
+  border: 5px solid chocolate;
+}
+.box {
+  width: 100px;
+  background-color: plum;
+  &:extend(.box_border);
+}
+//less内置函数
+.box {
+  color: color(skyblue);
+  font-size: ceil(18.5px);
+}
+//作用域scope:首先使用离自己最近的变量。
+@mainColor:#f00;
+.box {
+  @mainColor: #0f0;
+  .item {
+    span {
+      @mainColor: #ff0;
+      color: @mainColor;
+    }
+  }
+}

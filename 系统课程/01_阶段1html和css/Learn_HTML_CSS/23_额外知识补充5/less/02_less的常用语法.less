@@ -1,0 +1,40 @@
+//1.兼容css代码
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: plum;
+}
+//2.定义变量。@变量名:变量值;
+@mainColor: #f3c258;
+@smallFontSize: 12px;
+@normalFontSize: 14px;
+@bigFontSize: 18px;
+.container p {
+  color: @mainColor;
+  font-size: @bigFontSize;
+}
+//3.选择器的嵌套
+.container {
+  .box {
+    .link {
+      color: @mainColor;
+      font-size: @bigFontSize;
+      &:hover {
+        color: aqua;
+        text-decoration: none;
+      }
+    }
+  }
+}
+.list {
+  .item {
+    color: @mainColor;
+    font-size: 20px;
+    &:hover {
+      background-color: #f00;
+    }
+    &:nth-child(1) {
+      background-color: chocolate;
+    }
+  }
+}
