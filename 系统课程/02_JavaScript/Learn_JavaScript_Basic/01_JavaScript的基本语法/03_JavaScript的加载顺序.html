@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- js加载顺序：默认遵循HTML文档的加载顺序，即自上而下的加载顺序。推荐将js代码和编写位置放在body子元素的最后一行。 -->
+  <!-- 如果将js放在元素结构之前，html在加载时直接加载js，此时根本找不到.title的元素。 -->
+  <!-- <script>
+    var titleEl = document.querySelector(".title");
+    alert(titleEl);
+  </script> -->
+  <h1 class="title">哈哈哈哈</h1>
+  <p>嘻嘻嘻</p>
+  <script>
+      var titleEl = document.querySelector(".title");
+      alert(titleEl);
+  </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1、String的基本使用
+    // var name = "Five";
+    // var address = "中国";
+    // var intro = "认真是一种可怕的力量！";
+
+    //2、别的引号的使用
+    //单引号和双引号效果一样
+    // var message1 = "Hello World";
+    // var message2 = 'Hello world';
+
+    //反引号-ES6新增语法，可拼接变量或表达式
+    // var message3 = `Hello World, ${name}, ${2 + 3}`;
+    // console.log(message3);
+
+    //字符串本身中包含引号-如果外面是双引号，里面就用单引号；如果外面是单引号，里面就用双引号
+    // var message4 = "Hello 'World'";
+    // console.log(message4);
+
+    //字符串中的转义字符
+    // var message5 = "Hello \'\' World";
+    // console.log(message5);
+
+    //字符串本身有的方法和属性
+    //-获取字符串的长度。
+    // var message = "Hello World";
+    // console.log(message.length);
+
+    //字符串操作：字符串和字符串可以拼接。
+    var nickName = "five";
+    var info = "my name is ";
+    //使用反引号和${}进行拼接。
+    var infoStr = `my name is ${nickName}`;
+    //通过+运算符进行拼接。
+    var infoStr2 = info + nickName;
+    console.log(infoStr, infoStr2);
+</script>
+</body>
+</html>

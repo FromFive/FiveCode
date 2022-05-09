@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //练习1:定义一些变量，保存自己的个人信息：姓名、年龄、身高、体重、爱好等。
+    // var name, age, height,weight,hobby;
+    // name = "hh";
+    // age = 18;
+    // height = 1.88;
+    // weight = 60;
+    // hobby = "code";
+
+    //练习2:定义一个变量name，赋值成coderwhy。定义一个变量admin，将name赋值给admin。
+    // var name = "coderwhy";
+    // var admin = name;
+
+    //练习3:定义变量，保存两个数字，并且对两个变量的数字进行交换。
+    //方式一：使用临时变量。
+    // var num1 = 10;
+    // var num2 = 20;
+    // console.log(num1, num2);
+    // var num3 = num1;
+    // console.log(num3);
+    // num1 = num2;
+    // num2 = num3;
+    // console.log(num1, num2);
+    
+    //方式二：不使用临时变量。
+    var num1 = 10,num2 = 20;
+    num1 = num1 + num2; //num1=10+20=30
+    console.log(num1);
+    num2 = num1 - num2; //num2=30-20=10
+    num1 = num1 - num2; //num1=30-10=20
+    console.log(num1, num2);
+
+    //练习4:让用户在浏览器中输入一个值，在js程序中使用变量接收
+    // var info = prompt("请输入一个值：");
+    // console.log(info);
+  </script>
+</body>
+</html>

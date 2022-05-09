@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1、正常的数值。
+    // var num =18;
+
+    //2、特殊的数值。
+    //Infinity：代表数学概念中的无穷大∞，也可以表示-Infinity。
+    // var num1 = Infinity;
+    // var num2 = 1 / 0;
+    // console.log(num1,num2);
+
+    //NaN：not a number(不是一个数字)。代表一个计算错误，是一个错误的操作所得到的结果。
+    //例如字符串和一个数字相乘。
+    // var result = 3 * "abc";
+    // console.log(result);
+
+    //isNaN，用于判断是否不是一个数字。不是数字返回TRUE，是数字返回FALSE。
+    // console.log(isNaN(result));//true
+
+    //3、进制表示
+    // var num3 = 100;//十进制
+    // var num4 = 0x100;//十六进制
+    // var num5 = 0o100;//八进制
+    // var num6 = 0b100;//二进制
+    // console.log(num4,num5,num6);
+
+    //4、数字可以表示的范围
+    var max = Number.MAX_VALUE;//最大正数值
+    var min = Number.MIN_VALUE;//最小正数值，小于这个的数字会被转化为0
+    console.log(max,min);
+</script>
+</body>
+</html>
