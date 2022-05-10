@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //隐式转换
+    var str1 = "6";
+    var str2 = "3";
+    console.log(str1 / str2);//隐式转换成数字类型，进行相除。打印结果为2。
+    //显式转换
+    var str3 = "123";
+    var result = Number(str3);
+    console.log(typeof result);//Number
+    //其他类型转换数字的规则
+    console.log(Number(undefined));//Nan
+    console.log(Number(true));//1
+    console.log(Number(false));//0
+    console.log(Number(null));//0
+    console.log(Number(""));//0
+    console.log(Number("  123  "));//去掉收尾空格后的纯数字字符串中含有的数字，即123
+    console.log(Number("0哈哈哈哈"));//NaN
+    console.log(Number(""));//空字符串会转成0
+    
+  </script>
+</body>
+</html>

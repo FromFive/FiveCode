@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //三元运算符的使用：
+    //计算条件结果，如果结果为真，则返回 value1，否则返回 value2。
+    //var result = condition ? value1 : value2;
+
+    //案例1： 比较两个数字的大小，获取较大的那个数字。
+    var num1 = 88+99+5**9;
+    var num2 = 30*9+100**2;
+    console.log(num1, num2);
+    // if (num1 > num2) {
+    //   result = num1;
+    // } else {
+    //   result = num2;
+    // }
+    var result = num1 > num2 ? num1 :num2;
+    console.log(result);
+
+    //另一种用法：给变量赋默认值.
+    //案例2:定义一个对象类型的变量，如果有值，则将这个值赋给info，如果没有，赋值为null。
+    var info = {age:100}
+    var obj = info ? info : null;
+
+    //案例3:判断一个人是否是成年人了
+    var age = prompt("请输入您的年龄：");
+    age = Number(age);
+    var message = age > 18 ? "已成年" : "未成年";
+    alert(message);
+  </script>
+</body>
+</html>

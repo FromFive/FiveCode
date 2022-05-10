@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //案例1：如果考试超过90分，就可以去游乐场
+    //1、定义一个变量来保存分数
+    var score = 99;
+    //2、如果分数超过90分，就去游乐场
+    if (score > 90) {
+      console.log("去游乐场玩")
+    }
+    //案例2：苹果单价5元一斤，如果购买的数量超过5斤，那么立减8元。
+    //1、定义两个变量来存储苹果的重量和单价。
+    var weight = 6;
+    var price = 5;
+    var totalPrice = weight * price;
+    //2、根据购买的重量，决定是否立减8元。
+    if (weight > 5) {
+      totalPrice -= 8;
+    }
+    console.log("总价格：" + totalPrice);
+    //案例3：播放列表中一共3首歌，播放完最后一首后从第一首从新播放。
+    var currentIndex = 2;
+    currentIndex++;
+    if (currentIndex === 3) {
+      currentIndex = 0;
+    }
+  </script>
+</body>
+</html>

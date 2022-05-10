@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Null存在的意义就是对 对象进行初始化，并且在转成Boolean类型时，会转成false.
+    var obj = null;
+    console.log(typeof obj);//Object
+    obj = {
+      name: "hh",
+      age: 18
+    }
+    var one = {};//转成布尔类型是true。
+    if (one) {
+    console.log("哈哈哈");
+    }
+</script>
+</body>
+</html>

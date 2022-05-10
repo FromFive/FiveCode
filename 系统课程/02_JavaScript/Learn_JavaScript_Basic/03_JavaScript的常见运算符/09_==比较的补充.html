@@ -8,9 +8,15 @@
 </head>
 <body>
   <script>
-    var person = {name: "hh", age: 18, height: 1.88 }
-    //对象类型中某一个属性
-    console.log(person.name)//打印person对象的name属性。
-</script>
+    var info = {
+      name: "hh",
+      age: 18,
+      [Symbol.toPrimitive]() {
+        return 123;
+      }
+    }
+    console.log(123 == info);//true
+    console.log("" == null);//false
+  </script>
 </body>
 </html>

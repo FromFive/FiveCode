@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 转换规则：直观上为空的值（如0、空字符串、null、undefined和NaN）将变为false。其他值变成true。包含0的字符串"0"也是true。非空的字符串总是转为true。
+    //隐式转换
+    //方式1:在分支语句中，先将表达式转为布尔类型，然后进行语句判断。
+    //在if分支语句中转化为布尔类型。
+    var num = 123;
+    if (num) {
+      console.log("hh");
+    }
+    //显式转换
+    console.log(Boolean(0));
+    console.log(Boolean(""));
+    console.log(Boolean(undefined));
+    console.log(Boolean(null));
+    console.log(Boolean(NaN));
+    console.log(Boolean(123));
+    console.log(Boolean("hh"));
+    console.log(Boolean("0"));
+  </script>
+</body>
+</html>
