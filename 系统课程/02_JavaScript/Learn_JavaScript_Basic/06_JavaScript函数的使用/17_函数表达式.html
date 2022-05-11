@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //总结：无乱函数是如何创建的，函数都是一个值，而且是对象类型的。
+    
+     //函数声明和函数表达式的区别：
+     // 语法不一样：声明是在主函数中单独声明；表达式是在完整的表达式中完整的声明。
+     //js创建函数的时机不一样：单独声明的函数可以先调用后执行（调用函数写在函数声明前面）；表达式中的函数，不能先调用后执行，会报错。
+     //开发中如何选择？首先考虑函数的声明语法，只有在特殊情况下才会用表达式。
+    
+    //函数声明写法
+    foo();
+    function foo() {
+      console.log("foo函数被执行了～")
+    }
+    //函数的表达式写法
+    //此时函数名可以省略
+    //函数本身的话也是一种对象类型
+    var bar = function() {
+      console.log("bar函数被执行了～")
+    }
+  </script>
+</body>
+</html>

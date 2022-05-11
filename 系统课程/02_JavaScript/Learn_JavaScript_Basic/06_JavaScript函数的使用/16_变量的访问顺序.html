@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //首先找自己内部的变量，如果没有则向上一层作用域查找，如果上层没有，那么访问全局的变量，如果全局也没有，则访问window对象中的属性有没有，如果也没有，那么就会报错。
+    var message = "hello whrld"
+    function sayHello() {
+      var message = "hello why"
+      function hi() {
+        var message =  "hello hh"
+        console.log(message)//hello hh
+      }
+      hi()
+    }
+    sayHello()
+  </script>
+</body>
+</html>

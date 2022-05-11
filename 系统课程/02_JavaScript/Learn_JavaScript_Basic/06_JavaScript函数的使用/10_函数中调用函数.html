@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function bar() {
+      console.log("bar函数被执行了～")
+    }
+
+    //函数内部可以调用其他函数，可以是浏览器实现好的，也可以是自己写的其他函数，同时也可以调用该函数本身（递归）。 
+    function foo() {
+      //调用浏览器提供给我们的其他函数
+    console.log("foo函数被执行了～")
+    console.log("hello world")
+
+    //调用自己的函数-bar函数
+    bar()
+
+    //其他代码
+    console.log("其他代码")
+    }
+    foo()
+    //解析顺序：首先是通过foo()来调用foo函数，依次执行里面的代码，打印信息后遇到bar函数，然后调用它，执行bar函数里的代码，执行完成后在继续执行foo函数中剩下的代码。
+  </script>
+</body>
+</html>

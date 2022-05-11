@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 函数内部可以调用另一个函数，那么函数内部也可以调用自己,那么这个函数称为递归调用。但是一定要有结束条件，不然会一直调用下去，会报错（超出最大的栈内存）
+    function foo() {
+      console.log("函数内部可以调用自己，这种叫做递归函数");
+      foo();
+    }
+    foo()
+  </script>
+</body>
+</html>

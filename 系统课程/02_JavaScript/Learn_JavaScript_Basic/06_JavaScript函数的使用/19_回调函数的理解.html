@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //首先是声明一个foo函数，调用时可传入fn参数。然后调用foo函数，此时传入参数是一个函数，该函数没有函数名也叫作匿名函数。此时该匿名函数作为参数执行foo函数，可以解析成fn = function(){}，即函数表达式;然后在foo函数中调用该变量，此时该变量已经被赋值一个函数，那么匿名函数作为参数传入一个函数，同时又在这个函数中被调用，那么这就是函数回调。
+    function foo(fn) {
+      fn()
+    }
+    foo(function(){
+      console.log("foo函数中传入一个函数")
+    })
+    
+  </script>
+</html>

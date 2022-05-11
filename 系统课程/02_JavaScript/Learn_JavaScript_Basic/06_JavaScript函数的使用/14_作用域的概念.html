@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //message在哪一个范围内可以被使用，称之为message的作用域
+    //通常在script元素内部着一层直接定义的变量，是全局变量。即全局作用域。
+    var message = "hello";
+    if(true) {
+       console.log(message);
+     }
+     function foo() {
+       console.log("在foo中访问message",message);
+     }
+     foo();
+
+     //2-在es5之前是没有块级作用域的,var定义的变量是没有作用域的
+     
+    {
+    var count = 100;
+    console.log("在代码块中访问count:",count)
+    }
+    console.log("在代码块外面访问count:",count)//可以访问
+
+    //3-for循环的代码块也没有作用域
+    for (var i = 0;i < 3; i++) {
+      var baz = "baz"
+    }
+    console.log("for循环外面访问baz", baz);//可以访问，因为for循环后面就是一个代码块。
+    console.log("for循环外面访问i", i);//3.因为for循环已经执行完毕，i停留在3.
+
+    //4-函数的代码块中定义变量有作用域
+    //在函数内部代码块中定义的变量，在函数外部是获取不到的
+    // function test() {
+    //   var bar = "bar"
+    // }
+    // console.log("test函数外面访问bar:", bar)//不可以访问
+
+    function sayHello() {
+      var nickname = "kobe"
+      console.log("外面访问nickname", nickname)//可以访问
+      function hi() {
+        console.log("在hi函数访问nickname", nickname)//可访问到
+      }
+      hi()
+    }
+    sayHello();
+    // console.log("外面访问nickname", nickname)//访问不了。
+  </script>
+</body>
+</html>

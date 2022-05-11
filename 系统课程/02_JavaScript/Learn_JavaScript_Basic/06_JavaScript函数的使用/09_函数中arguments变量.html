@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //理解arguments变量
+    // 在所有函数中都存在一个变量是arguments变量
+    function printInfo(name, age, height, weight) {
+      console.log("姓名是", name);
+      console.log("年龄是", age);
+      console.log("身高是", height);
+      console.log("体重是", weight);
+      //arguments的类型是对象类型。对象中包含了所有传入的参数。
+      console.log(arguments);
+      console.log(typeof arguments);//object
+      console.log(arguments[0]);//是hh
+      console.log(arguments[2]);//是1.77
+    }
+    printInfo("hh", 20, 1.77, 60);
+    
+    //练习：通过argument参数，根据传入参数的索引，实现输入多个数字后求和。
+    //函数中的圆括号中不写参数，到时可以任意传入，不管个数多少。
+    //然后通过索引，遍历arguments变量，获取传入的参数，每次获取都与result值相加并复制给result，最后返回result，即可以得到不同值的求和。
+    function sum() {
+      var result = 0;
+      for (var i = 0; i < arguments.length; i++) {
+        result += arguments[i];
+      }
+      return result;
+    }
+    console.log(sum(20,21));
+    console.log(sum(60,123,22));
+    console.log(sum(223,98,112,564));
+  </script>
+</body>
+</html>

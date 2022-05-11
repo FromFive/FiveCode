@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //练习4:根据传入的数字，将单位转成亿、万、千。
+    // 10_0000_0000是1000000000的语法糖。
+    var playCount1 = 13687;
+    var playCount2 = 53687999;//5368万
+    var playCount3 = 9112345678;//91亿
+    function formatCount(count) {
+      if (count >= 1_0000_0000) { //超过1亿则进行转换
+        result = Math.floor(count / 1_0000_0000) + "亿";
+      } else if (count >= 10_0000) {
+        result = Math.floor(count / 1_0000) + "万";
+      } else {
+        result = count;
+      }
+      return result;
+    }
+    console.log(formatCount(playCount1));
+    console.log(formatCount(playCount2));
+    console.log(formatCount(playCount3));
+    console.log(formatCount(100000000));
+  </script>
+</body>
+</html>
