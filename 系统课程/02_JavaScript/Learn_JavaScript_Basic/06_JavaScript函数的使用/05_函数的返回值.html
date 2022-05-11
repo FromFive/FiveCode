@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //理解返回值
+    //注意事项1-如果函数内部没有写返回值，默认返回值是undefined。
+    function foo() {
+      console.log("foo函数被执行~");
+    }
+    var result = foo();
+    console.log("foo的返回值:", result);
+    //注意事项2-函数内部只写上return关键字，跟上一条的效果是一样的，返回undefined。
+    function bar() {
+      console.log("bar函数被执行~");
+      return;
+    }
+    var result1 = bar();
+    console.log("bar的返回值：", result1);
+    //注意事项3-如果函数执行到return关键字时，函数会立即停止执行，退出函数，后面的代码就不会执行。
+    function baz() {
+      console.log("hello");
+      return;
+      console.log("hi");
+    }
+    baz();
+
+    //具体返回值
+    //通过sum函数传入两个参数，返回result，在函数外部可以用另一个变量接收这个返回值。
+    function sum(num1, num2) {
+      var result = num1 + num2;
+      return result;
+    }
+    var total = sum(20,30);
+  </script>
+</body>
+</html>
