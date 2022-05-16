@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* W3C官方文档中有声明，text-align只对块级元素内的行内级内容有效。如果块级元素内还是一个块级元素，使用此方式让其居中是不行的。但是可以改变该元素的类型 */
+    .box {
+      height: 500px;
+      background-color: plum;
+      text-align: center;
+    }
+    .content {
+      display: inline-block;
+      width: 100px;
+      height: 200px;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="content"></div>
+  </div>
+</body>
+</html>
