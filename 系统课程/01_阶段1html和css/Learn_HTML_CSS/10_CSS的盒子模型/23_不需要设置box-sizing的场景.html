@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container1 {
+    width: 300px;
+    height: 300px;
+    background-color: orange;
+  }
+    /*box没有设置宽度，是因为box是个块级元素，可以独占父元素的一行，而且没有设置宽度的情况下，它的宽度是auto，交给浏览器处理。此时它的宽度是等于父元素的宽度的。*/
+    /* 但是在以上基础上给box再设置border、padding时，width也是auto，由浏览器处理，计算出的实际width是container的width减去box的border和padding。所以这种情况下是不需要设置box-sizing的。*/
+    .container1 .box {
+      height: 200px;
+      background-color: #f00;
+      border-right: 30px solid #0f0;
+    }
+
+    /*不需要设置box-sizing的场景二*/
+    .container2 {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+    }
+    /*当test绝对定位时，宽高是覆盖在父元素上，box2自己没有设置宽高，默认是auto的。此时给box2设置border，是不会盒子撑大的，包含边框在内的宽高依然是300.所以此种情况也不需要设置box-sizing。*/
+    .container2 .box2 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: aqua;
+      border: 10px solid #0f0;
+    }
+
+    /*不需要设置box-sizing的场景三*/
+    .container3 {
+      display: flex;
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+    }
+    /* flex布局下，子元素未设置高度，其align-item默认是normal，自动拉伸与父元素同高，此时设置border，会压缩子元素，其高度也是包含border后等于父元素的高度。*/
+    /*flex布局下，子元素未设置宽度，例如box4，是设置了flex为1，其宽度是将剩余的宽度给了他，即其宽度也是auto，如果设置border，也会压缩该元素，其宽度是包含了边框后等于剩下的宽度。*/
+    .container3 .box3 {
+      width: 100px;
+      background-color: #0f0;
+      border-top: 30px solid #00f;
+    }
+    .container3 .box4 {
+      flex: 1;
+      background-color: #ff0;
+      border: 30px solid plum;
+    }
+  </style>
+</head>
+<body>
+  <div class="container1">
+    <div class="box">
+    </div>
+  </div>
+
+  <div class="container2">
+    <div class="box2">
+    </div>
+  </div>
+
+  <div class="container3">
+    <div class="box3">
+    </div>
+    <div class="box4">
+    </div>
+</body>
+</html>
