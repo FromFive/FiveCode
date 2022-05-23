@@ -31,14 +31,17 @@
     1、按照方案一，根据元素语意化，设置父元素的内边距
     2、触发父元素的BFC：就是给当前的盒子建立一个独立空间。
     */
-    .two{
+    /* .two{
       margin-top: 100px;
     }
     .one{
       overflow: auto;
-    }
+    } */
 
-    /* 方案三：设置父元素的border */
+    /* 方案三：设置父元素的border的颜色为transparent。但是本质上border虽然看不见，但是还是占据位置。此方案不推荐。 */
+    .one {
+      border:1px solid transparent;
+    }
   </style>
 </head>
 <body>
