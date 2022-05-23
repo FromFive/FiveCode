@@ -39,3 +39,34 @@
   padding-right: 3px;
   background-position: 0 -977px;
 }
+/* 公共CSS代码 */
+/* 可能共同引用的精灵图地址 */
+.sprite01{
+  background-image: url("../../image/网易云/music-sprite01.png");
+  display: inline-block;
+}
+.sprite02{
+  background-image: url("../../image/网易云/music-sprite02.png");
+  display: inline-block;
+}
+/* 可能共同使用的图标宽高和位置 */
+.sprite_02_icon_music{
+  width: 14px;
+  height: 11px;
+  background-position: 0 -24px;
+}
+.sprite_02_icon_play{
+  width: 16px;
+  height: 17px;
+  background-position: 0 0;
+}
+.iconall_sprite {
+  display: inline-block;
+  background: url(../../image/网易云/iconall_sprite.png);
+}
+.iconall_sprite_radio {
+  width: 35px;
+  height: 15px;
+  background-position: -31px -658px;
+
+}
