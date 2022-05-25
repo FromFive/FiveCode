@@ -1,0 +1,102 @@
+/* 设置整体banner高度。 */
+/* 添加背景图，居中显示，尺寸尽量大。 */
+.banner{
+  height: 285px;
+  background: url("../../image/网易云/banner背景图.jpg") center center/6000px;
+}
+.banner .area{
+  position: relative;
+}
+/* 设置banner左侧区域宽度。 */
+.banner .area .area-left{
+  position: relative;
+  width: 730px;
+}
+/* 设置左侧区域图片列表为flex布局。 */
+/* 超出的图片隐藏。 */
+.banner .area .area-left .img-list{
+  display: flex;
+  overflow: hidden;
+}
+/* 因为图片列表设置了弹性布局，里面的图片太大为了适应显示，图片会收缩。所以需要设置li不收缩。而且宽度继承父元素的宽度。 */
+.banner .area .area-left .img-list li{
+  flex-shrink: 0;
+  width: 100%;
+}
+/* .banner .area .area-left .list .item{
+  display: block;
+} */
+.banner .area .area-left .img-list .item img{
+  width: 100%;
+}
+.banner .area .area-left .dots-list{
+  display: flex;
+  justify-content:center;
+  position: absolute;
+  width: 730px;
+  height: 20px;
+  left:0;
+  right: 0;
+  bottom: 5px;
+  margin: 0 auto;
+}
+.banner .area .area-left .dots-list li{
+  margin: 0 8px;
+}
+.banner .area .area-left .dots-list .item{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background: url("../../image/网易云/banner-sprite.png") 3px -343px;
+}
+.banner .area .area-left .dots-list .item:hover{
+  background-position: -16px -343px;
+}
+.banner .area .area-right{
+  position: absolute;
+  right: -1px;
+  top: 0;
+  bottom: 0;
+  width: 254px;
+  height: 285px;
+  background-image: url("../../image/网易云/banner-download-sprite.png");
+}
+.banner .area .area-right .item{
+  display: inline-block;
+  width: 215px;
+  height: 56px;
+  margin: 186px 0 0 19px;
+  text-indent: -9999px;
+}
+.banner .area .area-right .item:hover{
+  background: url("../../image/网易云/banner-download-sprite.png") 0 -290px;
+}
+.banner .area .area-right .desc{
+  color: #8d8d8d;
+  font-size: 12px;
+  text-align: center;
+  margin: 10px auto;
+}
+.banner .area .control{
+  position: absolute;
+  width: 37px;
+  height: 63px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  background: url("../../image/网易云/banner-sprite.png") 
+}
+.banner .area .btn-left{
+  background-position: 0 -360px;
+  left: -70px;
+}
+.banner .area .btn-left:hover{
+  background-position: 0 -430px;
+}
+.banner .area .btn-right{
+  background-position: 0 -508px;
+  right: -70px;
+}
+.banner .area .btn-right:hover{
+  background-position: 0 -578px;
+}

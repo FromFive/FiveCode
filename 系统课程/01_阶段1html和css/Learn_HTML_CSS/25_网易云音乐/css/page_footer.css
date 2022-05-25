@@ -1,0 +1,113 @@
+.footer {
+  height: 172px;
+  border-top: 1px solid #d3d3d3;
+  background: #f2f2f2;
+}
+.footer .area{
+  display: flex;
+  justify-content: space-between;
+}
+.footer .area .area-left{
+  flex: 1;
+}
+.footer .area .area-left .copy {
+  padding-top: 15px;
+  line-height: 24px;
+}
+.footer .area .area-left .copy .link{
+  display: flex;
+  align-items: center;
+}
+.footer .area .area-left .copy .link .item{
+  color: #999;
+}
+.footer .area .area-left .copy .link .line{
+  margin: 0 6px;
+  color: #c2c2c2;
+}
+.footer .area .area-left .copy .right {
+  font-size: 12px;
+  color: #666;
+}
+.footer .area .area-left .copy .right .all{
+  display: inline-block;
+  margin-right: 14px;
+}
+.footer .area .area-left .copy .right a {
+  color: #666;
+}
+.footer .area .area-left .copy .right a:hover {
+  text-decoration: underline;
+}
+.footer .area .area-left .copy .record .police {
+  margin-left: 5px;
+}
+.footer .area .area-left .copy .record .police .logo {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(../../image/网易云/police.png);
+  background-size: cover;
+}
+.footer .area .area-right {
+  width: 420px;;
+}
+.footer .area .area-right .list {
+  display: flex;
+  margin-top: 33px;
+}
+.footer .area .area-right .list .item {
+  flex: 1;
+  width: 60px;
+  height: 70px;
+  text-align: center;
+}
+.footer .area .area-right .list .icon {
+  display: inline-block;
+  width: 50px;
+  height: 45px;
+  background: url(../../image/网易云/foot_sprite.png) no-repeat;
+  background-size: 110px 552px;
+}
+.footer .area .area-right .list .icontext {
+  display: inline-block;
+  width: 52px;
+  height: 14px;
+  margin: 5px 5px 0;
+  background: url(../../image/网易云/foot_text_sprite.png) no-repeat;
+  background-size: 180px 139px;
+}
+.footer .area .area-right .list .icon-studio {
+  background-position: -63px -456.5px;
+}
+.footer .area .area-right .list .icontext-studio {
+  background-position: 0 -108px;
+  width: 72px;
+  margin-left: -6px;
+}
+.footer .area .area-right .list .icon-user {
+  background-position: -63px -101px;
+}
+.footer .area .area-right .list .icontext-user {
+  background-position: -1px -91px;
+}
+.footer .area .area-right .list .icon-musician {
+  background-position: 0 0;
+}
+.footer .area .area-right .list .icontext-musician {
+  background-position: 0 0;
+}
+.footer .area .area-right .list .icon-reward {
+  background-position: -60px -50px;
+}
+.footer .area .area-right .list .icontext-reward {
+  background-position: 0 -54px;
+}
+.footer .area .area-right .list .icon-cash {
+  background-position: 0 -101px;
+}
+.footer .area .area-right .list .icontext-cash {
+  background-position: -1px -72px;
+}

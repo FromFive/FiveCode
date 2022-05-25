@@ -1,0 +1,7 @@
+.main .area{
+  display: flex;
+  justify-content: space-between;
+  border:1px solid #d3d3d3;
+  border-width: 0 1px;
+  background-image: url("../../image/网易云/main-wrap.png");
+}

@@ -1,0 +1,106 @@
+.main .area .area-right .user-login{
+  width: 250px;
+  height: 126px;
+  background-image: url("../../image/网易云/main-sprite.png");
+}
+.main .area .area-right .user-login .note{
+  font-size: 12px;
+  width: 205px;
+  margin: 0 auto;
+  padding-top: 16px;
+  line-height: 22px;
+}
+.main .area .area-right .user-login .btn{
+  display: block;
+  width: 100px;
+  height: 31px;
+  line-height: 31px;
+  text-align: center;
+  color: #fff;
+  margin: 15px auto;
+  text-shadow: 0 1px 0 #8a060b;
+  background: url("../../image/网易云/main-sprite.png") 0 -195px;
+}
+.main .area .area-right .user-login .btn:hover{
+  background-position: -110px -195px;
+}
+.main .settle-singer{
+  padding: 20px;
+}
+.main .hot-anthor{
+  padding: 20px;
+}
+.main .area .area-right .settle-singer .singer-list li{
+  margin-top: 14px;
+  background:#fafafa;
+}
+.main .area .area-right .settle-singer .singer-list li:hover {
+  background:#f4f4f4;
+}
+.main .settle-singer .singer-list .item{
+  display: flex;
+  width: 210px;
+  height: 62px;
+}
+.main .settle-singer .singer-list .item .info{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 5px 14px;
+  border: 1px solid #e9e9e9;
+  border-left: none;
+}
+.main .settle-singer .singer-list .item .info .singer{
+  font-size: 12px;
+  font-weight: 700;
+}
+.main .settle-singer .singer-list .item .info .desc{
+  color: #666;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main .btn{
+  text-align: center;
+}
+.main .apply{
+  display: inline-block;
+  width: 210px;
+  font-size: 12px;
+  font-weight: 700;
+  /* 使用圆角隐藏图片红点 */
+  border-radius: 4px;
+  overflow: hidden;
+}
+.main .area-right .hot-anthor .content {
+  width: 210px;
+  margin-top: 20px;
+}
+.main .area-right .hot-anthor .content .item {
+  display: flex;
+  margin-bottom: 15px;
+}
+.main .area-right .hot-anthor .content .ablum {
+  display: inline-block;
+  width: 40px;
+  margin-right: 10px;
+}
+.main .area-right .hot-anthor .content .info {
+  flex: 1;
+  line-height: 21px;
+  overflow: hidden;
+}
+.main .area-right .hot-anthor .content .info .anthor {
+  display: inline-block;
+}
+.main .area-right .hot-anthor .content .info .anthor:hover {
+  text-decoration: underline;
+}
+.main .area-right .hot-anthor .content .info .desc {
+  color: #666;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
