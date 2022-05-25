@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 现象：当一个div中只有一张图片没有其他文本或内容时，图片底部也是有多余的像素。因为即便没有其他内容，也会被当成行内元素，这个div也要预留出这个空隙，保证之后添加文本时可以基线对齐。 */
+    .box {
+      background-color: #ff0;
+    }
+    /* 
+    解决方案：
+   方案1：给img设置vertical-align为top，顶部对齐或者middle或者bottom。
+   方案2：将img的display改为block。block独占一行，不与其他行内级的内容在一行对齐。 
+   */
+   .box img {
+     vertical-align: top;
+     /* display: block; */
+   }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../image/背景图6.gif" alt="">
+  </div>
+</body>
+</html>

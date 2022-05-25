@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    现象1：块级元素的默认高度：如果没有设置高度，本质是由内容的行高撑起来的。
+
+    现象2：当文本很多的时候，有很多行时，是由多行的行高一起撑起来的高度。
+
+    现象3：当一行文本中有一个100*100的inline-block的盒子时，那么这一行会撑高。因此引出一个概念-行盒。
+
+    为什么行高可以撑起块级元素的高度？
+
+    因为行盒line box的存在。line-height是设置一行内容的高度，其实就是一个行盒的高度。行盒包裹每行的行内级元素inline-level。而其中的文字是有行高的，必须将整个行高包裹进去。
+
+    行盒作用是将当前行的所有内容包裹在一起。
+    */
+    .box {
+      background-color: #ff0;
+    }
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    中国网5月25日讯 5月23日，<span class="small"></span>在国务院联防联控机制新闻发布会上，移民局边防检查管理司司长刘海涛介绍，目前组团出国旅游活动仍然暂停，也不鼓励个人出国旅游观光、访朋探友。
+  </div>
+</body>
+</html>

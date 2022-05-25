@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      background-color: #ff0;
+    }
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+    在一个div中有图片、文字、inline-block，甚至有margin时会如何显示？
+  1、只有文字时，line-boxes只包裹文本。
+  2、既有文字又有图片时，line-boxes会将图片和文字都包裹起来。
+  3、既有文字又有图片，还有inline-block时，line-boxes会将文字、图片、inline-block都包裹起来。
+  4、既有文字又有图片，还有inline-block，甚至有margin-bottom时，line-boxes会将文字、图片、inline-block及给inline-block设置的margin-bottom一起包裹起来。line-boxes会变得更高。
+  5、既有文字又有图片，还有inline-block，inline-block有margin-bottom，且在inline-block也有文本时，line-boxes也会将全部包裹起来，但是显示效果跟第4种情况是不一样的。
+  -->
+  <div class="box">
+    中国网5月25日讯 5月23日，哈哈哈哈哈gggffffxxx<span class="small"></span>
+    <img src="../image/背景图6.gif" alt="">
+  </div>
+</body>
+</html>

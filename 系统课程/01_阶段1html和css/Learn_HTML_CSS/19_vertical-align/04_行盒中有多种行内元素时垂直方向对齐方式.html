@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+    行盒中有多种行内级元素时，垂直方向的对齐方式默认是baseline基线对齐。 
+    文本的基线是小写x的底部划分；
+    图片的基线是在图片底部的；
+    inline-block中没有内容的情况下，它的基线也是盒子底部，如果有margin-bottom会是margin-bottom的底部；
+    如果inline-block有文本，是和最后一行文本的基线对齐。
+    */
+    .box {
+      background-color: #ff0;
+    }
+    .box .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      background-color: #0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    中国网5月25日讯 5月23日，哈哈哈哈哈gggffffxxx<span class="small">哈哈哈啊啊啊啊啊</span>
+    <img src="../image/背景图6.gif" alt="">
+  </div>
+</body>
+</html>

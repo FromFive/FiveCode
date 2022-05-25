@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 当行内块级元素的行高与高度一致时，里面的文本是垂直居中的。 */
+    /* 当把这个行内块级盒子放入一个行盒中时，他在行盒中也是居中的，前提是他与父元素的font-size是一致的。参考案例二 */
+    /* 当行内块级盒子的行高变小的话，会出现盒子往下走的现象。 */
+    /* 当行内块级盒子的行高变大，大于本身盒子的高度，文本会从盒子中出去，脱离盒子，文本并且向下走。 */
+    .small {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      background-color: #f00;
+    }
+
+    /* 案例二 */
+    .box {
+      margin-top: 10px;
+      height: 300px;
+      line-height: 300px;
+      background-color: #0f0;
+    }
+    /* 当one的行高不设置时，会继承父元素的行高，如果行内块级盒子中有文本，此时文本是与其他普通文本或行内级元素基线对齐，但是盒子已经脱离了文本，跑到顶部。 */
+    /* 如果one的行高比父元素的行高还要大，那么这个行盒依然会被撑起来，因为行盒包裹当前行的所有。 */
+    .box .one {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      /* line-height: 100px; */
+      background-color: #ff0;
+    }
+  </style>
+</head>
+<body>
+  <div class="small">xxx</div>
+  <!-- 案例二 -->
+  <div class="box">
+    xxxxhhhh
+    <img src="../image/背景图6.gif" alt="">
+    <div class="one">xxx</div>
+  </div>
+</body>
+</html>
