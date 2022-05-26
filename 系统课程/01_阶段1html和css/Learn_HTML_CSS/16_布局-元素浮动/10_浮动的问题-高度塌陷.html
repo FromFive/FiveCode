@@ -10,6 +10,7 @@
       width: 1190px;
       margin: 0 auto;
       background-color: orange;
+      overflow: hidden;
     }
     .wrapper{
       margin-right: -10px;
@@ -29,10 +30,10 @@
     }
 
     /* 高度塌陷解决 */
-    .other{
+    /* .other{
       height: 50px;
       background-color: #0f0;
-    }
+    } */
     /* 方案一-不推荐，只是作为方案2的理解。 */
     /* clear属性可以指定一个元素是否必须移动到它之前的浮动元素的下面。 */
     /* 因为line之前的item元素都是浮动元素，脱离标准流，如果不给line设置clear，那么line是显示在最上面的，因为line不是浮动元素，所以还是按照标准流显示。但是给line设置了clear之后，它就可以显示在浮动元素下面。 */
@@ -42,18 +43,18 @@
       clear:both;
     }
     /* 方案2：给浮动元素的父元素添加after伪元素，内容是空。因为伪元素是行内非替换元素，没有内容的情况下，高度和宽度是没有的，等于没显示。所以需要设置为block。然后进行左右的全部浮动清除。另外还需兼容其他浏览器。 */
-    .clear-fix::after{
+    /* .clear-fix::after{
       content:"";
       display: block;
-      clear:both;
+      clear:both; */
       /* 浏览器兼容 */
-      visibility: hidden;
+      /* visibility: hidden;
       height: 0;
-    }
+    } */
     /* 兼容IE6/7 */
-    .clear-fix{
+    /* .clear-fix{
       *zoom:1;
-    }
+    } */
   </style>
 </head>
 <body>
