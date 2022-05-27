@@ -1,31 +1,46 @@
 @import url(./variable.less);
-
+@import url(./mixins.less);
 .download {
   display: flex;
   height: 16vw;
+  border-bottom: 0.13333vw solid #e3e3e3;
+  box-sizing: border-box;
+  background-color: #fff;
   .left {
     display: flex;
+    justify-content: center;
     align-items: center;
     flex: 1;
+    overflow: hidden;
+    padding: 0 3.2vw;
     img {
     width: 10.6667vw;
     height: 10.6667vw;
-    margin-left: 3.2vw;
-    margin-right: 2.6667vw;
     border-radius: 2.1333vw;
-    box-shadow: 0 0 0.93333vw 0 rgb(0 0 0 / 15%);
+    box-shadow: 0 0 0.93333vw 0 rgba(0,0,0,.15);
     }
-    .title {
-      color: #333;
-      font-weight: 500;
+    .info {
+      flex: 1;
+      overflow: hidden;
+      margin-left: 2.1333vw;
+      .title {
+        color: #333;
+        font-size: @normalFontSize;
+        font-weight: 500;
+        .nowrap();
+      }
+      .subtitle {
+        margin-top: .5333vw;
+        color: #999;
+        font-size: @smallFontSize;
+        .nowrap();
+      }
     }
-    .subtitle {
-      color: #999;
-      font-size: @smallFontSize;
-    }
+    
   }
   .right {
     width: 25.2vw;
+    height: 16vw;
     text-align: center;
     line-height: 16vw;
     color: #fff;
