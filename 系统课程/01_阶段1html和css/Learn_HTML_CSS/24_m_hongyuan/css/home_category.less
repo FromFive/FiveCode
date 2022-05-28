@@ -1,0 +1,39 @@
+@import url(./variable.less);
+.category {
+  display: flex;
+  justify-content: center;
+  margin: 0 2.6667vw;
+  padding: 0 3.2vw;
+  text-align: center;
+  .item {
+    flex: 1;
+    
+    .title {
+      font-size: @bigFontSize;
+      color: #666;
+    }
+    .subtitle {
+      height: 4.2667vw;
+      padding: 0 1.6vw;
+      border-radius: 2.4vw;
+      font-size: @smallFontSize;
+      color: #999;
+    }
+    img {
+          position: relative;
+          top: -0.5333vw;
+          width: 14.9333vw;
+          height: 6.9333vw;
+          margin-bottom: -1.0667vw;
+        }
+    &.active {
+      .title {
+        color: @mainColor;
+      }
+      .subtitle {
+        color: #fff;
+        background-image: linear-gradient(to right,red,@mainColor);
+      }
+    }
+  }
+}

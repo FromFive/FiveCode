@@ -3,3 +3,32 @@ body {
   font-size: @normalFontSize;
   background-color: #f5f5f5;
 }
+//官网中的tag看起来会更拥挤，是因为他将高度和行高设置为字体大小相等了。
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.3333vw;
+  font-size: @smallFontSize;
+  color: @mainColor;
+  .tag {
+    position: relative;
+    padding: 0 1.0667vw;
+    margin-right: .8vw;
+    margin-bottom: .5333vw;
+    border: .26667vw solid rgba(255,0,0,.5);
+    border-radius: .8vw;
+    
+    &.ticket {
+      padding-left: 6.4vw;
+    }
+    &.ticket::before {
+      position: absolute;
+      content: "券";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      padding: 0 1.0667vw;
+      background-color: #ffe6e7;
+    }
+  }
+}

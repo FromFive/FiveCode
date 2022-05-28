@@ -1,0 +1,52 @@
+@import url(./variable.less);
+//官网中的商品列表是一个div中放了两个商品，就是两个为一组。但是在实际开发中，后端返回的数据是一个大的数组，并没有对数据进行分组，所以前端如果分组布局的话对数据处理就烦琐了，所以直接对商品列表做flex布局即可。
+.product {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3.2vw;
+  .item {
+    flex-shrink: 0;
+    width: 46.6667vw;
+    margin-top: 1.6vw;
+    border-radius: 1.3333vw;
+    overflow: hidden;
+    background-color: #fff;
+
+    &:nth-child(2n) {
+      margin-left: 1.6vw;
+    }
+
+    .ablum {
+      img {
+        width: 100%;
+      }
+    }
+    .info {
+      padding: 2.6667vw;
+
+      .brand {
+        text-indent: 4.8vw;
+        background: url(../image/brand-1.jpeg) no-repeat left center/ 4vw 4vw;
+      }
+      .desc {
+        text-indent: 8vw;
+        background: url(../image/product-self.png) no-repeat left .8vw/6.9333vw 3.4667vw;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+      .price {
+        display: flex;
+        align-items: baseline;
+        color: #f00;
+        font-size: @smallFontSize;
+        font-weight: 700;
+        .final {
+          font-size: 4.8vw;
+        }
+      }
+    }
+  }
+}
