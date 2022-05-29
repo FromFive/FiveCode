@@ -41,7 +41,7 @@
       float: left;
       width: 234px;
       height: 300px;
-      background-color: plum;
+      background-color: #fff;
       margin-right: 14px;
       margin-bottom: 14px;
       /* 动画 */
@@ -54,10 +54,11 @@
     .wear .list .item.item1{
       height: 614px;
     }
-    .wear .list .item.item9,
-    .wear .list .item.item10{
+    .wear .list .item.item-small,
+    .wear .list .item.item-more{
       height: 143px;
-      position: relative;
+      padding-top: 50px;
+      box-sizing: border-box;
     }
     .wear .list .item a{
       display: inline-block;
@@ -71,38 +72,86 @@
       width: 160px;
       height: 160px;
     }
+    .wear .list .item1 a,
+    .wear .list .item-small a,
+    .wear .list .item-more a{
+      padding: 0;
+    }
+    .wear .list .item.item1 a img{
+      width: 100%;
+    }
     .wear .list .item .pro-title{
       font-size: 14px;
       font-weight: 400;
       margin-bottom: 2px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .wear .list .item .pro-info{
       color: #b0b0b0;
       /* margin-top: 5px; */
       margin-bottom: 10px;
       font-size: 12px;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .wear .list .item .pro-price{
       font-size: 14px;
       color: #ff6700;
     }
-    .wear .list .item.item9 img{
+    .wear .list .item-small {
+      position: relative;
+    }
+    .wear .list .item-small .small-ablum {
       position: absolute;
       right: 20px;
       top: 32px;
       width: 80px;
       height: 80px;
     }
-    .wear .list .item.item9 .pro-title{
-      width: 94px;
+    .wear .list .item-small .small-ablum img {
+      width: 80px;
+    }
+    .wear .list .item-small .pro-title{
+      /* width: 94px; */
       height: 42px;
-      /* margin: -10px 110px 5px 30px; */
+      margin: -10px 110px 5px 30px;
+      text-align: left;
+    }
+    .wear .list .item-small .pro-price {
+      margin: 5px 110px 0 30px;
+      text-align-last: left;
+    }
+    .wear .list .item-more {
+      position: relative;
+    }
+    .wear .list .item-more .more {
+      width: 94px;
+      margin: 0 110px 0 30px;
+      font-size: 18px;
+      color: #333;
+      text-align: left;
+    }
+    .wear .list .item-more .more span {
+      display: block;
+      font-size: 12px;
+      color: #757575;
+    }
+    @font-face {
+      font-family: "iconfont";
+      src: url("./iconfont/iconfont.ttf");
+    }
+    .iconfont{
+      font-family: "iconfont";
+      font-style: normal;
+    }
+    .wear .list .item-more .iconfont::before {
+      content: "\e602";
+      position: absolute;
+      right: 35px;
+      top: 48px;
+      display: inline-block;
+      width: 48px;
+      height: 48px;
+      line-height: 48px;
+      font-size: 48px;
+      color: #ff6700;
     }
   </style>
 </head>
@@ -118,14 +167,18 @@
         </div>
       </div>
       <ul class="list">
-        <li class="item item1"><a href="#">1</a></li>
+        <li class="item item1">
+          <a href="#">
+            <img src="../image/小米商品图片/album.webp" alt="">
+          </a>
+        </li>
         <li class="item item2">
           <a href="#">
             <img src="../image/小米商品图片/小米手表.webp" alt="">
-            <h3 class="pro-title">
+            <h3 class="nowrap pro-title">
               Xiaomi Watch S1
             </h3>
-            <p class="pro-info">
+            <p class="nowrap pro-info">
               腕事具备
             </p>
             <p class="pro-price">
@@ -133,26 +186,27 @@
             </p>
           </a>
         </li>
-        <li class="item item3"><a href="#">
-          <img src="../image/小米商品图片/小米耳机.webp" alt="">
-            <h3 class="pro-title">
+        <li class="item item3">
+          <a href="#">
+            <img src="../image/小米商品图片/小米耳机.webp" alt="">
+            <h3 class="nowrap pro-title">
               Xiaomi真五险降噪耳机3
             </h3>
-            <p class="pro-info">
+            <p class="nowrap pro-info">
               静听好声音
             </p>
             <p class="pro-price">
               409元起
             </p>
-        </a>
+          </a>
         </li>
         <li class="item item4">
           <a href="#">
             <img src="../image/小米商品图片/红米手表.webp" alt="">
-            <h3 class="pro-title">
+            <h3 class="nowrap pro-title">
               Redmi手表2
             </h3>
-            <p class="pro-info">
+            <p class="nowrap pro-info">
               AMOLED高清大屏
             </p>
             <p class="pro-price">
@@ -163,10 +217,10 @@
         <li class="item item5">
           <a href="#">
             <img src="../image/小米商品图片/小米手环.webp" alt="">
-            <h3 class="pro-title">
+            <h3 class="nowrap pro-title">
               小米手环6 NFC版
             </h3>
-            <p class="pro-info">
+            <p class="nowrap pro-info">
               全屏实力
             </p>
             <p class="pro-price">
@@ -177,10 +231,10 @@
         <li class="item item6">
           <a href="#">
             <img src="../image/小米商品图片/红米手表1.webp" alt="">
-              <h3 class="pro-title">
+              <h3 class="nowrap pro-title">
                 Redmi手表
               </h3>
-              <p class="pro-info">
+              <p class="nowrap pro-info">
                 35g轻量设计 | 1.4英寸高清大屏 | 多功能 NFC | 7天长续航
               </p>
               <p class="pro-price">
@@ -191,10 +245,10 @@
         <li class="item item7">
           <a href="#">
             <img src="../image/小米商品图片/耳机pro.webp" alt="">
-              <h3 class="pro-title">
+              <h3 class="nowrap pro-title">
                 Xiaomi 真无线降噪耳机 3 Pro
               </h3>
-              <p class="pro-info">
+              <p class="nowrap pro-info">
                 动态降噪 静听曼妙
               </p>
               <p class="pro-price">
@@ -205,10 +259,10 @@
         <li class="item item8">
           <a href="#">
             <img src="../image/小米商品图片/红米耳机.webp" alt="">
-            <h3 class="pro-title">
+            <h3 class="nowrap pro-title">
               Redmi Buds 3半入耳真无线蓝牙耳机
             </h3>
-            <p class="pro-info">
+            <p class="nowrap pro-info">
               轻巧半入耳，舒适有天分
             </p>
             <p class="pro-price">
@@ -216,7 +270,7 @@
             </p>
           </a>
         </li>
-        <li class="item item9">
+        <li class="item item-small">
           <a href="#">
               <h3 class="pro-title">
                 Redmi Buds 3青春版
@@ -224,10 +278,20 @@
               <p class="pro-price">
                 649元起
               </p>
-            <img src="../image/小米商品图片/青春版.webp" alt="">
+            <div class="small-ablum">
+              <img src="../image/小米商品图片/青春版.webp" alt="">
+            </div>
           </a>
         </li>
-        <li class="item item10"><a href="#">10</a></li>
+        <li class="item item-more">
+          <a href="#">
+            <div class="more">
+              浏览更多
+              <span>热门</span>
+            </div>
+            <i class="iconfont"></i>
+          </a>
+        </li>
       </ul>
   </div>
 </body>
