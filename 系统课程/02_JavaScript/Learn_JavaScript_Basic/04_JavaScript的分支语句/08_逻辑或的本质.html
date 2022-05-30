@@ -26,10 +26,16 @@
     if (chineseScore > 90 || mathScore > 90) {}
 
     // 本质推导二: 获取第一个有值的结果
-    var info = "abc"
-    var obj = {name: "why"}
-    var message = info || obj || "我是默认值"
-    console.log(message.length)
+    //案例1:通常在开发中我们需要服务器给我们的一个变量传入一个值，但是我们不确定传入的值是真实有值还是一个undefined，因此为了安全起见，我们需要在传入的参数有值的情况下直接用这个值，如果这个参数没有值是个undefined，那么可以通过逻辑或来赋予默认值。例如以下代码：当传入的参数是个undefined时，在第一个运算元进行计算，undefined转成布尔值是false，所以会继续向下计算下一个运算元，设置的默认值字符串转成布尔的结果是true，所以此时返回初始值"我是默认值"而不是计算值true。然后打印message的长度是就不会报错。
+    var info = undefined;
+    var message = info || "我是默认值";
+    console.log(message.length);//5
+
+    // 案例2:本质同上。如果info有值直接返回info的值，如果没有，则继续向下计算obj，如果他有值，直接返回，如果没有，继续向下计算。
+    var info1 = undefined;
+    var obj1 = {name: "why"}
+    var message1 = info1 || obj1 || "我是默认值"
+    console.log(message1);
   </script>
 </body>
 </html>
