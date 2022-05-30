@@ -7,6 +7,26 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <script>
+    var currentIndex = 5;
+    //自己自增或者自减，加号或减号的位置在变量前还是变量后是没有区别的。
+    // ++currentIndex;
+    // console.log(currentIndex);
+    // --currentIndex;
+    // console.log(currentIndex);
+
+    //以下两段代码需要分别注释后执行另一段。
+    
+    //自增和自减表达式本身又在其他的表达式中，那就有区别。
+    //先将100与currentIndex初始值相加，然后currentIndex进行自增。
+    // var result1 = 100 + currentIndex++;
+    // console.log(currentIndex);
+    // console.log("result1:" + result1);
+
+    //先将currentIndex的值自增，然后将自增的值与100相加。
+    var result2 = 100 + ++currentIndex;
+    console.log(currentIndex);
+    console.log("result2:" + result2);
+  </script>
 </body>
 </html>

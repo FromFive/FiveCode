@@ -8,12 +8,13 @@
 </head>
 <body>
   <script>
+    //当一个String类型或者Number类型的变量与Object类型的变量进行相等运算时，会将Object类型的变量进行toPrimitive()转换。
     var info = {
       name: "hh",
       age: 18,
       [Symbol.toPrimitive]() {
         return 123;
-      }
+      }//利用函数将object对象转成数字123
     }
     console.log(123 == info);//true
     console.log("" == null);//false
