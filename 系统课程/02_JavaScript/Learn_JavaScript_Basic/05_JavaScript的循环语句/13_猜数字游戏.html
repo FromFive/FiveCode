@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 1、随机生成一个0-99的数字
+    var randomNum = Math.floor(Math.random() * 100);
+    
+    // 2、定义玩家猜测数字的机会
+    var count = 3;
+    //定义猜测的状态，猜对则成功为true，初始值是false。
+    var isSuccess = false;
+    //定义i来记录猜测机会状态是第几次
+    for (var i = 0; i < count; i++) {
+      // 获取用户输入的数字
+      var inputNum = Number(prompt("请输入猜测的数字："));
+      //  与随机生成的数字进行比较
+      if (inputNum === randomNum) {
+        alert("猜对了！");
+        isSuccess = true;
+        break;//猜对了给出相应提示，且成功状态为true，并跳出循环，结束游戏。
+      } else if (inputNum > randomNum) {
+        alert("猜大了！");
+      } else {
+        alert("猜小了！");
+      }
+      //如果最后机会都用完了，需要提示信息。此处有两种写法
+      //一：i记录当前用户使用次数。当i与用户使用的次数-1相等时，机会就没有了。例如：一共就3次机会，当i为0时，用户有一次机会。当i为1时，用户再一次机会。当i为2时，用户最后一次机会。如果以上3次机会答对或猜大猜小都有相应提示或推出循环。当猜错时，会执行机会次数判断，当i为2时是最后一次机会，此时就可以提示用户机会用完了。
+      // if (i === count-1) {
+      //   alert("机会用完了～");
+      // }
+      
+    }
+    //二：设置一个布尔变量记录是否猜对。初始值是false，猜对了则为true。如果最后都没猜对，则取反，提示机会用完。
+    // if (!isSuccess) {
+    //   alert("机会用完了～");
+    // }
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //需求：遇到nba时，不再执行后续的遍历代码。
+    var names = ["cba","abc","bca","nba","bac","cab"];
+    // for(var i = 0; i < names.length; i++) {
+    //   console.log(names[i]);
+    //   if(names[i] === "nba") {
+    //     break;//跳出整个循环体
+    //   }
+    // }
+
+    //continue：跳过本次循环，执行下一次循环体。
+    //需求：不打印nba
+    // var names = ["cba","abc","bca","nba","bac","cab"];
+    // for(var i = 0; i < names.length; i++) {
+    //   if(names[i] === "nba") {
+    //     continue;
+    //   }
+    //   console.log(names[i]);
+    // }
+
+    //需求：不打印nba和cab
+    var names = ["cba","abc","bca","nba","bac","cab"];
+    for(var i = 0; i < names.length; i++) {
+      if(names[i] === "nba" || names[i] === "cab") {
+        continue;
+      }
+      console.log(names[i]);
+    }
+  </script>
+</body>
+</html>
