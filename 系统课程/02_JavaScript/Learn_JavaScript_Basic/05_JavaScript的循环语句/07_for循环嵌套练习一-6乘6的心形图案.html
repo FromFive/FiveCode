@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      color:aqua;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    //1、在屏幕中显示❤组成的6*6的图案
+    //方法1
+    // for (var i < 0; i < 6; i++) {
+    //   document.write("<div>❤ ❤ ❤ ❤ ❤ ❤</div>")
+    // }
+
+
+    //方法2：for循环嵌套
+    //首先将每一次i执行的内容包在一个div中，则需要使用document.write在i执行前后在屏幕中写入div元素，可以做到独占行。然后每执行一次i，就执行一次m循环，m循环中会在同一行中打印6个心形。
+    /*
+    i=0时，m执行6次，i+1=1。
+    i=1时，m执行6次，i+1=2。
+    i=2时，m执行6次，i+1=3。
+    i=3时，m执行6次，i+1=4。
+    i=4时，m执行6次，i+1=5。
+    i=5时，m执行6次，i+1=6。
+    i=6时，跳出循环不执行。
+    */
+    for (var i = 0; i<6; i++) {
+      document.write("<div>");
+      for(var m = 0; m < 6; m++) {
+        document.write("❤&nbsp;");
+      }
+      document.write("</div>");
+    }
+  </script>
+</body>
+</html>
