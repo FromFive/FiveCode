@@ -43,14 +43,17 @@
 
     function sayHello() {
       var nickname = "kobe"
-      console.log("外面访问nickname", nickname)//可以访问
+      console.log("sayHello函数内部访问nickname", nickname)//可以访问
       function hi() {
+        var hiName = "哈哈哈"
         console.log("在hi函数访问nickname", nickname)//可访问到
       }
       hi()
+      //sayHello函数中调用其内部定义的Hi函数中定义的hiName变量
+      console.log("访问hiName：", hiName);//不能访问
     }
     sayHello();
-    // console.log("外面访问nickname", nickname)//访问不了。
+    // console.log("sayHello外面访问nickname", nickname)//访问不了。
   </script>
 </body>
 </html>
