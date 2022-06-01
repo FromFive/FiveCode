@@ -14,14 +14,15 @@
     var playCount2 = 53687999;//5368万
     var playCount3 = 9112345678;//91亿
     function formatCount(count) {
+      var result = 0;
       if (count >= 1_0000_0000) { //超过1亿则进行转换
-        result = Math.floor(count / 1_0000_0000) + "亿";
+        result = Math.floor(count / 1_0000_0000) + "亿";//转化成亿这个单位所以除以1亿。
       } else if (count >= 10_0000) {
-        result = Math.floor(count / 1_0000) + "万";
+        result = Math.floor(count / 1_0000) + "万";//转化成万这个单位所以除以1万。
       } else {
-        result = count;
+        result = count;//其他情况不需要格式化，直接将数字赋值。
       }
-      return result;
+      return result;//返回最终格式化的数字.
     }
     console.log(formatCount(playCount1));
     console.log(formatCount(playCount2));
