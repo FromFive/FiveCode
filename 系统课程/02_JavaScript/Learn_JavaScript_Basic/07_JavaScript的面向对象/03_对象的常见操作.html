@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      name: "five",
+      age: 18,
+      run: function(){
+        console.log("在跑步")
+      }
+    }
+
+    //访问对象中的属性
+    console.log(obj.name)
+    console.log(obj.age)
+    obj.run()
+
+    //修改对象中的属性
+    obj.name = "why"
+    obj.age = 20
+    obj.run = function() {
+      console.log("正在跑步")
+    }
+    console.log(obj.name)
+    console.log(obj.age)
+    obj.run()
+
+    //给对象添加属性，即使这个属性一开始并没有
+    obj.height = 1.74
+    obj.address = "中国"
+    obj.eat = function() {
+      console.log("吃东西")
+    }
+
+    console.log(obj.height)
+    console.log(obj.address)
+    obj.eat()
+  </script>
+</body>
+</html>

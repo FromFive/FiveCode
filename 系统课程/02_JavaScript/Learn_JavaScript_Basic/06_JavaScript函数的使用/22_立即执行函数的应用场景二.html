@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">按钮1</button>
+  <button class="btn">按钮2</button>
+  <button class="btn">按钮3</button>
+  <button class="btn">按钮4</button>
+  <script>
+    //需求：点击按钮后，在控制台打印点击了第几个按钮
+
+    //1、获取所有的类名为.btn的选择器。是一个数组。
+    var btnEls = document.querySelectorAll(".btn");
+
+    //2、for循环：i来记录点击次数
+    for (var i = 0; i < btnEls.length; i++) {
+      //每执行一次，就将第i个按钮赋值给btn
+      var btn = btnEls[i];
+      //使用立即执行函数：每执行一次，将i传给立即函数，当点击按钮时，触发点击事件，执行打印操作。
+      //这里也会形成闭包。会在js高级学习。
+      (function(m) {
+        btn.onclick = function() {
+        console.log(`点击了第${m+1}个按钮`);
+        }
+      })(i);
+
+      //错误写法1:将点击事件的函数值变成立即执行函数。
+      //原因：因为立即执行函数时立刻执行的，将其复制给按钮的点击事件，就会改变其性质，会在控制台直接打印4次下面的语句。
+      // btn.onclick = (function() {
+      //   console.log(`点击了第${i+1}个按钮`);
+      // })();
+
+      //错误写法2:只是给按钮的点击事件复制了一个函数值。
+      //原因：只复制了一个函数，但是其实这个函数在for循环的时候是没有调用的，它其实是在点击按钮的那瞬间才会调用。在浏览器从上向下解析代码的时候，你不点击按钮，函数不调用，就等于是略过了这行代码，for循环也会继续进行，直到i值小于元素数组的长度不成立时才会跳出循环，此时的i已经是4了。所以在你去点击按钮的时候，执行这个函数，这个函数中没有定义i变量，就会向上找这个i变量（这是函数作用域的影响），但是这个i一直是4，i+1也就一直是5，所以打印出来的信息不对。
+      // btn.onclick = function() {
+      //   console.log(`点击了第${i+1}个按钮`);
+      // }
+    }
+  </script>
+</body>
+</html>

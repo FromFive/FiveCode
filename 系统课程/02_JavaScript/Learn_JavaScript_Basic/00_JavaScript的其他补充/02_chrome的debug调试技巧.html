@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function foo(name) {
+      console.log("foo函数被执行", name)
+    }
+
+    function bar(){
+      console.log("bar函数被执行")
+      var name = "five"
+
+      function hi() {
+        console.log("hi～", name)
+      }
+
+      foo()
+      return hi
+    }
+
+    debugger
+    var fn = bar()
+    fn()
+
+    // 异步函数setTimeout(fn, duration)
+    // fn可以传入一个匿名函数，setTimeout是高阶函数
+    //浏览器内部会在duration时间之后，主动调用传入fn，这就是fn的回调。
+
+    setTimeout(function() {
+      console.log("匿名函数2秒后执行")
+    }, 2000);
+
+    for (var i = 0; i < 3; i++) {
+      console.log(i)
+    }
+
+  </script>
+</body>
+</html>

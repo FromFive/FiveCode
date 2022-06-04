@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //普通函数声明
+    function foo() {
+      console.log("foo function is executed");
+    }
+    // 普通函数调用
+    // foo();
+
+    // 立即执行函数：先定义一个函数，然后在这个函数外面加一层小括号表示一个整体，同时在后面再加一个小括号，代表调用这个函数。那么这就是一个立即执行函数。
+    //在立即执行函数的上一句代码必须要有分号，不然会报错。
+    /*
+    function外面的小括号：表示一个整体。
+    function关键字后面紧跟的小括号：表示需要传入的参数-形参。
+    function函数整体后面的小括号：表示调用函数，里面可以传入实参。
+    */
+    (function bar() {
+      console.log("立即执行函数");
+    })();
+    // 通常立即执行函数可以省略函数名
+    (function() {
+      console.log("立即执行函数可以省略函数名");
+    })();
+    // 立即执行函数可以有参数
+    (function(name){
+      console.log("立即执行函数可以有参数：", name)
+    })("five")
+    // 立即执行函数可以有返回值
+    var result = (function() {
+      console.log("立即执行函数可以有返回值")
+      return "我是返回值"
+    })()
+    console.log(result)
+  </script>
+</body>
+</html>

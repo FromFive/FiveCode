@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 去掉外层包起来作为整体的小括号，在function关键字前面写一个加号。
+    +function() {
+      console.log("立即执行函数的其他写法")
+    }();
+
+    // 将调用小括号放在里面
+    (function(fn) {
+      console.log(fn)
+    }("立即执行函数的其他写法"))
+  </script>
+</body>
+</html>
