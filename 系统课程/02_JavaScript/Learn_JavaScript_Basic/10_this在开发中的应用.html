@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 获取当前对象中的某个变量。此种方法更灵活，如果使用对象名.变量的方式的话，但凡对象名改变了，就要去修改使用到该方式的代码。
+    var info = {
+      name: "why",
+      running: function() {
+        console.log(`${this.name} running`)
+      },
+      eating: function() {
+        console.log(`${this.name} eating`)
+      },
+      studying: function() {
+        console.log(`${this.name} studying`)
+      }
+    }
+    info.running()
+    info.eating()
+    info.studying()
+  </script>
+</body>
+</html>

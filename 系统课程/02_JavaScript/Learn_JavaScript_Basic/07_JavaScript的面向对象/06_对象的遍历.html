@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    对象的遍历表示获取对象中所有的属性和方法。
+   遍历方式一：普通for循环+Object.keys()方法。Object.keys()方法会返回一个由一个给定对象的而自身可枚举属性组成的数组。
+  遍历方式二：for in遍历方法
+    */
+    var obj = {
+      name: "hh",
+      age: 18,
+      height: 1.88
+    }
+
+    //第一种for循环方式
+    //1、通过Object.keys()将对象中的属性名key抽成一个数组
+    var objKeys = Object.keys(obj)
+    console.log(objKeys)
+
+    for (var i = 0; i < objKeys.length; i++) {
+      //2、根据索引从数组中取到key属性名后赋值给变量key
+      var key = objKeys[i]
+      //3、根据变量key找到对应的value
+      var value = obj[key]
+      console.log(`key:${key},value:${value}`)
+    }
+
+    //for..in..遍历:定义一个变量keySec，从obj中依次取出变量名赋值给它。
+    for (var keySec in obj) {
+      var valueSec = obj[keySec]
+      console.log(`keySec:${keySec},valueSec:${valueSec}`)
+    }
+
+  </script>
+</body>
+</html>

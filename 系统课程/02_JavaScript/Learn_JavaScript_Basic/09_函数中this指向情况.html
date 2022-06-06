@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1、如果函数是一个普通函数，以默认的方式调用，那么this指向的就是window。
+    function foo(name, age) {
+      console.log(arguments)
+      console.log(this)
+    }
+    foo("hh", 123)
+
+    //2、如果函数是被某个对象引用并且调用，那么this指向的是这个对象。
+    //以下代码中的this指向的是obj
+    var obj = {
+      name: "why",
+      running: function() {
+        console.log(this)
+        console.log(typeof this)
+        // console.log(obj)
+        console.log(this === obj)//true
+      }
+    }
+    obj.running()//this指向obj，obj===this
+
+    var fn = obj.running
+    fn()//this指向window，因为是普通函数调用。obj===this是false
+
+    function bar() {
+      console.log(this)
+    }
+    var obj1 = {
+      name: "hh",
+      bar: bar
+    }
+    obj1.bar()//this指向的是obj对象（因为是对象发起的调用）
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    对象的方括号的使用：
+    因为点符号要求key是有效的变量标识符，所以使用点符号时，key不能包含空格、不以数字开头、也不包含特殊字符（允许使用$和_），那么就可以使用方括号。比如属性名有两个单词组成，并且有引号引起来的情况。
+    或者是将属性赋值给一个变量时，通过对象找到这个变量，不能用点，得用方括号。
+    */
+    var obj = {
+      name: "hh",
+      "my friend": "why",
+      "eating something": function() {
+        console.log("eating")
+      }
+    }
+
+    console.log(obj["my friend"])
+    console.log(obj["name"])
+
+    obj["eating something"]()
+    var eatkey = "eating something"
+    obj[eatkey]()
+  </script>
+</body>
+</html>

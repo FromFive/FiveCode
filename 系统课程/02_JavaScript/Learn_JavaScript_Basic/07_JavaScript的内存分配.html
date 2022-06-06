@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //以下代码在内存中的表象：在栈内存中有的是name="why"/age=18/obj=0x100(十六进制地址)。原始类型数据是直接存储在栈内存中，对象类型的数据是在堆内存中创建的内存空间，且有一个内存地址，在栈内存中显示的是内存地址。
+    var name = "why"
+    var age = 18
+    var obj = {
+      foo: "foo",
+      bar: 123
+    }
+
+    //当原始数据类型赋值给其他变量时，那么这个新变量在栈内存中也是直接存储为nickname="why"。但是将对象类型赋值给其他变量时，是将这个内存地址给了这个新变量，也就是说这个新变量和原来的变量是指向了同一个内存地址。
+    var nickname = name
+    var info = obj
+
+    //当通过这个新变量来访问对象的属性时，并且改变了属性值，那么会在原来的内存地址上将这个属性原来的属性值给改变。此时如果通过原来的变量来访问对象的属性时，属性值是修改后的。
+    info.foo = "哈哈哈"
+    console.log(obj.foo)//哈哈哈
+  </script>
+</body>
+</html>
