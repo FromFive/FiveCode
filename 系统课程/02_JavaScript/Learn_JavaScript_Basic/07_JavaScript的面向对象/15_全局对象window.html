@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    window作用:
+    1. 根据查找顺序查找变量时最终会找到window，如果window也没有，就会报错。
+    2. 将一些浏览器全局提供的变量、方法、对象放在window里。例如alert()、console、Object等。
+    3. （了解）使用var定义的变量默认会添加到window上。
+    */
+    console.log(window)//在控制台查看时，会卡到后续定义的message，是浏览器默认给刷新。
+    var message = "hello"
+    function foo() {
+      console.log(window.console === console)
+      console.log(window.Object === Object)
+      console.log(window.message)
+    }
+    foo()
+  </script>
+</body>
+</html>

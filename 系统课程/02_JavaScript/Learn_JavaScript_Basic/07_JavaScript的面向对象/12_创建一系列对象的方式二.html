@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //这个函数称为工厂函数，生产对象。它是一种设计模式。
+    function createStu(name, age, height) {
+      //1、手动创建一个新对象。这个对象默认值是空的对象。
+      var stu = {}
+      //2、给对象添加属性。属性值根据传入的参数而定。
+      stu.name = name
+      stu.age = age
+      stu.height = height
+      stu.running = function() {
+        console.log("running")
+      }
+      //3、将这个对象返回出去。
+      return stu
+    }
+    //重复调用函数，创建新的对象。
+    //每次创建出来的都是新的对象。
+    var stuFri = createStu("why", 18, 1.88)
+    var stuSec = createStu("hh", 20, 1.88)
+    var stuThr = createStu("mei", 21, 1.88)
+    console.log(stuFri)
+    console.log(stuSec)
+    console.log(stuThr)
+  </script>
+</body>
+</html>

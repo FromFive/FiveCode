@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 为了区分普通函数和构造函数的区别，构造函数的名称一般使用首字母大写，或者如果多个单词组成则使用大驼峰。
+    // 构造函数创建的对象，打印出来是对应定义的类型
+    function Person(name) {
+      this.name = "name"
+    }
+    var p1 = new Person("hh")
+    console.log(p1)//Person
+  </script>
+</body>
+</html>
