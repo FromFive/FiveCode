@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    console.log(typeof Math)//object
+
+    // Math对象的属性
+    console.log(Math.PI)
+
+    // Math对象的方法
+    var num = 3.66
+    console.log(Math.floor(num))//3
+    console.log(Math.ceil(num))//4
+    console.log(Math.round(num))//4
+
+    // 生成5-50的随机数（包含5）
+    for (var i = 0; i < 1000; i++) {
+      var randomNum = Math.floor(Math.random() * 45) + 5
+      console.log(randomNum)
+    }
+  </script>
+</body>
+</html>

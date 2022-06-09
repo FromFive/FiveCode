@@ -8,8 +8,50 @@
 </head>
 <body>
   <script>
-    var num = 3.22446
-    console.log(num.toString(2))
+    // 类属性
+    var num = 123 //本质是new Number(123)
+    console.log(Number.MAX_VALUE)
+    console.log(Number.MIN_VALUE)
+    console.log(Number.MAX_SAFE_INTEGER)//最大整数
+    console.log(Number.MIN_SAFE_INTEGER)//最小整数
+
+    // 实例方法（对象的方法）
+    // toString()
+    var num = 3.223334
+    console.log(num.toString(),typeof num.toString() )
+    console.log(num.toString(2))//二进制
+    console.log(num.toString(8))//八进制
+
+    // （了解）如果是直接对一个数字操作，可以事先用..（两个点）运算符。
+    var num1 = 123
+    console.log(123..toString(2))
+
+    // toFixed()
+    var pi =3.1415926
+    console.log(pi.toFixed(2))//保留两位小数
+    console.log(pi.toFixed(3))//3.142。保留3位小数，默认四舍五入。
+
+    // 类方法
+    var num2 = "123.456"
+    console.log(Number.parseInt(num2))//123。整数。不会四舍五入。
+    console.log(Number.parseFloat(num2))//123.456。浮点数。不会四舍五入。
+    console.log(Number(num2))
+
+    //window对象上面也有parseInt和parseFloat。
+    //window.parseInt和Number.parseInt调的是同一个函数。
+    console.log(parseInt(num2))
+    console.log(parseFloat(num2))
+
+    console.log(window.parseInt === Number.parseInt)//true
+
+    //本质
+    // function Number() {
+    // }
+    // Number.parseInt = function(){}
+    // window.parseInt = Number.parseInt
+
+    // 因为Number本质是浏览器构造的一个对象，同时他也是一个函数。所以当我们直接打印Number的类型是，它返回的是function。因为既是一个对象又是一个函数时，优先返回函数类型。
+    console.log(typeof Number)//function
   </script>
 </body>
 </html>

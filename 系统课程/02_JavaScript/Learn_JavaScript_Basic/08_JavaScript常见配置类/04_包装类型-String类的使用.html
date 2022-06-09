@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str = "hello world"
+    console.log(str.length)
+
+    //访问字符串中某个位置的字符
+    console.log(str[4])//o
+    console.log(str.charat(4))//o
+
+    //字符串遍历
+    // 方式一：for循环
+    for (var i = 0; i < str.length; i++) {
+      console.log(str[i])
+    }
+
+    //方式二：支持for...of遍历:跟迭代器有关
+    //String对象内部是将字符串完成了一个可迭代对象
+    for (var char of str) {
+      console.log(char)
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var name = "Hello World"//原始类型
+    var age = 18//原始类型
+
+    //但是这些基本数据类型可以调用一些属性或方法
+    console.log(name.length)
+    console.log(name.split(" "))
+
+    //本质相当于以下
+    // function String(str) {
+    //   this.str = str
+    //   this.length = 10
+    //   this.split = function() {}
+    // }
+    // var name1 = new String("Hello World")
+
+    // console.log(name1.length)
+    // console.log(name1.split(" "))
+  </script>
+</body>
+</html>
