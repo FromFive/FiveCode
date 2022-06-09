@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    slice(start, end)：从start到end（不含end）。支持负值。
+    substring(start, end)：从start到end（不含end）。不支持负值，写负值会默认为0.兼容性差。
+    substring(start, length)：从start开始获取长为length的字符串。允许start为负数。兼容性差。
+    开发中推荐使用slice方法。
+    */
+    var str = "hello world"
+    console.log(str.slice(3, 7))//从索引3开始到索引7，但不包含索引7.
+    console.log(str.substring(3, -1))
+    console.log(str.substring(3))//从索引3开始到最后。
+  </script>
+</body>
+</html>

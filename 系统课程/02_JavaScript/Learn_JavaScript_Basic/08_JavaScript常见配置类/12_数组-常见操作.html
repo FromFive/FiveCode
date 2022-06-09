@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 访问数组中的元素
+    var names = ["nba", "cba", "abc", "bac"]
+    console.log(names[2])
+    console.log(names[names.length - 1])//数组中最后一个元素
+
+    
+    console.log(names.at(2))
+    console.log(names.at(-3))//当i为负数时，表示从尾部开始找。最后一个是-1.
+
+    // 修改数组中的元素
+    // names[0] = "hh"
+    // console.log(names)
+
+    // 新增数组中的元素-了解，开发中一般不这么操作
+    // names[3] = "mei"
+    // names[10] = "lei"
+    // console.log(names)
+
+    // 删除数组中的元素-了解，开发中一般不这么操作
+    delete names[1]
+    console.log(names)//原来的这个值删除了，但是会显示空。
+  </script>
+</body>
+</html>

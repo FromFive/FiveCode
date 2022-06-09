@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 方式一：字面量创建方式，使用中括号[]创建。
+    //数组中的值可以是原始类型，也可以对象类型
+    var arrayName = ["why", "hh", "five"] 
+    var products= [
+      { name: "鼠标", price: 90 },
+      { name: "西瓜", price: 50 },
+      { name: "香蕉", price: 20 },
+    ]
+    var food1 = { name: "牛奶", price: 5}
+    var food2 = { name: "酸奶", price: 6}
+    var food3 = { name: "旺仔", price: 6}
+    var foods = [food1, food2, food3]
+    console.log(arrayName, products, foods)
+
+    // 方式二：类Array创建。window对象中有一个Array的构造函数。然后new Array()。但是开发中一般不用这种方式创建数组。
+    var arr1 = new Array()//创建的是空数组。
+
+    var arr2 = new Array("hh", "cba", "nab")//创建时可以往数组里放值。开发中也不推荐这么创建数组。
+
+    //如果传入了一个数字，默认会当成我们要创建一个对应长度的空数组。
+    var arr3 = new Array(5)
+    console.log(arr1, arr2, arr3)//[empty*5]
+  </script>
+</body>
+</html>

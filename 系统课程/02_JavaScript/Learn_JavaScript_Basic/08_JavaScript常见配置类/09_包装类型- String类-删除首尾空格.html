@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var str  = "abc-cba-bac-nba"
+    var item = str.split("-")
+    console.log(item)//通过-将字符串分割，赋值给item，返回一个数组。
+    console.log(str.split("-", 2))
+
+    var newStr = item.join("*")//将一个数组拼接起来，并且以星号分割。
+    console.log(newStr)
+  </script>
+</body>
+</html>

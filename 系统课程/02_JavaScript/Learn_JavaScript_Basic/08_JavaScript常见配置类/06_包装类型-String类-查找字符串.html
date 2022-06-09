@@ -10,7 +10,35 @@
   <script>
     var str = "my name is why"
     var name = "why"
-    console.log(str.indexOf(name))
+    //如果能找到，返回索引值。如果不存在，会直接返回-1.
+    console.log(str.indexOf(name))//返回索引值11
+    if (str.indexOf(name) !== -1) {
+      console.log("str中包含name")
+    } else {
+      console.log("str中不包含name")
+    }
+
+    //返回布尔值
+    if (str.includes(name)) {
+      console.log("str中包含name")
+    }
+
+    //是否以my开头
+    if (str.startsWith("my")) {
+      console.log("str中以my开头")
+    }
+
+    //是否以why结尾
+    if (str.endsWith(name)) {
+      console.log("str中以name结尾")
+    }
+
+    //将why替换为其他字符串
+    var newStr = str.replace("why", "hh")
+    var newStr1 = str.replace("why", function() {
+      return "five"
+    })
+    console.log(newStr, newStr1)
   </script>
 </body>
 </html>
