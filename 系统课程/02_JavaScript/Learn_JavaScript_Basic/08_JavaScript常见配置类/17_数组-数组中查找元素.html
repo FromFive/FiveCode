@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var students = [
+      { id: 100, name: "why", age: 18},
+      { id: 101, name: "five", age: 19},
+      { id: 102, name: "hh", age: 20},
+      { id: 103, name: "money", age: 21}
+    ]
+    var stu = students.find(function(item) {
+      return item.id === 101
+      // if (item.id ===101) return true //可以直接返回表达式或者判断后返回true
+    })
+    console.log(stu)
+  </script>
+</body>
+</html>

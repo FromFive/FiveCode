@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+    length属性是可写的，可以进行扩容。
+    设置的length小于原来的元素个数，数组会被截断。
+    如果设置为0，会清空数组。
+    */ 
+    var names = ["nab", "nba", "cba", "abc"]
+    console.log(names.length)
+
+    names.length = 10
+    console.log(names)
+
+    names.length = 2
+    console.log(names)
+
+    names.length = 0
+    console.log(names)
+  </script>
+</body>
+</html>

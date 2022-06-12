@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //数组中原始类型的查找
+    var names = ["abc", "bac", "nba", "cba"]
+    console.log(names.indexOf("nba"))
+
+    var findName = names.find(function(item, index, arr) {
+      return item === "nba"
+    })
+    console.log(findName)
+
+    // 数组中对象类型的查找
+    var students = [
+      { id: 100, name: "why", age: 18},
+      { id: 101, name: "five", age: 19},
+      { id: 102, name: "hh", age: 20},
+      { id: 103, name: "money", age: 21}
+    ]
+    var findStu = students.find(function(item, index, arr) {
+      return item.id === 101
+    })
+    console.log(findStu)
+    /*
+    find方法内部实现的原理是，需要我们在外部给find方法传入一个函数，这个函数需要有返回值。find函数根据这个返回值做判断。如果这个回调函数找到了数组中的某个元素，那么就返回true。find函数发现找到了这个元素，那么就停止循环，并将这个元素再返回出去。
+    */
+
+    // 手动实现
+    Array.prototype.myFind = function(fn) {
+      // var item = undefined //这个变量用来接受成功找到时的那个元素，并且在最后将它返回出去。但是它的默认值不能是null，因为数组里既有可能是原始类型的元素，也可能是对象类型的元素。
+      for (var i = 0; i < this.length; i++) {
+        var isSuccess = fn(this[i], i, this)
+        //如果成功找到，回到函数返回的是true，那么成功标志也被赋值为true，就可以执行if判断的代码块。
+        if (isSuccess) {
+          // item = this[i] //将成功找到的值赋值给接受它的变量。
+          break //成功找到则跳出循环。
+        }
+      }
+      return this[i] //如果是变量接受的那个成功找到的值，那么就返回那个变量。即item。
+    }
+
+    var findNewStu = students.myFind(function(item, index, arr) {
+      return item.id === 101 //此处返回的是一个表达式。如果循环找到的元素的ID是全等于101的，那么表达式结果就是true，最终回调函数的返回结果是true，并将这个结果赋值给高阶函数中的成功标志变量。
+    })
+    console.log(findNewStu) //获取到myFind函数的返回值
+
+    var findNewName = names.myFind(function(item, index, arr) {
+      return item === "nba"
+    })
+    console.log(findNewName)
+
+    // 更加简便的写法
+    Array.prototype.myNewFind = function(fn) {
+      for (var i = 0; i < this.length; i++) {
+        var isSuccess = fn(this[i], i, this) 
+        //如果回调函数找到了对应的元素且返回值是true，那么在if代码块中也不需要赋值给item，再break跳出循环，可以直接return返回这个值，而且return后就可以直接跳出循环。这样写的代码更简洁。
+        if (isSuccess) return this[i]
+      }
+    }
+    var newFindStu = students.myNewFind(function(item, i, arr) {
+      return item.id === 102
+    })
+    console.log(newFindStu)
+  </script>
+</body>
+</html>

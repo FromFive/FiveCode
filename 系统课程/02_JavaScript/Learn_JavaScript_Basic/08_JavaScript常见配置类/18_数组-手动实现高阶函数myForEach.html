@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = ["abc", "cba", "nab", "nba"]
+    // forEach函数用法
+    // names.forEach(function(item, index, arr) {
+    //   console.log(item, index, arr)
+    // })
+
+    // 手动还原实现原理
+    /*
+    版本一
+    声明一个函数myForEach，接受函数fn作为参数，并回调这个函数。数组的元素有几个，就回调几次这份函数fn。所以在内部加for循环，每循环一次就回调一次。回调函数接受元素、索引或着数组为实参，当回调这个函数时，就传入这些参数给形参。
+    调用myForEach函数，并传入实参函数，这个函数被回调时就可以被执行。接受传入的参数并赋值给代码块的变量，打印相应信息。
+    缺点：数组是定义好写死的，如果换一个数组获取里面的信息，需要重新写一套这份代码。
+    */
+    // function myForEach(fn) {
+    //   for (var i = 0; i < names.length; i++) {
+    //     fn(names[i], i, names)
+    //   }
+    // }
+    // myForEach(function(item, index, arr) {
+    //   console.log(item, index, arr)
+    // })
+
+    /*
+    版本二
+    为了解决上个版本的数组写死的问题，不够灵活，这个版本就将数组arr也作为变量，同时传给
+    myForEach函数。for循环中的需要获取数组长度的地方和传给回调函数的数组作为变量的地方都可以使用这个变量。那么在调用myForEach函数的时候，也可以直接将定义的数组变量传入。
+    */
+    // function myForEach(fn, arr) {
+    //   for (var i = 0; i < arr.length; i++) {
+    //     fn(arr[i], i, arr)
+    //   }
+    // }
+    // myForEach(function(item, index, arr) {
+    //   console.log(item, index, arr)
+    // }, names)
+
+    // myForEach(function(item, index, arr) {
+    //   console.log(item, index, arr)
+    // }, [123, 321, 345])
+
+    /*
+    版本三
+    js引擎实现的forEach函数是通过数组调用的，数组是一种特殊的对象类型。那么我们手动实现也可以使用数组调用。
+    相当于给这个数组对象添加一个属性，这个属性对应的是一个方法。当通过对象去调用这个方法时，里面的this是指向调用它的对象的。所以里面的arr变量可以直接替换成this。并且也不需要在调用myForEach时传入arr数组变量了。
+    缺点：别的数组想使用myForEach方法时，还得给它对应的写一套重复代码。
+    */ 
+    // names.myForEach = function(fn) {
+    //   for (var i = 0; i < this.length; i++) {
+    //     fn(this[i], i, this)
+    //   }
+    // }
+    // names.myForEach(function(item, index, arr) {
+    //   console.log(item, index, arr)
+    // })
+
+    /*
+    版本四-后续学习原型链
+    将myForEach函数添加在数组的原型链上，以后不管哪个数组都可以直接调用。就和ForEach一样。
+    */ 
+
+    Array.prototype.myForEach = function(fn) {
+      for (var i = 0; i < this.length; i++) {
+        fn(this[i], i, this)
+      }
+    }
+    names.myForEach(function(item, index, arr) {
+      console.log(item, index, arr)
+    })
+
+    var num = [123, 321, 126, 621]
+    num.myForEach(function(item, index, arr) {
+      console.log(item, index, arr)
+    })
+
+
+  </script>
+</body>
+</html>

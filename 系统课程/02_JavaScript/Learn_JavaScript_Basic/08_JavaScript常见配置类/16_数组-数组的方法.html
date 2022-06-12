@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = ["nab", "nba", "cba", "abc", "why", "five"]
+    // arr.slice()：对数组进行截取。
+    // 不会修改原数组。
+    var newNames = names.slice(2)
+    console.log(names)
+    console.log(newNames)
+
+    // arr.concat()：创建一个新数组，其中包含来自于其他数组和其他项的值。
+    // 如果使用push来添加，首先是会改变原来的数组，其次会在原来的数组里又加了两个数组，而不是添加的元素。
+    var food1 = ["apple", "banana"]
+    var food2 = ["milk", "yogurt"]
+    var food3 = ["cherry", "orange"]
+    // food1.push(food2)
+    // food1.push(food3)
+    // console.log(food1)
+
+    var newFood = food1.concat(food2, food3)//不会改变原数组
+    console.log(newFood)
+    console.log(food1)
+
+    // arr.join()：将一个数组的所有元素连接成一个字符串并返回这个字符串。
+    console.log(names.join())
+    console.log(names.join("-"))
+  </script>
+</body>
+</html>

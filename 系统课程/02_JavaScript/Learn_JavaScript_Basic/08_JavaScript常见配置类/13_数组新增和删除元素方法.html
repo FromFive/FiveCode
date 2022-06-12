@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var names = ["abc", "cba", "nba"]
+    // 1、在数组的尾部添加和删除元素
+    // push()：在末端添加元素。一次可添加多个。
+    names.push("why", "hh")
+    // console.log(names)
+
+    // pop()：从末端取出一个元素。一次只能删除一个。没有参数。但是有返回值，可以用变量接收。
+    names.pop()
+    console.log(names)
+
+
+    // 2、在数组的头部添加和删除元素
+    //unshift()：在首端添加元素，整个其他数组元素向后移动。一次可添加多个。
+    names.unshift("five", "money")
+    console.log(names)
+
+    // shift()：取出队列首端的一个元素，整个数组元素向前移动。一次只能删除一个。没有参数。
+    names.shift()
+    console.log(names)
+
+    // push 和pop方法运行效率比较快，而shift和unshift比较慢。
+
+    // 3、在任意位置添加/修改/删除元素
+    names.splice(1,2)//从索引1开始，删出2个元素。
+    console.log(names)
+
+    //从索引1的位置，添加新元素。
+    // names.splice(1,0,"hh","five")
+    // console.log(names)
+
+    //从索引1的位置开始，删除要替换的元素，添加新的元素
+    names.splice(1,2,"hh","five")
+    // console.log(names)
+  </script>
+</body>
+</html>
