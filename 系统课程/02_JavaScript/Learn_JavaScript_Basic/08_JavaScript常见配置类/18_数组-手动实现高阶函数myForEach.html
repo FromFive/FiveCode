@@ -68,13 +68,13 @@
     将myForEach函数添加在数组的原型链上，以后不管哪个数组都可以直接调用。就和ForEach一样。
     */ 
 
-    Array.prototype.myForEach = function(fn) {
+    Array.prototype.myForEach = function(fn, arr) {
       for (var i = 0; i < this.length; i++) {
-        fn(this[i], i, this)
+        fn(this[i], i, this)//这个this是myForEach的，因为他被对象调用，所以指向的是对象。
       }
     }
     names.myForEach(function(item, index, arr) {
-      console.log(item, index, arr)
+      console.log(item, index, arr, this)//回调函数中的this指向window
     })
 
     var num = [123, 321, 126, 621]
