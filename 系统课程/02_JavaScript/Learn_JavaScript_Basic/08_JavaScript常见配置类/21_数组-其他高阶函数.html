@@ -8,6 +8,7 @@
 </head>
 <body>
   <script>
+    // forEach
     var names = ["abc", "cba", "nba", "mba"]
     names.forEach(function(item) {
       console.log(item, this)//回调函数中的this指向window
@@ -15,6 +16,71 @@
     names.forEach(function(item) {
       console.log(item, this)
     }, names)
+
+    // filter
+    //找出数组中的偶数
+    var nums = [21, 28, 12, 30, 55, 40]
+    var newNums = []
+    for (var item of nums) {
+      if (item % 2 === 0) {
+        newNums.push(item)
+      }
+    }
+    console.log("newNums:", newNums)
+
+    var newNums1 = nums.filter(function(item) {
+      return item % 2 === 0
+    })
+    console.log("newNums1:", newNums1)
+
+    // map
+    var newNums2 = nums.map(function(item) {
+      return Math.pow(item, 2)
+    })
+    console.log("newNums2:", newNums2)
+
+    // reduce
+    //preValue有初始值
+    var newNums3 = nums.reduce(function(preValue, item) {
+      return preValue + item
+    }, 0)
+    console.log("newNums3:", newNums3)
+
+    //preValue没有初始值
+    var newNums4 = nums.reduce(function(preValue, item) {
+      return preValue + item
+    })
+    console.log("newNums4:", newNums4)
+
+    // reduce练习
+    var products = [
+      { name: "鼠标", price: 88, count: 2},
+      { name: "键盘", price: 36, count: 3},
+      { name: "耳机", price: 19, count: 4}
+    ]
+    var totalPrice = products.reduce(function(preValue, item) {
+      return preValue + item.price * item.count
+    }, 0)
+    console.log(totalPrice)
+
+    // 综合练习
+    //求数组中偶数元素的平方，并再次计算平方和。
+    //链式调用。
+    var numArry = [21, 18, 22, 3, 55, 60]
+    var total = numArry.filter(function(item) {
+      return item % 2 === 0
+    }).map(function(item) {
+      return item * item
+    }).reduce(function(preValue, item) {
+      return preValue + item 
+    }, 0)
+    console.log("total:", total)
+
+    // 简化：箭头函数。
+    var newTotal = numArry.filter(item => item % 2 === 0)
+                          .map(item => item * item)
+                          .reduce((preValue, item) => preValue + item)
+    console.log("newTotal:", newTotal)
   </script>
 </body>
 </html>

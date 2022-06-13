@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 自定义时间格式化（简陋版）
+    // 弊端：个位数的时间，不能在十位数的地方显示0.即2022-06-13中，06只会显示6.并且时间之间的分隔符会固定，不会灵活。
+    // 时间格式化需要用到正则表达式，后续的高级中学习
+
+    //获取想要的时间信息 
+    var date = new Date()
+    var year = date.getFullYear()
+    var month = date.getMonth()
+    var day = date.getDate()
+    var hour = date.getHours()
+    var minute = date.getMinutes()
+    var second = date.getSeconds()
+    var milliseconds =date.getMilliseconds()
+    // 将获取到的信息拼接
+    console.log(`${year}/${month}/${day} ${hour}:${minute}:${second}`)
+
+    // getDay是获取一周中的第几天。西方习惯是周日作为一周的第一天，从0开始。
+    var weekDay = date.getDay()
+    console.log(weekDay)
+
+    // 也可以给date设置时间
+    date.setFullYear(2033)
+    // set方法可以自动校准时间，如果传入的数值，在当前时间里没有，那么会自动校准。
+    // 例如，给当前的时间的日改为32号，但是真实的月份中并没有32号，那么它会在当前月份的月底自动加多余的几天。
+    date.setDate(32)
+    console.log(date)
+  </script>
+</body>
+</html>
