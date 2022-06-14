@@ -26,15 +26,38 @@
     bar(foo1);
 
     //4、函数作为另外一个函数的返回值
-    // function sayHello(name) {
-    //   function hi() {
-    //     console.log("hi:", name)
-    //   }
-    //   return hi;
-    // }
-    // var fn = sayHello("kobe");
-    // fn();
-    //函数存在于另外一个数据结构中
-    //函数放在数组中
+    function sayHello(name) {
+      function hi() {
+        console.log("hi:", name)
+      }
+      return hi;
+    }
+    var fn = sayHello("kobe");
+    fn();
+    
+    //5、函数存在于另外一个数据结构中：对象或者数组的数据结构中。
+    //5.1、存在于对象的数据结构中。定义个对象类型的变量，它的属性中有一个是函数。
+    var obj = {
+      name: "why",
+      //这个函数被存在了对象的数据结构中。
+      eating: function () {
+        console.log("eating~");
+      }
+    }
+    //通过对象.属性名来拿到这个函数。
+    obj.eating();
+
+  //5.2、存在于数据的数据结构中。声明3个函数，然后定义一个数组变量，将这三个函数放在数组中。这种方式可以用来做事件总线的封装，后续在js高级学习。
+    function baz1() {
+      console.log("baz1函数被执行");
+    }
+    function baz2() {
+      console.log("baz2函数被执行");
+    }
+    function baz3() {
+      console.log("baz3函数被执行");
+    }
+    //事件总线的封装（后续js高级学习）
+    var fns = [baz1,baz2,baz3];
   </script>
 </html>

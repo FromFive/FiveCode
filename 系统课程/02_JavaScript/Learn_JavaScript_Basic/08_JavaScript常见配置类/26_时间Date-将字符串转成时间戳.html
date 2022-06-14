@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //字符串时间转成时间戳
+    var dateString1 = "03/23/20"
+    var dateString2 = "2022-5-16"
+    var dateString3 = "2022*5-16"
+
+     // 方式一：实例方法getTime()
+     var date = new Date(dateString1).getTime()
+     console.log(date)
+
+    //方式二：类方法Date.parse()
+    var timestamp1 = Date.parse(dateString1)
+    var timestamp2 = Date.parse(dateString2)
+    var timestamp3 = Date.parse(dateString3)
+    console.log(timestamp1, timestamp2, timestamp3)
+    
+    var newDate = new Date(1584892800000)
+    console.log(newDate)
+  </script>
+</body>
+</html>

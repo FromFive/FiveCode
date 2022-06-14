@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Date对象，转成时间戳
+    var date = new Date()
+
+    //方式一：Date.now()
+    var timestamp1 = Date.now()
+    console.log(timestamp1)
+
+    //方式二：getTime()
+    var timestamp2 = date.getTime()
+    console.log(timestamp2)
+
+    //方式三：valueOf()
+    var timestamp3 = date.valueOf()
+    console.log(timestamp3)
+
+    //方式四：+运算符
+    console.log(+date)
+
+    // 利用获取到的Unix时间戳，封装一个简单的函数，测试代码的性能
+    //计算某个操作所花费的时间.首先在操作开始前定义一个开始时间，然后在操作后定义一个结束时间
+    function testPerformance(fn) {
+      var startTime = Date.now()
+      fn()
+      var endTime = Date.now()
+      return endTime - startTime
+    }
+    var runningTime = testPerformance(function() {
+      for (var i = 0; i < 100000; i++) {
+        console.log(i)
+      } 
+    })
+    console.log("执行10万次for循环打印所消耗的时间是：", runningTime)
+    
+  </script>
+</body>
+</html>

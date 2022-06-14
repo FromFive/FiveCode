@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <h1>我是标题</h1>
+    <p>JavaScript的DOM操作</p>
+  </div>
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+  <input type="text">
+  <button>Search</button>
+  <script>
+    //拿到对应的对象模型。
+    var boxEl = document.body.children[0]//整个文档对象下面的body对象，body对象中索引为0的子元素（对象）。
+    console.log(boxEl)
+
+    // 对其进行操作，例如改变样式。
+    boxEl.style.color = "plum"
+  </script>
+</body>
+</html>

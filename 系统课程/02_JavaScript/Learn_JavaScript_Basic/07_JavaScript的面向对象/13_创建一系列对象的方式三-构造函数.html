@@ -8,6 +8,7 @@
 </head>
 <body>
   <script>
+    // javascript已经默认给我们提供了更加符合js思维方式的一种创建对象的规则，也更符合面向对象的思维方式。所以可以去掉自己手动创建的空对象，将方式二中的stu对象使用this关键字。最后使用new调用这个函数，那么js内部就会创建一个新对象并且让this指向这个对象。
     function Student(name, age, height) {
       this.name = name
       this.age = age
