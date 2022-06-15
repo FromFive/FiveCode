@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="btn">切换</button>
+  <div id="box" class="one" title="hh" style="color: red">
+  元素的全局属性hidden
+  </div>
+  <script>
+    //当点击按钮时，隐藏box。
+    //1、获取按钮元素和div元素
+    var btnEl = document.querySelector(".btn")
+    var boxEl = document.querySelector("#box")
+    //2、监听按钮的点击事件，一点击就回调函数，将box的hidden属性设置为true。（元素中没有设置hidden，默认时false）
+    //function是一个回调函数，将它赋值给按钮的onclick属性，当事件发生时，就回调这个函数。
+    btnEl.onclick = function() {
+      //3、只是隐藏
+      //3.1、设置hidden为true。
+      // boxEl.hidden = true
+      // 3.2、设置display为none。
+      // boxEl.style.display = "none"
+
+      // 4、通过判断来做到点击按钮切换隐藏或显示
+      //4.1表达式判断：如果隐藏属性没有设置是false的情况下 元素是显示的，点击后就让它变为true，即元素隐藏。此时元素是隐藏的为true，再次点击的时候进行判断，hidden不是false，那么就会执行else的代码块，让他变为false，元素就会再显示出来。
+      // if (boxEl.hidden === false) {
+      //   boxEl.hidden = true
+      // } else {
+      //   boxEl.hidden = false
+      // }
+      // 4.2、取反判断：比如说元素一开始没有设置hidden，那么hidden是false，元素是显示的，那么取反的话这个表达式为true成立，就执行代码块，将hidden设置为true，让元素不显示。反之，如果元素设置了hidden，是true，元素是不显示的，那么取反的结果是false，表达式不成立，就执行else的代码，将hidden设置为false，让元素显示。
+      if (!boxEl.hidden) {
+        boxEl.hidden = true
+      } else {
+        boxEl.hidden = false
+      }
+
+      // 5、直接取反：将hidden取反的结果直接复制给hidden。如果元素是显示的，那么hidden就是false，一取反就是true，即这次点击让hidden为true，元素不显示。那么如果元素不显示，hidden就是true，一取反就是false，这次点击就让hidden变为false，元素显示。
+      boxEl.hidden = !boxEl.hidden
+    }
+  </script>
+</body>
+</html>
