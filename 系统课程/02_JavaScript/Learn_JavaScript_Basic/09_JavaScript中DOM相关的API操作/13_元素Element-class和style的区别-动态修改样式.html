@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+    color: red;
+    background-color: green;
+    font-size: 18px;
+  }
+  </style>
+</head>
+<body>
+  <div id="abc" class="box" title="bac" age="18">
+    我是div。
+  </div>
+  <script>
+    //需求：当点击box时，文字颜色改成红色
+    //获取元素对象
+    var boxEl = document.querySelector(".box")
+    // 定义点击次数，初始为1，每点击一次，宽度加100.
+    var count = 1
+    // 监听点击
+    boxEl.onclick = function() {
+      //方式一：设置style属性
+      // boxEl.style.color = "red"
+
+      //方式二：动态添加类名
+      // boxEl.className = "active"
+      boxEl.classList.add("active")
+
+      //必须使用修改style属性的情况：动态修改宽度。
+      boxEl.style.width = 100 * count + "px"
+      count++
+    }
+  </script>
+</body>
+</html>

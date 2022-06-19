@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="abc" class="box" title="bac" age="18">
+    我是div。
+  </div>
+  <input type="checkbox" checked>
+
+  账号：<input class="account" type="text">
+  <button class="btn">设置input的值</button>
+  <script>
+    var boxEl = document.querySelector(".box")
+    console.log(typeof boxEl)//object
+
+    // 1、对于标准的attribute，会在DOM对象上创建与其对应的property。
+    // 对于property可以通过点操作来获取。
+    // 在获取标准属性的时候，最好是采用点的形式，既可以获取到对应的类型也能获取到值.
+    console.log(boxEl.id)//abc
+    console.log(boxEl.height)//undefined
+
+    // 因为获取到的attribute值总是字符串类型，所以像input元素的一些布尔属性，在获取的时候会是空字符串。
+    var inputEl = document.querySelector("input")
+    console.log(inputEl.getAttribute("checked"))//空字符串
+    // 所以如果作为条件判断，不会执行相应代码块。因为得到的属性checked是字符串，在条件判断中转成布尔类型是false，而if判断执行代码块的条件是true，所以不会执行打印语句。
+    if (inputEl.getAttribute("checked")) {
+      console.log("checkbox处于选中状态")//不会打印
+    }
+    //如果要执行if判断，可以使用点操作来获取checked属性。
+    if (inputEl.checked) {
+      console.log("checkbox处于选中状态")//会打印
+    }
+    console.log(typeof inputEl.checked)//boolean
+
+    // 2、property和attribute是相互影响的
+    /*
+    改变property，通过attribute获取的值，会随着改变。
+    通过attribute操作修改，property的值会随着改变。
+    */
+   inputEl.id = "aaa"
+   console.log(inputEl.getAttribute("id"))
+   inputEl.setAttribute("title", "hh")
+   console.log(inputEl.title)
+
+  // 3、比较特殊的情况：有些属性只支持通过setAttribute的方式设置，不能点属性的方式设置。但好像value在这两种方式下都支持。
+  var accInputEl = document.querySelector(".account")
+  var btnEl = document.querySelector(".btn")
+  btnEl.onclick = function() {
+    accInputEl.setAttribute("value","hh")
+    //优先级更高
+    accInputEl.value = "five"
+  }
+  </script>
+</body>
+</html>

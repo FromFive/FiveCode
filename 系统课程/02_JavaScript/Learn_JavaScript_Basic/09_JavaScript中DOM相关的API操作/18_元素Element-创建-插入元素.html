@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      font-size: 20px;
+    }
+  </style>
+</head>
+<body>
+  <span>我是span</span>
+  <div id="abc" class="box" title="bac" style="color: red" age="18" data-height="1.88">
+    我是div。
+    <span>我是div的span</span>
+    <p>我是div的p</p>
+  </div>
+  <script>
+    // 在div.box中插入h2元素
+    var boxEl = document.querySelector(".box")
+    // 1、使用innerHTMl。缺点是不能把它当成是元素，而是一个字符串。并且浏览器还需要解析这个字符串。
+    // boxEl.innerHTML = `<h2 class="title">hhh</h2>`
+
+    // 2、创建一个DOM对象然后放到对应的位置
+    // 2.1、创建一个DOM对象并设置类名或内容
+    var h1El = document.createElement("h1")
+    h1El.classList.add("test")
+    h1El.textContent = "我是一级标题"
+    // 2.2、通过方法将这个元素放到对应的位置
+    // append是将元素放到调用元素中的最后（在这个调用元素中，即在div.box中，是父子关系）
+    // boxEl.append(h1El)
+
+    //prepend是将元素放到调用元素中的开头（在这个调用元素中，即在div.box中，是父子关系）
+    // boxEl.prepend(h1El)
+
+    // after是将元素放到调用元素的后面，（不在这个调用元素中，是兄弟关系）
+    // boxEl.after(h1El)
+
+    // before是将元素放到调用元素的前面，（不在这个调用元素中，是兄弟关系）
+    // boxEl.before(h1El)
+
+    // replaceWith是将元素整体替换调用元素。这个方法可以放多个参数。
+    // boxEl.replaceWith(h1El, "abc")
+
+    // 需求，将h1元素放到div中的span和p之间
+    // 方式一：通过querselectorall找到页面中所有的span元素集合，通过索引将h1元素放到它的后面。
+    // var spanEls = document.querySelectorAll("span")
+    // spanEls[1].after(h1El)
+
+    // 方式二：直接使用div元素对象调用querySelector方法，找到它下面的span元素。然后将h1元素放到它的后面。
+    var spanEl = boxEl.querySelector("span")
+    spanEl.after(h1El)
+  </script>
+</body>
+</html>

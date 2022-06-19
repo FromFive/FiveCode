@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: aqua;
+      background-color: plum;
+    }
+  </style>
+</head>
+<body>
+  <div id="abc" class="box" title="bac" age="18">
+    我是div。
+  </div>
+  <button class="btn">切换</button>
+  <script>
+    var boxEl = document.querySelector(".box")
+    // 直接修改className会修改原来的类名。
+    boxEl.className = "hhh"
+    console.log(boxEl.className)
+
+    //classList可以给元素添加多个类名
+    boxEl.classList.add("box")
+    boxEl.classList.remove("hhh")
+    console.log(boxEl.classList.contains("hhh"))//false
+    console.log(boxEl.classList.contains("box"))//true
+
+    //需求：点击按钮时active在添加和移除之间切换
+    var btnEl = document.querySelector(".btn")
+    btnEl.onclick = function() {
+      // 方式一：if判断
+      // if (boxEl.classList.contains("active")) {
+      //   boxEl.classList.remove("active")
+      // } else {
+      //   boxEl.classList.add("active")
+      // }
+
+      // 方式二：toggle
+      boxEl.classList.toggle("active")
+    }
+  </script>
+</body>
+</html>

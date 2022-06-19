@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="remove-btn">移除box</button>
+  <button class="clone-btn">克隆box</button>
+  <div class="box">
+    <h2 class="title">我是标题</h2>
+    <p>我是内容</p>
+  </div>
+  <script>
+    // 移除元素
+    // 1、获取元素
+    var boxEl = document.querySelector(".box")
+    var btnEl = document.querySelector(".remove-btn")
+    // 2、监听btn的点击。当发生点击时，浏览器帮助我们回调后面的函数。
+    btnEl.onclick = function() {
+      // 直接使用元素调用remove方法即可移除掉元素。
+      boxEl.remove()
+    }
+
+    // 克隆/复制元素
+    var cloneBtnEl = document.querySelector(".clone-btn")
+    var count = 0
+    cloneBtnEl.onclick = function() {
+      // cloneNode方法是克隆出一个节点，不光是元素，也包括注释、文本等节点。可以传入一个布尔类型的参数，表示复制的深度。如果传入true表示box下的子元素也一起复制，如果不写，则不复制子元素。
+      var newNode = boxEl.cloneNode(true)
+      //将克隆的box的标题内容改掉。
+      newNode.children[0].textContent = "我也是标题" + count
+      // boxEl.after(newNode)
+      document.body.append(newNode)
+      count++
+    }
+  </script>
+</body>
+</html>

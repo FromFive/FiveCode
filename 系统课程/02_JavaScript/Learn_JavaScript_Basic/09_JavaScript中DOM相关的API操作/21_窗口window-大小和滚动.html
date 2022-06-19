@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+    }
+    .box {
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <!-- 如果页面内容较多，产生滚动条，滚动条本书是不属于html的，是属于window的。 -->
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+
+  <button class="scroll-btn">滚动位置</button>
+  <script>
+    console.log(window.outerWidth, window.outerHeight)
+
+    console.log(window.innerWidth, window.innerHeight)
+
+    console.log(document.documentElement.clientWidth, document.documentElement.clientHeight)
+    
+    console.log(document.documentElement.offsetWidth, document.documentElement.offsetHeight)
+
+    window.onclick = function() {
+      console.log(window.scrollX, window.scrollY)
+    }
+
+    //实时监听滚动区域
+    // window.onscroll = function() {
+    //   console.log(window.scrollY)
+    // }
+
+    var scrollBtnEl = document.querySelector(".scroll-btn")
+    scrollBtnEl.onclick = function() {
+      // window.scrollBy(0, 100)
+      window.scrollTo(0,200)
+      
+    }
+
+  </script>
+</body>
+</html>

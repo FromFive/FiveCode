@@ -7,12 +7,39 @@
   <title>Document</title>
 </head>
 <body>
-  <div id="abc" class="box" titile="bac" age="18">
+  <div id="abc" class="box" title="bac" age="18">
     我是div。
   </div>
+  <input type="checkbox" checked>
+  <input type="checkbox" checked="checked">
   <script>
     var boxEl = document.querySelector(".box")
-    console.log(typeof boxEl)
+    console.log(typeof boxEl)//object
+
+    // 所有arrtibute都支持的操作
+    // 1、检查特性是否存在。
+    console.log(boxEl.hasAttribute("id"))//true
+    console.log(boxEl.hasAttribute("height"))//false
+
+    // 2、获取某个特性
+    // 存在则获取到这个特性值;不存在则获取不到，为null。
+    console.log(boxEl.getAttribute("title"))//bac
+
+    // 3、设置某个属性
+    boxEl.setAttribute("height","1.88")
+
+    // 4、移除某个属性
+    boxEl.removeAttribute("height")
+    
+    // 5、获取属性集合，不是数组
+    console.log(boxEl.attributes.title)
+    console.log(boxEl.attributes[0])
+
+    // 注意：特性总是字符串类型。
+    // 因为获取到的attribute值总是字符串类型，所以像input元素的一些布尔属性，在获取的时候会是空字符串。
+    var inputEls = document.querySelectorAll("input")
+    console.log(inputEls[0].getAttribute("checked"))//空字符串
+    console.log(inputEls[1].getAttribute("checked"))//checked
   </script>
 </body>
 </html>

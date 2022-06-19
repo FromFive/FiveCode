@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 30px;
+    }
+    .box {
+      width: 100px;
+      height: 100px;
+      padding: 20px;
+      border: 10px solid red;
+      overflow: auto;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    人间仙境，震撼双眼。在江西境内，耗资26亿在深山峡谷中建起了一个S 仙故里，四周悬崖瀑布环绕，条条小巷纵横交错，夜晚一片华灯初上，仿佛置身仙境一般，他便是江西的望仙谷。在望仙谷，一栋栋客房挂在110米高的悬崖之上，犹如生长在山体上的N 巢。在这里，错落有序的古镇，但是你一定想不到，早在十几年前，这里还只是一个废弃的荒村。
+  </div>
+  <script>
+    var boxEl = document.querySelector(".box")
+    console.log(getComputedStyle(boxEl).width)//获取到的宽度带有单位，是string类型。
+    console.log(boxEl.clientWidth)//获取到的宽度没有单位，是数字类型，可直接使用。
+    console.log(boxEl.clientHeight)
+
+    console.log(boxEl.clientLeft)
+    console.log(boxEl.clientTop)
+
+    console.log(boxEl.offsetWidth)
+    console.log(boxEl.offsetHeight)
+
+    console.log(boxEl.offsetLeft)
+    console.log(boxEl.offsetTop)
+
+    console.log(boxEl.scrollHeight)
+    console.log(boxEl.scrollTop)
+
+    // 滚动内容后，点击页面任意位置获取滚动部分的高度。
+    window.onclick = function() {
+      console.log(boxEl.scrollTop)
+    }
+  </script>
+</body>
+</html>
