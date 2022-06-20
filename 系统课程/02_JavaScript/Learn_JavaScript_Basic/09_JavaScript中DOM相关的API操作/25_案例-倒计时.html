@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .countdown {
+      color: #f00;
+    }
+    .countdown .time {
+      display: inline-block;
+      padding: 5px;
+      color: #fff;
+      background-color: #f00;
+    }
+  </style>
+</head>
+<body>
+  <div class="countdown">
+    <span class="time hour"></span>
+    <span class="split">:</span>
+    <span class="time minute"></span>
+    <span class="split">:</span>
+    <span class="time second"></span>
+  </div>
+  <script src="./js/format.js"></script>
+  <script>
+    var hourEl = document.querySelector(".hour")
+    var minuteEl = document.querySelector(".minute")
+    var secondEl = document.querySelector(".second")
+    
+    var endDate = new Date()
+    endDate.setHours(24)
+    endDate.setMinutes(0)
+    endDate.setSeconds(0)
+    endDate.setMilliseconds(0)
+
+    setInterval(function() {
+      var nowDate = new Date()
+      var intervalTime = Math.floor((endDate.getTime() - nowDate.getTime()) / 1000)
+      // console.log(intervalTime)
+
+      var intervalHour = formatPadLeft(Math.floor(intervalTime / 3600))
+      var intervalMinute = formatPadLeft(Math.floor((intervalTime / 60) % 60))
+      var intervalSecond = formatPadLeft(Math.floor(intervalTime % 60))
+      
+      hourEl.textContent = intervalHour
+      minuteEl.textContent = intervalMinute
+      secondEl.textContent = intervalSecond
+    }, 1000)
+
+    // 测试
+    // var nowDate = new Date()
+    // var intervalDate = new Date(endDate.getTime() - nowDate.getTime())
+    
+    // console.log(intervalDate.toISOString())
+  </script>
+</body>
+</html>

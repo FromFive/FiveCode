@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <ul></ul>
+  <script>
+    var ulEl = document.querySelector("ul")
+
+    // 方式一：
+    // while (true) {
+    //   var message = prompt()
+    //   // if (prompt() === "") break
+    //   if (!message) break
+    //   var liEl = document.createElement("li")
+    //   liEl.textContent = message
+    //   ulEl.append(liEl)
+    // }
+
+    // 方式二
+    var isFlag = true
+    while (isFlag) {
+      var message = prompt()
+      if (!message) {
+        isFlag = false
+      } else {
+        var liEl = document.createElement("li")
+        liEl.textContent = message
+        ulEl.append(liEl)
+      }
+    }
+    
+  </script>
+</body>
+</html>

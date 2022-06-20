@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2></h2>
+  <script src="./js/format.js"></script>
+  <script>
+    var h2El = document.querySelector("h2")
+    setInterval(function() {
+      var date = new Date()
+      var year = date.getFullYear()
+      var month = formatPadLeft(date.getMonth() + 1)
+      var day = formatPadLeft(date.getDate())
+      var hour =formatPadLeft( date.getHours())
+      var minute = formatPadLeft(date.getMinutes())
+      var second = formatPadLeft(date.getSeconds())
+      h2El.textContent = `${year}-${month}-${day} ${hour}:${minute}:${second}`
+    }, 1000)
+
+
+    // 补充：padStart方法。如果时间中的月日、十分秒是个位数，需要在左边补齐0，可以使用此方法。
+    // 第一个参数表示显示几位数；第二个参数是剩下的位数用什么补齐。
+    var str = "3"
+    console.log(str.padStart(2, "0"))
+  </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .scroll-btn {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      /* display: none; */
+      opacity: 0;
+    }
+    .box {
+      height: 200px;
+      background-color: orange;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <!-- 如果页面内容较多，产生滚动条，滚动条本书是不属于html的，是属于window的。 -->
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+
+  <button class="scroll-btn">回到顶部</button>
+  <script>
+    var scrollBtnEl = document.querySelector(".scroll-btn")
+    //实时监听滚动区域
+    // scrollBtnEl.hidden = true
+    window.onscroll = function() {
+      var scrollY = window.scrollY
+      // 方式一：设置默认的display为none，当滚动高度大于600时，让按钮再显示，此时不能不写具体值，因为会使用默认值none。
+      // if (scrollY > 600) {
+      //   scrollBtnEl.style.display = "block"
+      // } else {
+      //   scrollBtnEl.style.display = "none"
+      // }
+
+      // 方式二：使用hidden属性，先设置默认值为true不显示，然后当滚动高度大于600时，让hidden为false，显示出来。
+      if (scrollY > 600) {
+        scrollBtnEl.hidden = false
+      } else {
+        scrollBtnEl.hidden = true
+      }
+
+      // 方式三：如果想要设置动画，可以使用opacity。
+      if (scrollY > 600) {
+        scrollBtnEl.style.opacity = 1
+      } else {
+        scrollBtnEl.style.opacity = 0
+      }
+    }
+    scrollBtnEl.onclick = function() {
+      // window.scrollBy(0, 100)
+      // 回到顶部位置
+      window.scrollTo(0,0)
+      
+    }
+
+  </script>
+</body>
+</html>
