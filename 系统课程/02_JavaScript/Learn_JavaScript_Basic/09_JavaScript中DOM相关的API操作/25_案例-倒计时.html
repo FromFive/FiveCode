@@ -7,11 +7,18 @@
   <title>Document</title>
   <style>
     .countdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* width: 100px; */
+      text-align: center;
       color: #f00;
+      font-size: 20px;
     }
     .countdown .time {
-      display: inline-block;
+      width: 35px;
       padding: 5px;
+      border-radius: 3px;
       color: #fff;
       background-color: #f00;
     }
@@ -27,30 +34,40 @@
   </div>
   <script src="./js/format.js"></script>
   <script>
+    // 1、获取元素
     var hourEl = document.querySelector(".hour")
     var minuteEl = document.querySelector(".minute")
     var secondEl = document.querySelector(".second")
-    
+    // 2、定义截止时间，并设置为24点。
     var endDate = new Date()
     endDate.setHours(24)
     endDate.setMinutes(0)
     endDate.setSeconds(0)
     endDate.setMilliseconds(0)
-
-    setInterval(function() {
-      var nowDate = new Date()
-      var intervalTime = Math.floor((endDate.getTime() - nowDate.getTime()) / 1000)
-      // console.log(intervalTime)
-
-      var intervalHour = formatPadLeft(Math.floor(intervalTime / 3600))
-      var intervalMinute = formatPadLeft(Math.floor((intervalTime / 60) % 60))
-      var intervalSecond = formatPadLeft(Math.floor(intervalTime % 60))
-      
-      hourEl.textContent = intervalHour
-      minuteEl.textContent = intervalMinute
-      secondEl.textContent = intervalSecond
+    var timeId = setInterval(function() {
+        // 获取当前时间
+        var nowDate = new Date()
+        //获取当前时间到截止时间的差值时间戳，得到秒数
+        var intervalTime = Math.floor((endDate.getTime() - nowDate.getTime()) / 1000)
+        if (intervalTime === -1) {
+          clearInterval(timeId)
+        } else {
+        // 根据秒数得到具体的小时、分钟、秒
+        var intervalHour = formatPadLeft(Math.floor(intervalTime / 3600))
+        var intervalMinute = formatPadLeft(Math.floor((intervalTime / 60) % 60))
+        var intervalSecond = formatPadLeft(intervalTime % 60)
+        // 将格式化的小时、分钟、秒填充到元素中
+        hourEl.textContent = intervalHour
+        minuteEl.textContent = intervalMinute
+        secondEl.textContent = intervalSecond
+      }
     }, 1000)
 
+    // 公式转化
+    // var num = 125
+    // console.log(Math.floor(num / 100))
+    // console.log(Math.floor((num / 10) % 10))
+    // console.log(Math.floor(num % 10))
     // 测试
     // var nowDate = new Date()
     // var intervalDate = new Date(endDate.getTime() - nowDate.getTime())
