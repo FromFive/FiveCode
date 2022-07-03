@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <button data-action="new">新建</button>
+    <button data-action="modify">修改</button>
+    <button data-action="remove">删除</button>
+    <button>别的按钮</button>
+  </div>
+  <script>
+    // 事件委托和data-全局属性一起使用
+    var boxEl = document.querySelector(".box")
+    boxEl.onclick = function(event) {
+      var btnEl = event.target
+      // var action = btnEl.getAttribute("action")
+      var action = btnEl.dataset.action
+      switch (action) {
+        case "new":
+          console.log("新建按钮被点击了")
+          break
+        case "modify":
+          console.log("修改按钮被点击了")
+          break
+        case "remove":
+          console.log("删除按钮被点击了")
+          break
+        default:
+          console.log("其他按钮被点击了")
+      }
+    }
+  </script>
+</body>
+</html>

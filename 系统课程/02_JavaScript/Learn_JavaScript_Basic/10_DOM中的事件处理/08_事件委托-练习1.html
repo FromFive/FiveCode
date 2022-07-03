@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .active {
+      color: aqua;
+      font-size: 20px;
+      background-color: plum;
+    }
+  </style>
+</head>
+<body>
+  <!-- 需求：点击任意列表选项，颜色改变且字体变大。 -->
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
+  <script>
+    // 方案1:每一个li都监听自己的点击，并且有自己的处理函数，通过遍历动态添加类名。
+    var liEls = document.querySelectorAll("li")
+    for (var liEl of liEls) {
+      // 当直接使用liEl这个变量来添加类名是，只会给最后一个添加。因为事件只会在点击的那一个执行，但是那个时候for循环已经执行完毕了，到了最后一个。
+      // liEl.onclick = function() {
+      //   liEl.classList.add("active")
+      // }
+
+      // 方法1，在for循环中使用立即执行函数，利用立即执行函数内部有自己的作用域的特点。
+      // (function(liEl) {
+      //   liEl.onclick = function () {
+      //     liEl.classList.add("active")
+      //     console.log(liEl)
+      //   }
+      // })(liEl)
+
+      // 方法2，利用this指向处理事件的对象。
+      // liEl.onclick = function() {
+      //   this.classList.add("active")
+      // }
+
+      // 方法3、利用event对象的currentTarget
+      // liEl.onclick = function(event) {
+      //   event.currentTarget.classList.add("active")
+      // }
+    }
+
+    // 方案2，利用事件冒泡，点击子类也会冒泡到父类上，来监听ul的点击，并利用event对象中的target，将li的发生事件委托给ul来处理。
+    // 以上这种方式也叫做事件委托模式。这种性能相比于方案1要高，因为从始自终只有一个处理函数。
+    // var ulEl = document.querySelector("ul")
+    // ulEl.onclick = function(event) {
+    //   event.target.classList.add("active")
+    //   console.log(event.target)
+    // }
+
+    // 优化：点击li添加active，其他的取消active。
+    var ulEl = document.querySelector("ul")
+    // 方式4的变量，初始值为null。
+    var activeLiEl = null
+
+    ulEl.onclick = function(event) {
+      // 方式1:首先通过遍历把所有元素中只要有active的都先移除掉，然后在给点击的元素添加active。因为要遍历所有元素，所以性能差。
+      // for (var i = 0; i < ulEl.children.length; i++) {
+      //   ulEl.children[i].classList.remove("active")
+      // }
+      // event.target.classList.add("active")
+
+      // 方式2:添加一个判断。判断li元素中是有包含active，如果有再移除。但是性能也不高。
+      // for (var i = 0; i < ulEl.children.length; i++) {
+      //   var liEl = ulEl.children[i]
+      //   if (liEl.classList.contains("active")) {
+      //     liEl.classList.remove("active")
+      //   }
+      // }
+      // event.target.classList.add("active")
+
+      // 方式3:在ul中查找有active的li。
+      // 因为初始的时候是都没有active的，所以直接设置添加类名会报错。需要通过逻辑与的本质来设置。
+      // var activeLi = ulEl.querySelector(".active")
+      // activeLi && activeLi.classList.remove("active")
+      // event.target.classList.add("active")
+      
+
+      // 方式4:通过一个变量来记录上一次点击的元素是哪个。
+      // 边界判断：只有在点击新的li并且li有active时才移除，点击ul不需要移除。
+      if (activeLiEl && event.target !== ulEl) {
+        activeLiEl.classList.remove("active")
+      }
+      if (event.target !== ulEl) {
+        event.target.classList.add("active")
+      }
+      
+      activeLiEl = event.target
+    }
+  </script>
+</body>
+</html>

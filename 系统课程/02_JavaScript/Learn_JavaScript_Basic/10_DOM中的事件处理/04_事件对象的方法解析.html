@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+    }
+    .box span {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <a href="http://www.baidu.com">百度一下</a>
+  <div class="box">
+    <span>
+      <button>按钮</button>
+    </span>
+  </div>
+  <script>
+    var aEl = document.querySelector("a")
+    aEl.onclick = function(event) {
+      console.log("a被点击了")
+      alert("hh")
+      event.preventDefault()
+    }
+    var divEl = document.querySelector("div")
+    var spanEl = document.querySelector("span")
+    var btnEl = document.querySelector("button")
+
+    divEl.addEventListener("click", function() {
+      console.log("div的事件冒泡监听")
+    })
+    spanEl.addEventListener("click", function() {
+      console.log("span的事件冒泡监听")
+    })
+    btnEl.addEventListener("click", function(event) {
+      console.log("button的事件冒泡监听")
+      event.stopPropagation()
+    })
+
+    
+    btnEl.addEventListener("click", function() {
+      console.log("button的事件捕获监听")
+    }, true)
+    divEl.addEventListener("click", function() {
+      console.log("div的事件捕获监听")
+    }, true)
+    spanEl.addEventListener("click", function(event) {
+      console.log("span的事件捕获监听")
+      event.stopPropagation()
+    }, true)
+    
+  </script>
+</body>
+</html>

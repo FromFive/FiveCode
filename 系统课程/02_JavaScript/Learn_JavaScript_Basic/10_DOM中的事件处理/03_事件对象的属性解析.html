@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      width: 300px;
+      height: 300px;
+      background-color: orange;
+    }
+    .box span {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <span>
+      <button>按钮</button>
+    </span>
+  </div>
+  <script>
+    var divEl = document.querySelector(".box")
+    var spanEl = document.querySelector("span")
+    divEl.onclick = function(event) {
+      console.log(event.target)
+      console.log(event.currentTarget)
+
+      console.log(event.type)
+
+      console.log("事件发生在元素内的位置：", event.offsetX, event.offsetY)
+      console.log("事件发生在客户端内的位置：", event.clientX, event.clientY)
+      console.log("事件发生在页面内的位置：", event.pageX, event.pageY)
+      console.log("事件发生在屏幕内的位置：", event.screenX, event.screenY)
+      console.log("事件发生所处阶段：", event.eventPhase)
+    }
+    // spanEl.onclick = function(event) {
+    //   console.log(event.target)
+    //   console.log(event.currentTarget)
+    // }
+  </script>
+</body>
+</html>

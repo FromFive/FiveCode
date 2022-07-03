@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // eventtarget可以实现类似事件总线的效果。
+    // 监听派发的事件
+    window.addEventListener("hh", function() {
+      console.log("监听派发的事件")
+    })
+   setTimeout(function() {
+    // 派发一个新事件
+    window.dispatchEvent(new Event("hh"))
+   }, 5000)
+  </script>
+</body>
+</html>
