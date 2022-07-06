@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="box">
+    <h2>
+      我是标题
+    </h2>
+    <div class="container">
+      <p>
+        我是段落，<span class="keyword">获取元素的方法</span>哈哈哈
+      </p>
+      <p>
+        我也是段落，<span class="keyword">方法有很多</span>
+      </p>
+      <div class="article">
+        <h3 id="title">
+          我是文章标题
+        </h3>
+        <p>
+          我是文章内容。
+        </p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // 元素导航的方法：比较繁琐，需要一层层寻找。
+    var bodyEl = document.body
+    var boxEl = bodyEl.firstElementChild
+    var containerEl = boxEl.children[1]
+    var pEl = containerEl.children[0]
+    var spanEl = pEl.children[0]
+    spanEl.style.color = "red"
+
+    // document中的方法
+    var keywordEls = document.getElementsByClassName("keyword")
+    keywordEls[0].style.backgroundColor = "aqua"
+    //获得的keywordEls是个集合，不是数组。
+    for (var i = 0; i < keywordEls.length; i++) {
+      keywordEls[i].style.fontSize = "20px"
+    }
+
+    var titleEl = document.getElementById("title")
+    titleEl.style.color = "orange"
+
+    //querySelector
+    var keywordEl = document.querySelector(".keyword")
+    var keywordEls = document.querySelectorAll(".keyword")
+    console.log(keywordEl, keywordEls)
+    var titleEl = document.querySelector("#title")
+
+    for (var el of keywordEls) {
+      el.style.fontWeight = 700
+    }
+  </script>
+</body>
+</html>

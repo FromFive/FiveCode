@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 200px;
+      background-color: orange;
+    }
+    .box span {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <span></span>
+  </div>
+  <script>
+    var boxEl = document.querySelector(".box") //as HTMLDivElement
+    var spanEl = document.querySelector("span")
+    
+    // 第一组：enter和leave。当鼠标进入子元素时，浏览器认为子元素是父元素的一部分，所以不会有任何反应。
+    // boxEl.onmouseenter = function() {
+    //   console.log("div mouseenter")
+    // }
+    // boxEl.onmouseleave = function() {
+    //   console.log("div mouseleave")
+    // }
+    // spanEl.onmouseenter = function() {
+    //   console.log("span mouseenter")
+    // }
+    // spanEl.onmouseleave = function() {
+    //   console.log("span mouseleave")
+    // }
+
+    // 第二组：over和out。当鼠标放到子元素上时，浏览器认为子元素与父元素是独立的，那么会进行向上冒泡到div，会打印对应的信息。
+    boxEl.onmouseover = function() {
+      console.log("div mouseover")
+    }
+    boxEl.onmouseout = function() {
+      console.log("div mouseout")
+    }
+    // spanEl.onmouseover = function() {
+    //   console.log("span mouseover")
+    // }
+    // spanEl.onmouseout = function() {
+    //   console.log("span mouseout")
+    // }
+  </script>
+</body>
+</html>

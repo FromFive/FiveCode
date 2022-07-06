@@ -8,7 +8,18 @@
 </head>
 <body>
   <script>
-    
+    var str = "Hello world"
+    str = "hh"//这种方式不是修改字符串，是重新赋值了。
+    str[1] = "A"//这种也不会修改
+    console.log(str)
+
+
+    //可以使用toUpper()方法，但是也并不是改变了原有的字符串，而是在原来字符串的基础上将其转成大写的，返回一个新的值。
+    var str1 = str.toUpperCase()
+    console.log("str1:", str1)
+
+    var str2 = str.toLowerCase()
+    console.log("str2:", str2)
   </script>
 </body>
 </html>
