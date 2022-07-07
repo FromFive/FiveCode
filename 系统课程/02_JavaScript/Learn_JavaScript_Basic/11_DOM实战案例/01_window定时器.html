@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button class="out">取消timeout定时器</button>
+  <button class="inter">取消interval定时器</button>
+  <script>
+    function foo(name, age) {
+      console.log("3秒后foo被调用", name, age)
+    }
+    // 可以传入多个参数，作为foo函数的参数，了解即可。
+    var timeoutId = setTimeout(foo, 3000, "why", 20)
+    
+    function bar() {
+      console.log("每隔3秒bar被调用")
+    }
+    var interId = setInterval(bar, 3000)
+
+    var outBtnEl = document.querySelector(".out")
+    var interBtnEl = document.querySelector(".inter")
+    // 取消定时器
+    outBtnEl.onclick  = function() {
+      clearTimeout(timeoutId)
+    }
+
+    interBtnEl.onclick = function() {
+      clearInterval(interId)
+    }
+  </script>
+</body>
+</html>

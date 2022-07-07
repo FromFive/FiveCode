@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      background-color: #f00;
+    }
+    .box button {
+      flex: 1;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <button>新增</button>
+    <button>修改</button>
+    <button>删除</button>
+  </div>
+  <script>
+    // 监听按钮元素本身，enter和over是没有区别的，因为没有冒泡。
+    //使用for循环会对每个按钮元素创建了不同的函数，一共要创建3个函数，性能上相对较低。
+    // var btnEls = document.querySelectorAll("button")
+    // for (var btnEl of btnEls) {
+    //   btnEl.onmouseenter = function() {
+    //     console.log(this.textContent)
+    //   }
+    // }
+
+    // 监听父元素，进行事件委托，需要冒泡，所以只能用over。
+    // 此种方法是对上述for循环的一种优化，只创建了一个函数。
+    var boxEl = document.querySelector(".box")
+    boxEl.onmouseover = function(event) {
+      if (event.target !== boxEl) {
+        console.log(event.target.textContent)
+      }
+      // if (event.target.tagName === "BUTTON") {
+      //   console.log(event.target.textContent)
+      // }
+    }
+  </script>
+</body>
+</html>

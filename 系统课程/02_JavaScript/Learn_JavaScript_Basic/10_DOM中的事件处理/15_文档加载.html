@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      // box样式也可以在页面内容加载完毕，外部资源未加载完毕的时候设置。
+      var boxEl = document.querySelector(".box")
+      boxEl.style.backgroundColor = "orange"
+
+      // 此时外部资源例如图片、样式表未加载，所以在此时获取图片占据的宽度和高度是获取不到的，因为未加载。
+      var imgEl = document.querySelector("img")
+      console.log("页面内容加载完毕", imgEl.offsetWidth, imgEl.offsetHeight)
+    })
+
+    // 通常情况下，按照加载顺序，script是写在body的最后。如果写在前面，在js中设置元素样式的时候，加载时会报错。但是可以通过load事件解决。
+    // load事件是在HTML文档，包括外部资源例如图片、样式表等都加载完成后，再执行。
+    window.addEventListener("load", function() {
+      // box的样式设置可以在页面所有内容加载完毕时设置。
+      // var boxEl = document.querySelector(".box")
+      // boxEl.style.backgroundColor = "orange"
+
+      // 此种方式中是页面中的所有内容都加载完毕，包括图片、样式表等外部资源，所以可以获取到图片占据的宽度和高度。
+      var imgEl = document.querySelector("img")
+      console.log("页面所有内容加载完毕", imgEl.offsetWidth, imgEl.offsetHeight)
+    })
+  </script>
+  <div class="box"></div>
+  <img src="../image/背景图6.gif" alt="">
+</body>
+</html>

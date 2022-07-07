@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*1、 给定一个高度即可，宽度由内容撑起来。头像的高度要与父元素的高度一致，且宽度也要与自己的高度一致，因为要设置边框角度。 */
+    /* 2、父元素设置flex布局。宽度不设置的情况下，直接设置flex会占据整行，所以使用inline-flex。 */
+    .box {
+      display: inline-flex;
+      align-items: center;
+      height: 40px;
+      border-radius: 20px;
+      background-color: rgba(0,0,0,.4);
+    }
+    .box img {
+      width: 40px;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .box span {
+      margin: 0 15px 0 8px;
+      font-size: 14px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="../image/背景图6.gif" alt="">
+    <span clsaa="info">Five对这件商品感兴趣</span>
+  </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input type="text">
+  <button>搜索</button>
+  <script>
+    var inputEl = document.querySelector("input")
+    // inputEl.onkeydown = function() {
+    //   console.log("keydown")
+    // }
+    // inputEl.onkeypress = function() {
+    //   console.log("keypress")
+    // }
+    // inputEl.onkeyup = function(event) {
+    //   console.log("keyup:", event.key, event.code)
+    // }
+
+    // 应用一：搜索框，按下enter键进行搜索
+    var btnEl = document.querySelector("button")
+    btnEl.onclick = function() {
+      console.log("进行搜索：", inputEl.value)
+    }
+    inputEl.onkeyup = function(event) {
+      if (event.code === "Enter") {
+        console.log("进行搜索：", inputEl.value)
+      }
+    }
+
+    // 应用二：按下s键（search），自动聚焦到搜索框。
+    // 在鼠标不点击到搜索框的时候，按s键自动聚焦，所以这个事件是发生在document上。
+    document.onkeyup = function(event) {
+      if (event.code === "KeyS") {
+        inputEl.focus()
+      }
+    }
+  </script>
+</body>
+</html>

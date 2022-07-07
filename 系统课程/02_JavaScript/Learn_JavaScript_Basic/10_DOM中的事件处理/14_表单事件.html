@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form action="/five">
+    <input type="text">
+    <textarea name="" id="" cols="30" rows="10"></textarea>
+    <button type="reset">重置</button>
+    <button type="submit">提交</button>
+  </form>
+  <script>
+    var inputEl = document.querySelector("input")
+
+    // 1、聚焦和失去焦点
+    // inputEl.onfocus = function() {
+    //   console.log("聚焦时触发")
+    // }
+    // inputEl.onblur = function() {
+    //   console.log("失去焦点时触发")
+    // }
+
+    // 2、输入事件和元素内容改变的事件
+    // inputEl.oninput = function() {
+    //   console.log("input输入文本时触发：", inputEl.value)
+    // }
+    // inputEl.onchange = function() {
+    //   console.log("change文本输入完成，焦点离开，确定内容改变时触发：", inputEl.value)
+    // }
+
+    // 3、表单重置和提交事件
+    // 因为重置和提交都是对表单进行的操作，所以事件也是发生在表单form上。
+    var formEl = document.querySelector("form")
+    formEl.onreset = function(event) {
+      console.log("重置表单")
+      event.preventDefault()
+    }
+    formEl.onsubmit = function(event) {
+      console.log("提交表单")
+      event.preventDefault()//阻止默认行为，可手动提交表单（后续学习）。
+    }
+  </script>
+</body>
+</html>
