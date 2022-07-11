@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 53.3333vw;
+      height: 53.3333vw;
+      background-color: #f00;
+    }
+    .cover {
+      position: fixed;
+      right: 0;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      background-color: rgba(0,0,0, .4);
+    }
+    .cover .wrapper {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80vw;
+      height: 80vw;
+    }
+    .cover .wrapper .close {
+      position: relative;
+      width: 100%;
+      height: 10.6667vw;
+      /* background-color: #0f0; */
+    }
+    .cover .wrapper .close img {
+      display: inline-block;
+      position: absolute;
+      right: -6.6667vw;
+      width: 10.6667vw;
+      height: 10.6667vw;
+    }
+    .cover .wrapper img {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="box"></div>
+  <div class="cover">
+    <div class="wrapper">
+      <div class="close">
+        <img src="../image/按钮_关闭_o.png" alt="">
+      </div>
+      <div class="album">
+        <img src="../image/背景图6.gif" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var coverEl = document.querySelector(".cover")
+    var closeEl = coverEl.querySelector(".close")
+    var closeImgEl = closeEl.querySelector("img")
+    console.log(closeImgEl)
+
+    function closeCover() {
+      coverEl.remove()
+    }
+    closeImgEl.addEventListener("click", closeCover)
+
+    setTimeout(closeCover, 5000)
+  </script>
+</body>
+</html>

@@ -19,6 +19,7 @@
       width: 40px;
       height: 100%;
       border-radius: 50%;
+      overflow: hidden;
     }
     .box span {
       margin: 0 15px 0 8px;
@@ -32,5 +33,41 @@
     <img src="../image/背景图6.gif" alt="">
     <span clsaa="info">Five对这件商品感兴趣</span>
   </div>
+  <script>
+    // 1、发送ajax请求，服务器返回的数据列表。
+    var tipList = [
+      {
+        icon: "",
+        title: "money对这件商品感兴趣"
+      },
+      {
+        icon: "",
+        title: "hh对这件商品感兴趣"
+      },
+      {
+        icon: "",
+        title: "smile对这件商品感兴趣"
+      }
+    ]
+
+    // 2、获取对应的对象。
+    var boxEl = document.querySelector(".box")
+    var imgEl = boxEl.querySelector("img")
+    var spanEl = boxEl.querySelector("span")
+
+    // 3、定义一个变量，用于设置初始的索引值。初始值可以设置为0或值随机生成一个索引。
+    var currentIndex = Math.floor(Math.random() * tipList.length)
+    // 4、每2秒切换数据：切换数据时，头像对应的是数据列表相应索引中的icon；描述信息对应的是数据列表相应索引中的title。
+    // 每切换一次数据，索引值自增。直到自增的索引值等于或大于数据列表的长度，那么让这个索引值重置为0，从0再次开始。
+    setInterval(function() {
+      imgEl.src = tipList[currentIndex].icon
+      spanEl.textContent = tipList[currentIndex].title
+      currentIndex++ 
+      if (currentIndex === tipList.length) currentIndex = 0
+    }, 2000)
+
+    // 生成随机索引
+    // Math.floor(Math.random() * tipList.length)
+  </script>
 </body>
 </html>

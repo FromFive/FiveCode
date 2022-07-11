@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+    }
+    .topbar {
+      display: flex;
+      align-items: center;
+      height: 13.3333vw;
+      color: #fff;
+      background: url(../image/jd-topbar-bg.png) no-repeat left top/cover;
+      transition: all .3s ease-out;
+      overflow: hidden;
+    }
+    .topbar .close {
+      display: flex;
+      align-items: center;
+      width: 4.2667vw;
+      height: 100%;
+      margin-left: 2.4vw;
+      cursor: pointer;
+    }
+    .topbar .close img {
+      width: 100%;
+      /* height: 4.2667vw; */
+    }
+    .topbar .logo {
+      width: 9.3333vw;
+      height: 9.3333vw;
+      margin: 0 2.4vw 0 4.8vw;
+    }
+    .topbar .info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      font-size: 3.2vw;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .topbar .info span:nth-child(1) {
+      font-weight: 500;
+    }
+    .topbar .info span:nth-child(2) {
+      color: #999;
+    }
+    .topbar .btn {
+      width: 32vw;
+      height: 100%;
+      line-height: 13.3333vw;
+      text-align: center;
+      font-size: 4vw;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="close">
+      <img src="../image/jd-topbar-close.png" alt="">
+    </div>
+    <img src="../image/jd-logo.png" alt="" class="logo">
+    <div class="info">
+      <span>打开京东APP</span>
+      <span>购物实惠又轻松</span>
+    </div>
+    <div class="btn">立即打开</div>
+  </div>
+  <script>
+    // 1、获取topbar对象，后续需要设置它隐藏。
+    var topbarEl = document.querySelector(".topbar") //as HTMLDivElement
+    // 2、获取关闭按钮
+    var closeEl = topbarEl.querySelector(".close")
+    // 3、监听关闭按钮的点击事件：点击关闭按钮，topbar消失。
+    // 此处在topbar的高度上设置了动画，从有高度到高度变为0这个过程中设置动画。动画结束后移除topbar。此处使用定时器时，间隔时长需要与动画设置时长一样。因为过度依赖动画设置时长，所以不建议采用定时器。
+    closeEl.addEventListener("click", function() {
+      topbarEl.style.height = 0
+    //   setTimeout(function() {
+    //     topbarEl.remove()
+    //   }, 300)
+    })
+
+    // 监听动画结束后事件：动画结束后，移除topbar。
+    topbarEl.ontransitionend = function() {
+      topbarEl.remove()
+    }
+  </script>
+</body>
+</html>
