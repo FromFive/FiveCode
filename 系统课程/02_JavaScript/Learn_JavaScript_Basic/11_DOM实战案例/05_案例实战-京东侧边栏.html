@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .toolbar {
+      position: fixed;
+      right: 0;
+      width: 35px;
+    }
+    .toolbar .item {
+      position: relative;
+      width: 35px;
+      height: 35px;
+      margin-top: 1px;
+      border-radius: 3px 0 0 3px;
+      background-color: #7a6e6e;
+    }
+    .toolbar .icon {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      background: url(../image/toolbars_sprite.png) no-repeat;
+      cursor: pointer;
+    }
+    .text {
+      position: absolute;
+      right: 35px;
+      top: 0;
+      /* 默认宽度为0时，会有一部分字显示出来。此时可以设置层叠顺序在最下层或者设置超出隐藏 */
+      z-index: -1;
+      /* overflow: hidden; */
+      width: 0px;
+      height: 35px;
+      line-height: 35px;
+      text-align: center;
+      font-size: 12px;
+      color: #fff;
+      /* opacity: 1; */
+      cursor: pointer;
+      /* 因为设置的定位是距离右边，所以动画效果会从右边向左展开。 */
+      transition: width .2s ease;
+      background-color: #7a6e6e;
+    }
+    .item:hover,
+    .item:hover .text {
+      background-color: #c81623;
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar">
+    <div class="item">
+      <i class="icon"></i>
+      <div class="text">
+        购物车
+      </div>
+    </div>
+    <div class="item">
+      <i class="icon"></i>
+      <div class="text">
+        收藏
+      </div>
+    </div>
+    <div class="item">
+      <i class="icon"></i>
+      <div class="text">
+        限时活动
+      </div>
+    </div>
+    <div class="item">
+      <i class="icon"></i>
+      <div class="text">
+        联系客服
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1、动态设置精灵图位置
+    // 精灵图中图标的位置x轴是一样的，y轴不同
+    var iconEls = document.querySelectorAll(".icon")
+    for (var i = 0; i < iconEls.length; i++) {
+      iconEls[i].style.backgroundPosition = `-48px -${i*50}px`
+    }
+
+    // 2、设置鼠标进入进出动画
+    // 方案一：mouseenter 和 mouseleave
+    // 方法1:利用this指向，获取具体的textEl。
+    // for (var itemEl of itemEls) {
+    //   itemEl.onmouseenter = function() {
+    //     var textEl = this.querySelector(".text")
+    //     textEl.style.width = "62px"
+    //     this.style.borderRadius = "0px"
+    //   }
+    //   itemEl.onmouseleave = function() {
+    //     var textEl = this.querySelector(".text")
+    //     textEl.style.width = "0px"
+    //     this.style.borderRadius = "3px 0 0 3px"
+    //   }
+    // }
+
+    // 方式2:抽取重复代码到一个函数内，在事件中调用该函数。利用event.currentTarget。
+    // for (var itemEl of itemEls) {
+    //   itemEl.onmouseenter = function(event) {
+    //     handleMouseEventOne(event, 62, 0)
+    //   }
+    //   itemEl.onmouseleave = function(event) {
+    //     handleMouseEventOne(event, 0, 3)
+    //   }
+    // }
+
+    // function handleMouseEventOne(event, width, borderRadius) {
+    //   var textEl = event.currentTarget.querySelector(".text")
+    //   textEl.style.width = `${width}px`
+    //   event.currentTarget.style.borderRadius = `${borderRadius}px 0 0 ${borderRadius}px`
+    // }
+
+
+    // 方案二：mouseover 和 mouseout
+    var toolbarEl = document.querySelector(".toolbar")
+    // toolbarEl.onmouseover = function(event) {
+    //   handleMouseEvent(event, 62, 0)
+    // }
+    // toolbarEl.onmouseout = function(event) {
+    //   handleMouseEvent(event, 0, 3)
+    // }
+    // 首先判断target不是父元素toolbar。因为item下面嵌套子元素多，而且冒泡的原因获取到的target不一定能准确到是item，所以需要判断。如果target的类名是item，那么就返回target本身。如果是子元素，那么返回的是当前target的父元素即item。
+    function handleMouseEvent(event, width, borderRadius) {
+      if ( event.target !== toolbarEl) {
+        var itemEl = event.target.classList.contains("item") ? event.target : event.target.parentElement
+        var textEl = itemEl.querySelector(".text")
+        textEl.style.width = `${width}px`
+        itemEl.style.borderRadius = `${borderRadius}px 0 0 ${borderRadius}px`
+      }
+    }
+    // 使用捕获不可行。
+  </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.footer_wrapper .foot_copyright {
+  display: flex;
+  /* align-items: center; */
+  height: 66px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #d4d4d4;
+}
+.footer_wrapper .foot_copyright .tencent {
+display: block;
+width: 285px;
+height: 64px;
+text-indent: -999px;
+background: url(../img/foot_spr.png) no-repeat 0 0;
+}
+.footer_wrapper .foot_copyright .timi {
+display: block;
+width: 285px;
+height: 64px;
+text-indent: -999px;
+background: url(../img/foot_spr.png) no-repeat -285px 0;
+}
+.footer_wrapper .foot_bottom {
+display: flex;
+justify-content: space-between;
+font-size: 12px;
+} 
+.footer_wrapper .foot_bottom .left_area {
+width: 508px;
+height: 100px;
+color: #666;
+}
+.footer_wrapper .foot_bottom .left_area .tips {
+display: flex;
+flex-wrap: wrap;
+margin-bottom: 6px;
+color: #6d6d6d;
+}
+.footer_wrapper .foot_bottom .left_area .tips .item {
+margin-right: 12px;
+}
+.footer_wrapper .foot_bottom .right_area {
+width: 650px;
+height: 100px;
+color: #646467;
+} 
+.footer_wrapper .foot_bottom .right_area .link {
+display: flex;
+line-height: 20px;
+}
+.footer_wrapper .foot_bottom .right_area .link .item {
+display: block;
+margin-right: 2px;
+}
+.footer_wrapper .foot_bottom .right_area .link .line {
+width: 1px;
+height: 12px;
+margin-top: 5px;
+margin-right: 3px;
+background: #494949;
+}
+.footer_wrapper .foot_bottom .right_area .info {
+margin-top: 5px;
+}
+.footer_wrapper .foot_bottom .right_area .en {
+margin-right: 20px;
+}
+.footer_wrapper .foot_bottom .right_area .link .item img {
+display: inline-block;
+vertical-align: middle;
+}
