@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>王者荣耀-main</title>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/common.css">
+  <style>
+    .main .news-section {
+      position: relative;
+      display: flex;
+      height: 342px;
+      background: url(./img/main_bg.png) no-repeat;
+    }
+    .news-section .banner {
+      width: 605px;
+      /* 将banner图片超出的隐藏 */
+      overflow: hidden;
+    }
+    .news-section .banner .img-list {
+      display: flex;
+      width: 604px;
+      height: 298px;
+    }
+    .news-section .banner .img-list .item {
+      flex-shrink: 0;
+      width: 100%;
+    }
+    .news-section .banner .img-list .item a {
+      display: block;
+    }
+    .news-section .banner .img-list .item img { 
+      width: 100%;
+    }
+    .news-section .banner .title-list {
+      display: flex;
+      height: 44px;
+      line-height: 44px;
+    }
+    .news-section .banner .title-list .item {
+      flex: 1;
+      text-align: center;
+    }
+    .news-section .banner .title-list .item a {
+      display: block;
+      color: #b1b2be;
+    }
+    .news-section .banner .title-list .item.active a {
+      color: #f3c258;
+      background: rgba(255,255,255,0.15);
+    }
+    .news-section .news {
+      flex: 1;
+      padding: 0 17px;
+      overflow: hidden;
+    }
+    .news-section .news .tab-list{
+      display: flex;
+      height: 48px;
+      border-bottom: 1px solid #000;
+    }    
+    .news-section .news .tab-list .item {
+      width: 52px;
+    }
+    /* 设置了a元素的高度是包含了边框的高度后，边框动画就会从下面出来。 */
+    .news-section .news .tab-list .item a {
+      display: block;
+      height: 48px;
+      box-sizing: border-box;
+      line-height: 45px;
+      color: #b8b9c5;
+      text-align: center;
+      transition: border-bottom 225ms ease-out;
+    }
+    .news-section .news .tab-list .item:not(.more) a:hover,
+    .news-section .news .tab-list .item.active a {
+      color: #f3c258;
+      border-bottom: 3px solid #f3c258;
+    }
+    .news-section .news .notice {
+      height: 36px;
+      line-height: 36px;
+      margin-top: 18px;
+      padding: 0 15px;
+      background: #414046;
+    }
+    .news-section .news .notice a {
+      display: block;
+      color: #f3c258;
+      font-size: 18px;
+    }
+    .news-section .news .news-list .item{
+      display: flex;
+      margin-top: 11px;
+      overflow: hidden;
+    }
+    .news-section .news .news-list .item .desc{
+      flex: 1;
+      padding-right: 20px;
+      color: #b8b9c5;
+      
+    }
+    .news-section .news .news-list .time {
+      color: #999;
+      font-size: 12px;
+    }
+    .news-section .download {
+      width: 236px;
+    }
+    .news-section .download a{
+      display: block;
+      background: url(./img/index_sprite.png) no-repeat;
+    }
+    .news-section a.download-btn {
+      height: 128px;
+      background-position: 0 -219px;
+    }
+    .news-section a.guard-btn {
+      height: 106px;
+      background-position: 0 -350px;
+    }
+    .news-section a.exprenise-btn {
+      height: 108px;
+      background-position:0 -461px;
+    }
+    .main .age {
+      position: absolute;
+      top: 0;
+      right: -58px;
+      width: 53px;
+      height: 68px;
+      background: url(./img/age_notice.png);
+    }
+    .main .addict {
+      position: absolute;
+      top: 78px;
+      right: -58px;
+      width: 53px;
+      height: 47px;
+      background: url(./img/addict.png) no-repeat;
+      background-size: contain;
+    }
+  </style>
+</head>
+<body>
+  <div class="main main_wrapper">
+    <div class="news-section">
+      <div class="banner">
+        <ul class="img-list">
+          <li class="item">
+            <a title="桑启的旅途故事" href="#" >
+              <img src="./img/banner1.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner2.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner3.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner4.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner5.jpeg" alt="">
+            </a>
+          </li>
+        </ul>
+        <ul class="title-list">
+          <li class="item active">
+            <a href="#">桑启的旅途故事</a>
+          </li>
+          <li class="item">
+            <a href="#">结伴同游千窟</a>
+          </li>
+          <li class="item">
+            <a href="#">谁称为版本之子</a>
+          </li>
+          <li class="item">
+            <a href="#">荣耀大话王</a>
+          </li>
+          <li class="item">
+            <a href="#">王者炸麦了</a>
+          </li>
+        </ul>
+      </div>
+      <div class="news">
+        <ul class="tab-list">
+         <li class="item active">
+           <a href="#">热门</a>
+         </li>
+         <li class="item">
+          <a href="#">新闻</a>
+         </li>
+         <li class="item">
+          <a href="#">公告</a>
+         </li>
+         <li class="item">
+          <a href="#">活动</a>
+         </li>
+         <li class="item">
+          <a href="#">赛事</a>
+         </li>
+         <li class="item more">
+          <a href="#">...</a>
+         </li>
+        </ul>
+        <p class="notice">
+          <a href="#" class="nowrap_ellipsis">4月21日全服不停机公告</a>
+        </p>
+        <ul class="news-list">
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              最新BUG修复进展【老亚瑟的答疑时间】
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              王者改娃达人言吾豪I 《营地·人物》
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              桑启上线峡谷  玩法攻略等你来取
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              狄某有话说 | 牛魔：你们打，我在泉水指挥
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_notice">
+              4月14日正式服“萤火不灭”版本更新公告
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_hot">
+              2022金瞳奖青年赛道王者荣耀命题公布
+            </a>
+            <span class="time">04/19</span>
+          </li>
+          <li class="item">
+            <a href="#" class="desc nowrap_ellipsis news_type news_type_notice">
+              4月8日抢先服版本更新公告
+            </a>
+            <span class="time">04/19</span>
+          </li>
+        </ul>
+      </div>
+      <div class="download">
+        <a href="" class="download-btn"></a>
+        <a href="" class="guard-btn"></a>
+        <a href="" class="exprenise-btn"></a>
+      </div>
+      <div class="age"></div>
+      <a href="#" class="addict"></a>
+    </div>
+  </div>
+  <script>
+    // 1、获取对应的元素
+    var titlelistEl = document.querySelector(".title-list")
+    var imglistEl = document.querySelector(".img-list")
+
+    // 1.1定义变量记录当前的状态。例如当前有active类名的元素以及图片自动轮播时当前的索引值。
+    var originActiveEl = titlelistEl.querySelector(".active")
+    // 2、设置底部title切换，同时做图片轮播
+    titlelistEl.onmouseover = function(event) {
+      // 2.1确定发生鼠标进入的元素
+      var itemEl = event.target.parentElement
+      if (!itemEl.classList.contains("item")) return
+      // 2.2将默认设置active的元素移除掉active
+      originActiveEl.classList.remove("active")
+      // 2.3给进入的元素添加active
+      itemEl.classList.add("active")
+      // 2.4将添加了active的元素赋值给activeEl。
+      originActiveEl = itemEl
+
+      // 3、进入底部title，图片轮播，切换imglist。
+      // 3.1图片位移的尺寸是索引值乘604，所以需要获取索引值。这个索引值是item的索引。当鼠标进入的元素正好是title list的某个子元素时，跳出循环。
+      // for (var index = 0; index < titlelistEl.children.length; index++) {
+      //   if (titlelistEl.children[i] === itemEl) break
+      // }
+      var index =  Array.from(titlelistEl.children).findIndex(function(item) {
+        return item === itemEl
+      })
+
+      // 3.2设置图片位移尺寸和动画。
+      imglistEl.style.transform = `translateX(${-604 * index}px)`
+      imglistEl.style.transition = `all 300ms ease`
+
+    }
+  </script>
+</body>
+</html>

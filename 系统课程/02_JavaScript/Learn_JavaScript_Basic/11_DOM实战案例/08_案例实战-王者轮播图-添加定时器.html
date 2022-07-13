@@ -16,12 +16,13 @@
     }
     .news-section .banner {
       width: 605px;
+      /* 将banner图片超出的隐藏 */
+      overflow: hidden;
     }
     .news-section .banner .img-list {
       display: flex;
       width: 604px;
       height: 298px;
-      overflow: hidden;
     }
     .news-section .banner .img-list .item {
       flex-shrink: 0;
@@ -46,7 +47,6 @@
       display: block;
       color: #b1b2be;
     }
-    .news-section .banner .title-list .item a:hover,
     .news-section .banner .title-list .item.active a {
       color: #f3c258;
       background: rgba(255,255,255,0.15);
@@ -159,10 +159,25 @@
               <img src="./img/banner2.jpeg" alt="">
             </a>
           </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner3.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner4.jpeg" alt="">
+            </a>
+          </li>
+          <li class="item">
+            <a title="结伴同游千窟" href="#" >
+              <img src="./img/banner5.jpeg" alt="">
+            </a>
+          </li>
         </ul>
         <ul class="title-list">
           <li class="item active">
-            <a href="#" class="active">桑启的旅途故事</a>
+            <a href="#">桑启的旅途故事</a>
           </li>
           <li class="item">
             <a href="#">结伴同游千窟</a>
@@ -256,5 +271,68 @@
       <a href="#" class="addict"></a>
     </div>
   </div>
+  <script>
+    // 1、获取对应的元素
+    var titlelistEl = document.querySelector(".title-list")
+    var imglistEl = document.querySelector(".img-list")
+
+    // 1.1定义变量记录当前的状态。例如当前有active类名的元素以及图片自动轮播时当前的索引值。
+    var originActiveEl = titlelistEl.querySelector(".active")
+    var currentIndex = 0
+    // 2、设置底部title切换，同时做图片轮播
+    titlelistEl.onmouseover = function(event) {
+      // 2.1确定发生鼠标进入的元素
+      var itemEl = event.target.parentElement
+      if (!itemEl.classList.contains("item")) return
+      // 2.2将默认设置active的元素移除掉active
+      originActiveEl.classList.remove("active")
+      // 2.3给进入的元素添加active
+      itemEl.classList.add("active")
+      // 2.4将添加了active的元素赋值给activeEl。
+      originActiveEl = itemEl
+
+      // 3、进入底部title，图片轮播，切换imglist。
+      // 3.1图片位移的尺寸是索引值乘604，所以需要获取索引值。这个索引值是item的索引。当鼠标进入的元素正好是title list的某个子元素时，跳出循环。
+      // for (var i = 0; i < titlelistEl.children.length; i++) {
+      //   if (titlelistEl.children[i] === itemEl) break
+      // }
+      var index =  Array.from(titlelistEl.children).findIndex(function(item) {
+        return item === itemEl
+      })
+
+      // 3.2设置图片位移尺寸和动画。
+      imglistEl.style.transform = `translateX(${-604 * index}px)`
+      imglistEl.style.transition = `all 300ms ease`
+
+      // 3.3当鼠标放在底部title某个元素上时，这个元素的索引值复制给当前的索引。自动轮播时从当前的索引值加1，向下轮播即可。
+      currentIndex = index
+    }
+
+    // 4、自动轮播
+    var intervalId = setInterval(function() {
+      // 4.1 一开始所以值直接加1，向下轮播。
+      currentIndex++
+      // 4.2如果当前的索引超过了底部item集合长度时，将索引值变为0.
+      if (currentIndex === titlelistEl.children.length) currentIndex = 0
+      // 4.3设置图片轮播
+      imglistEl.style.transform = `translateX(${-604 * currentIndex}px)`
+      imglistEl.style.transition = `all 300ms ease`
+
+      // 5、在图片轮播同时，也切换底部title。
+      // 5.1 原来有active的移除掉
+      originActiveEl.classList.remove("active")
+
+      // 5.2 定义一个变量存放当前索引的元素。然后添加active
+      var currentItemEl = titlelistEl.children[currentIndex]
+      currentItemEl.classList.add("active")
+
+      // 5.3 记录新的activeEl。当前元素变为原含有active的元素
+      originActiveEl = currentItemEl
+    }, 3000)
+
+    // imglistEl.onmouseover = function() {
+    //   clearInterval(intervalId)
+    // }
+  </script>
 </body>
 </html>
