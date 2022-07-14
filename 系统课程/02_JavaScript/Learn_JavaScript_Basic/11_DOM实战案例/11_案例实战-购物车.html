@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    td,th {
+      border: 1px solid #aaa;
+      padding: 12px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th>编号</th>
+        <th>书籍名称</th>
+        <th>出版日期</th>
+        <th>价格</th>
+        <th>购买数量</th>
+        <th>操作</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <h2 class="total-price"></h2>
+  <script>
+    // 1、服务器返回数据
+    var books = [
+      {
+        id: 1,
+        name: "《算法导论》",
+        date: "2006-09",
+        price: 85.00,
+        count: 3,
+      },
+      {
+        id: 2,
+        name: "《UNIX编程艺术》",
+        date: "2006-02",
+        price: 59.00,
+        count: 2
+      },
+      {
+        id: 3,
+        name: "《编程珠玑》",
+        date: "2008-10",
+        price: 39.00,
+        count: 5
+      },
+      {
+        id: 4,
+        name: "《代码大全》",
+        date: "2006-03",
+        price: 128.00,
+        count: 8
+      }
+    ]
+    //  2、将数据插入到tbody中
+    // 首先获取到tbody元素
+    var tbodyEl = document.querySelector("tbody") 
+
+    // 根据服务器返回的数据创建tr并插入到tbody中。有多少数据就有多少tr。
+    for (var i = 0; i < books.length; i++) {
+      var trowEl = document.createElement("tr")
+
+      // tr中需要有td存放具体的数据，具体多少需要根据对象的属性来确定。一个tr中对应的是数组中的一条数据，即每个对象。一个td中对应的是对象中的具体属性。
+      // 所以通过i获取到数据中的某条对象，然后获得这个对象中的属性组成的数组。
+      var bookItem = books[i]
+      var bookKeys = Object.keys(bookItem)
+
+      // 根据对象中属性的多少来确定创建多少个td
+      // 通过m获取到某个对象中具体的属性，通过key获取到属性对应的属性值，然后将这个属性值保存到td中。最后td通过循环插入到tr中。
+      for (var m = 0; m < bookKeys.length; m++) {
+        var key = bookKeys[m]
+        var value = bookItem[key]
+        if (key === "price") {
+        value = `¥${value}`
+        }
+        var tdEl = document.createElement("td")
+        tdEl.textContent = value
+        trowEl.append(tdEl)
+      }
+      // tr通过循环插入到tbody中。
+      tbodyEl.append(trowEl)
+
+      // 返回的数据插入成功后，创建删除按钮。也是先将按钮插入到td中，再将td插入到tr中。
+      var deletTd = document.createElement("td")
+      var deleteBtnEl = document.createElement("button")
+      deleteBtnEl.textContent = "删除"
+      deletTd.append(deleteBtnEl)
+      trowEl.append(deletTd)
+
+      // 删除事件
+      deleteBtnEl.addEventListener("click", function() {
+        // 首先要删除数据
+        var deleteTrowEl = this.parentElement.parentElement
+        var deleteTrowIndex = deleteTrowEl.sectionRowIndex
+        books.splice(deleteTrowIndex,1)
+        // 然后删除所在的tr
+        deleteTrowEl.remove()
+        // 最后重新计算总价格
+        calTotalPrice()
+      })
+
+
+    }
+
+    // 计算最后的总价格
+    /* 
+    1）首先获取对应的元素。
+    2）通过数组的reduce方法计算累加。
+    3）最后将计算的价格插入到元素中。
+    */
+    var totalProceEl = document.querySelector(".total-price")
+    calTotalPrice()
+
+    // 封装计算总价的函数
+    function calTotalPrice() {
+      var totalPrice = books.reduce(function(preValue, item) {
+        return preValue + item.price * item.count
+      }, 0)
+      totalProceEl.textContent = `总价格：¥${totalPrice}`
+    }
+  </script>
+</body>
+</html>

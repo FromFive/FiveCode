@@ -15,18 +15,27 @@
       background: url(./img/main_bg.png) no-repeat;
     }
     .news-section .banner {
-      width: 605px;
+      width: 604px;
       /* 将banner图片超出的隐藏 */
       overflow: hidden;
     }
+    /* 当list的子元素设置绝对定位时，会脱离标准流，没有高度了，所以父元素需要设置高度，以免title在最上面显示。 */
     .news-section .banner .img-list {
+      position: relative;
       display: flex;
       width: 604px;
       height: 298px;
     }
+    /* 设置li绝对定位，除第一张图片是展示的（即定位位置是距离left为0，第2到第5张都是在右面位置待命，即left为100%）。当自动轮播或者鼠标放在某个title上时，（title索引和图片索引是对应的。）显示对应的图片，也就代表小于这个索引的其他图片都在左边待命，即位置是left为-100%。 */
     .news-section .banner .img-list .item {
+      position: absolute;
+      left: 100%;
       flex-shrink: 0;
       width: 100%;
+    }
+    /* 第一张图片默认是展示的，所以位置是left为0. */
+    .news-section .banner .img-list .item:first-child {
+      left: 0;
     }
     .news-section .banner .img-list .item a {
       display: block;
@@ -276,22 +285,40 @@
     var titlelistEl = document.querySelector(".title-list")
     var imglistEl = document.querySelector(".img-list")
     var bannerEl = document.querySelector(".banner")
-    // 1.1定义变量记录当前的状态。例如当前有active类名的元素以及图片自动轮播时当前的索引值。
-    var originActiveEl = titlelistEl.querySelector(".active")
+    /* 
+    1.1定义变量记录当前的状态。
+    activeTitleEl：当前有active类名的title元素；
+    currentIndex：鼠标进入某个title的当前的索引值；
+    previousIndex：上一个title的索引值。鼠标离开当前title，进入到下一个title时；
+    timeId：定时器返回值。
+    */
+    var activeTitleEl = titlelistEl.querySelector(".active")
     var currentIndex = 0
+    var previousIndex = 0
     var timeId  = null
+
     // 2、当鼠标进入底部元素时，切换图片和底部title。
     titlelistEl.onmouseover = function(event) {
-      // 2.1确定发生鼠标进入的元素，并判断如果当前的发生事件元素的类名没有包含item，则直接返回。因为进入的元素时a
+      // 2.1确定发生鼠标进入的元素，并判断如果当前的发生事件元素的类名，没有包含item，则直接返回。因为进入的元素是a，但是需要获取的元素是item，所以是获取发生事件元素的父元素。
       var itemEl = event.target.parentElement
       if (!itemEl.classList.contains("item")) return
 
-      // 2.2、获取底部title中每个item的索引值。此处使用title list的子元素集合获取。titlelistEl.children的值类型是一个类数组，可以通过Array.from方法将它转为数组，并通过findIndex方法找到对应的索引值。
+      /* 
+      2.2、获取底部title中每个item的索引值。此处使用title list的子元素集合获取。titlelistEl.children的值类型是一个类数组，可以通过Array.from方法将它转为数组，并通过findIndex方法找到对应的索引值。
+      当要找的这个item与当前发生元素的父元素完全相等时，则返回这个item的索引值。
+      */
       var index =  Array.from(titlelistEl.children).findIndex(function(item) {
         return item === itemEl
       })
-      // 2.3 记录最新的当前索引值。当鼠标放在底部title某个元素上时，这个元素的索引值复制给当前的索引。自动轮播时从当前的索引值加1，向下轮播即可。
+
+      /*
+      2.3 记录最新的索引值。
+      在鼠标进入下一个title元素后，当前这个元素的索引必定成为之前（上一个）的索引。
+      当鼠标进入底部tittle某个元素上时，即可获得它的索引，这个元素的索引值复制给当前的索引。自动轮播时从当前的索引值加1，向下轮播即可。
+      */
+      previousIndex = currentIndex
       currentIndex = index
+      
 
       // 3、调用轮播函数。
       switchBanner()
@@ -312,6 +339,7 @@
     // 因为timeId在全局中定义，所以在调用这个函数时，timeId被赋予了新值，所以在清除定时器时可以获得。
     function setTimeBanner() {
         timeId = setInterval(function() {
+          previousIndex = currentIndex
         // 1.1 一开始索引值直接加1，向下轮播。因为currentIndex是全局变量，在事件中被赋予了新值，所以此时自增时也是在新赋值上自增的。
         currentIndex++
         // 1.2如果当前的索引超过了底部item集合长度时，将索引值变为0.
@@ -321,20 +349,44 @@
       }, 3000)
     }
     function switchBanner() {
-      // 1.1、图片轮播设置
-      imglistEl.style.transform = `translateX(${-604 * currentIndex}px)`
-      imglistEl.style.transition = `all 300ms ease`
+      /* 
+      1.1、图片轮播设置
+      图片的索引和底部标题的索引是对应的。因为要对每张图片的索引进行判断，索引使用for循环。
+      定义变量newEl：将要进入展示位置的图片的索引。
+      当图片的索引与鼠标进入的title对应的索引一致时，那么这个图片就进入到展示位置。并且设置动画。
+      当图片的索引小于鼠标进入的title对应的索引时，这些图片在展示位置的左边显示。
+      当图片的索引大于鼠标进入的title对应的索引时，这些图片在展示位置的右边显示。
+      在图片进入到展示位置，并且从展示位置上离开时需要加动画，但是直接移动到展示位置左边和右边位置的不需要动画，需要重置。（例如鼠标目前在索引1，然后直接进入到3，那么1离开时需要动画，3进入时需要动画，中间的2没有展示，那么也需要到左边等候，但这个过程不需要动画。）
+      所以当前的图片成为上一张图片时，即它的索引成为上一个图片的索引，那么代表是刚刚离开的，所以需要离开动画。其他不等于的情况就直接重置动画为none。
+      */
+      for (var i = 0; i < imglistEl.children.length; i++) {
+        var newEl = imglistEl.children[i]
+        if (i === currentIndex) {
+          newEl.style.left = "0"
+          newEl.style.transition = "all 300ms ease"
+        } else if (i < currentIndex) {
+          if (i !== previousIndex) {
+            newEl.style.transition = "none"
+          }
+          newEl.style.left = "-100%"
+        } else {
+          if (i !== previousIndex) {
+            newEl.style.transition = "none"
+          }
+          newEl.style.left = "100%"
+        }
+      }
 
       // 2、在图片轮播同时，也切换底部title。
       // 2.1、将默认设置active的元素移除掉active
-      originActiveEl.classList.remove("active")
+      activeTitleEl.classList.remove("active")
 
       // 2.2、定义一个变量存放当前索引的元素。然后添加active。
       var currentItemEl = titlelistEl.children[currentIndex]
       currentItemEl.classList.add("active")
 
       // 2.3、记录最新的activeEl。当前元素变为原含有active的元素。
-      originActiveEl = currentItemEl
+      activeTitleEl = currentItemEl
     }
   </script>
 </body>
